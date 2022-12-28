@@ -1,0 +1,101 @@
+@media screen and (max-width: 1500px){
+	.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    	max-width: 1240px;
+	}
+	.pb-120 {
+    	padding-bottom: 80px;
+	}
+	.pt-120 {
+    	padding-top: 80px;
+	}
+	.banner-section span {
+    	font-size: 24px;
+    	line-height: 64px;
+	}
+	body{
+		font-size: 16px;
+		line-height: 30px;
+	}
+	h1 {
+    	font-size: 45px;
+    	line-height: 55px;
+	}
+	h2 {
+    	font-size: 35px;
+    	line-height: 45px;
+	}
+	h1 span{
+		font-size: 45px !important;
+	}
+	.banner-right-img:after{
+		left: -80px;
+    	width: 300px;
+    	height: 145px;
+    	background-size: 100%;
+	}
+	.banner-section .custom-btn {
+    	margin-top: 18px;
+    	margin-bottom: 34px;
+	}
+	.custom-btn {
+    	width: 174px;
+    	height: 58px;
+	}
+	.navbar .navbar-collapse .navbar-nav .nav-item .nav-link.login-btn{
+		width: 154px;
+    	height: 56px;
+	}
+	.banner-row{
+		padding: 30px 48px 0px 48px;
+	}
+	.mt-5{
+		margin-top: 1.5rem!important;
+	}
+	p{
+		margin-bottom: 0;
+	}
+	th:first-child, td:first-child {
+    	padding-left: 40px;
+	}
+	td {
+    	padding: 26px 0;
+	}
+	.package-box{
+		padding: 58px 70px;
+	}
+	.package-box h3{
+		font-size: 32px;
+    	line-height: 42px;
+	}
+	.package-box span:last-child{
+		font-size: 40px;
+    	line-height: 50px;
+	}
+	.second-col ul:last-child {
+    	padding-left: 20px;
+	}
+	.newsletter-form input{
+		height: 68px;
+		margin-bottom: 12px;
+	}
+	.newsletter-form button{
+		height: 68px;
+	}
+	.footer-bottom{
+		padding: 22px 0;
+	}
+	.custom-list li{
+		margin-right: 10px;
+	}
+	.custom-list li a{
+	    width: 40px;
+    	height: 40px;
+	}
+	.navbar .navbar-collapse .navbar-nav .nav-item .nav-link{
+		font-size: 15px;
+    	padding-right: 18px;
+	}
+	.navbar .navbar-collapse .navbar-nav .nav-item .nav-link.login-btn{
+		margin-left: 15px;
+	}
+}
