@@ -2,38 +2,62 @@
 @extends('layouts.front.app')
 
 @section('header')
-<style>
-    .banner-section span { 
-		display: inline-flex !important;
-	}
+    <style>
+        .banner-section span {
+            display: inline-flex !important;
+        }
 
-	.leaderboard-pagination .pagination {
-		justify-content: center;
-	}
-</style>
+        .leaderboard-pagination .pagination {
+            justify-content: center;
+        }
+    </style>
 @endsection
 
 @section('content')
-<!-- Banner Section -->
-<section id="banner" class="banner-section">
-	<div class="container">
-		<div class="row banner-row bg-white pt-96 pb-96">
-			<div class="col-12 text-center">
-				<h1>Top Sports <span class="prime-color">Bettor</span> <br>Leaderboard</h1>
-				<p class="mt-3 mb-0">Welcome to our leaderboard page. This is where we rank the <b>best </b><br><b>sports bettors</b> for the current season.</p>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- Banner Section -->
+    <!-- Banner Section -->
+    <section id="banner" class="banner-section banner-row banner-row-leaderboard">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Welcome To Blind Side Bets</h1>
+                    <h2>top sports bettor</h2>
+                    <h3>leaderboard</h3>
+                    <a class="btn-borderred" href="#">Explore More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- <section id="banner" class="banner-section banner-row banner-row-leaderboard">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Welcome To Blind Side Bets</h1>
+                    <h2>top sports bettor</h2>
+                    <h3>leaderboard</h3>
+                    <a class="btn-borderred" href="#">Explore More</a>
+                </div>
+            </div>
+
+            <section id="banner" class="banner-section">
+                <div class="container">
+                    <div class="row banner-row bg-white pt-96 pb-96">
+                        <div class="col-12 text-center">
+                            <h1>Top Sports <span class="prime-color">Bettor</span> <br>Leaderboard</h1>
+                            <p class="mt-3 mb-0">Welcome to our leaderboard page. This is where we rank the <b>best
+                                </b><br><b>sports bettors</b> for the current season.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Banner Section --> --}}
 
 
-<div id="app">
-	<leaderboard-component></leaderboard-component>
-</div>
+            <div id="app">
+                <leaderboard-component></leaderboard-component>
+            </div>
 
-<!-- Handicapper -->
-{{-- <section id="handicapper" class="handicapper pt-120 pb-120">
+            <!-- Handicapper -->
+            {{-- <section id="handicapper" class="handicapper pt-120 pb-120">
 	<div class="container">
 		<div class="row">
 			<form class="option-form" action="" method="">
@@ -80,7 +104,7 @@
 					</tr>
 				</thead>
 					<tbody>
-						@foreach($data as $key => $item)
+						@foreach ($data as $key => $item)
 						<tr>
 							<td>{{ $key + 1 }}</td>
 							<td><a href="{{ route('handicappers.profile', $item->id) }}"><img src="{{ asset('images/profile/' . ($item->image ?? 'default-avatar.jpg')) }}" class="rounded-circle" width="80" height="80" style="object-fit: contain;" alt="Profile Image"></a></td>
@@ -100,6 +124,5 @@
 		</div>
 	</div>
 </section> --}}
-<!-- Handicapper -->
-
-@endsection
+            <!-- Handicapper -->
+        @endsection
