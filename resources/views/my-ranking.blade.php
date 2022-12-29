@@ -15,7 +15,7 @@
 	<div class="container">
 		<div class="row banner-row justify-content-center pt-70 pb-70 bg-white">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-				<div class="card align-items-center position-relative">	
+				<div class="card align-items-center position-relative">
 					<img src="{{ asset('images/profile/' . (Auth::user()->image ?? 'default-avatar.jpg')) }}" class="rounded-circle border border-info" width="350" height="350" style="object-fit: contain;" alt="Profile Image">
 					<div class="card-body mb-5">
 						<a href="{{ route('handicappers.profile', Auth::id()) }}"><h2 class="mt-4 mb-4">{{ Auth::user()->name }}</h2></a>
@@ -44,11 +44,11 @@
 						</div>
 					</div>
 					<div class="my-ranking-hatl">
-						<h2 class="mb-3">TheHunchATL</h2>
+						<h2 class="mb-3">BLINDSIDEBETS</h2>
 							<a href="mailto:{{ Auth::user()->email }}">{{ Auth::user()->email }}</a>
 						<p  class="card-text mt-5 text-light">{{ Auth::user()->bio ?? '' }}</p>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</div>
 	</div>

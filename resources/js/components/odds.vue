@@ -7,7 +7,7 @@
 			<div class="container">
 				<div class="row banner-row justify-content-center pt-70 pb-70 bg-white">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-						<div class="card align-items-center position-relative">	
+						<div class="card align-items-center position-relative">
 							<img :src="'images/profile/' + (auth.image ?? 'default-avatar.jpg')" class="rounded-circle border border-info" width="350" height="350" style="object-fit: contain;" alt="Profile Image">
 							<div class="card-body mb-5">
 								<a :href="'handicappers/' + auth.id"><h2 class="mt-4 mb-4">{{ auth.name }}</h2></a>
@@ -36,11 +36,11 @@
 								</div>
 							</div>
 							<div class="my-ranking-hatl">
-								<h2 class="mb-3">TheHunchATL</h2>
+								<h2 class="mb-3">BLINDSIDEBETS</h2>
 									<a :href="'mailto:' + auth.email">{{ auth.email }}</a>
 								<p  class="card-text mt-5 text-light">{{ auth.bio ?? '' }}</p>
 							</div>
-						</div>	
+						</div>
 					</div>
 				</div>
 			</div>
@@ -87,7 +87,7 @@
 					<h2 class="pl-95">Net Units</h2>
 					<div class="unit_slider pl-95 pr-120 pt-55 pb-55 mt-40">
 						<div id="" class="slider-row-new">
-						<div class="row">	
+						<div class="row">
 							<div v-for="item in units" :key="item.id" @click="setStatsDetails(item, item.name)" data-bs-toggle="modal" data-bs-target="#statsmodal" style="cursor: pointer;" class="slider-box unit-slider-box col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
 								<h3>{{ item.name }}</h3>
 								<h3 class="mb-1"><span v-if="item.net_units > 0" class="success-color">{{ item.net_units }}u</span><span v-else class="danger-color">{{ item.net_units }}u</span></h3>
@@ -109,9 +109,9 @@
 								<small class="gray-text">{{ item.wins + '-' +  item.losses}}</small>
 							</div>
 						</div>
-						</div>	
+						</div>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</div>
 
@@ -160,7 +160,7 @@
 					</div>
 					<form @submit.prevent="placeBet()" enctype="multipart/form-data">
 						<div class="modal-body">
-							<div class="custom-1k22v0u e17ni7210"><div class="custom-yyq9fm ez1k6ur0"><span>{{ stats_modal.net_units }}u</span><svg viewBox="0 0 24 24" width="15" height="15" xmlns="http://www.w3.org/2000/svg" class="net-units-module__arrow custom-inrq evhdyr10" fill="#00C358" stroke="#00C358" stroke-width="0"><title>Right Arrow</title><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></div><div class="net-unit-performance__details"><div class="net-unit-performance__roi">ROI <span>{{ stats_modal.roi }}%</span></div><div class="net-unit-performance__record">Record <span>{{ stats_modal.wins + ' - ' + stats_modal.losses }}</span></div><div class="net-unit-performance__wins">Wins <span>{{ stats_modal.win_loss_percentage }}%</span></div></div></div>	
+							<div class="custom-1k22v0u e17ni7210"><div class="custom-yyq9fm ez1k6ur0"><span>{{ stats_modal.net_units }}u</span><svg viewBox="0 0 24 24" width="15" height="15" xmlns="http://www.w3.org/2000/svg" class="net-units-module__arrow custom-inrq evhdyr10" fill="#00C358" stroke="#00C358" stroke-width="0"><title>Right Arrow</title><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></div><div class="net-unit-performance__details"><div class="net-unit-performance__roi">ROI <span>{{ stats_modal.roi }}%</span></div><div class="net-unit-performance__record">Record <span>{{ stats_modal.wins + ' - ' + stats_modal.losses }}</span></div><div class="net-unit-performance__wins">Wins <span>{{ stats_modal.win_loss_percentage }}%</span></div></div></div>
 							<div class=" custom-1ajbsre e1fgk38m0">
 								<!-- <div class="pick-list__bet-cell custom-f3mmnx e15xu35g0">
 									<div class=" custom-1lle6oa e1j6txfk1">
@@ -235,9 +235,9 @@
 										<option :value="moment().format('YYYY-MM-DD')">{{ moment().format('dddd, MMMM Do') }}</option>
 										<option :value="moment().add(1, 'd').format('YYYY-MM-DD')">{{ moment().add(1, 'd').format('dddd, MMMM Do') }}</option>
 									</select>
-									
+
 									<!-- <input type="date" v-model="date" @change="limitDate()"> -->
-									
+
 								</div>
 								<div id="" class="bets-selection">
 									<select v-model="leagueFilter" @change="getOdds()">
@@ -283,7 +283,7 @@
 																<p :title="item.home_team">{{ item.home_team }}</p>
 															</div>
 														</div>
-														
+
 														<!-- Home MoneyLine Odds -->
 														<div class="spread game-box">
 															<span v-if="item.is_live == false && item.odds.length">
@@ -329,7 +329,7 @@
 															</span>
 															<span v-else> <button @click="showError()" type="button">{{ item.home_money_line ? item.home_money_line : 'N/A' }}</button> </span> -->
 														</div>
-														
+
 														<!-- Home Point Spread OR Asian Handicap OR Run Line Odds OR Puck Line -->
 														<div class="total game-box">
 															<span v-if="item.is_live == false && item.odds.length">
@@ -392,7 +392,7 @@
 																<p>N/A</p>
 															</span>
 														</div>
-														
+
 														<!-- Home Total Points or Total Goals or Total Runs Odds -->
 														<div class="mi game-box">
 															<span v-if="item.is_live == false && item.odds.length">
@@ -451,7 +451,7 @@
 																<p>{{ item.away_team }}</p>
 															</div>
 														</div>
-														
+
 														<!-- Away MoneyLine Odds -->
 														<div class="spread game-box">
 															<span v-if="item.is_live == false && item.odds.length">
@@ -483,7 +483,7 @@
 																<p>N/A</p>
 															</span>
 														</div>
-														
+
 														<!-- Away Point Spread OR Asian Handicap OR Run Line Odds OR Puck Line -->
 														<div class="total game-box">
 															<span v-if="item.is_live == false && item.odds.length">
@@ -546,7 +546,7 @@
 																<p>N/A</p>
 															</span>
 														</div>
-														
+
 														<!-- Away Total Points or Total Goals or Total Runs Odds -->
 														<div class="mi game-box">
 															<span v-if="item.is_live == false && item.odds.length">
@@ -600,7 +600,7 @@
 													</div>
 												</div>
 												</span>
-											</div>	
+											</div>
 										</div>
 										<!-- F5 -->
 										<div class="box" id="F5" style="display:none;">
@@ -623,7 +623,7 @@
 																<p>{{ item.home_team }}</p>
 															</div>
 														</div>
-														
+
 														<!-- F5 Home MoneyLine Odds -->
 														<div class="spread game-box">
 															<span v-if="item.is_live == false && item.odds.length">
@@ -659,7 +659,7 @@
 															</span>
 															<span v-else> <button @click="showError()" type="button">{{ item.home_money_line ? item.home_money_line : 'N/A' }}</button> </span> -->
 														</div>
-														
+
 														<!-- F5 Home Spread Odds -->
 														<div class="total game-box">
 															<span v-if="item.is_live == false && item.odds.length">
@@ -710,7 +710,7 @@
 																<p>N/A</p>
 															</span>
 														</div>
-														
+
 														<!-- F5 Home Total Odds -->
 														<div class="mi game-box">
 															<span v-if="item.is_live == false && item.odds.length">
@@ -769,7 +769,7 @@
 																<p>{{ item.away_team }}</p>
 															</div>
 														</div>
-														
+
 														<!-- F5 Away MoneyLine Odds -->
 														<div class="spread game-box">
 															<span v-if="item.is_live == false && item.odds.length">
@@ -791,7 +791,7 @@
 																<p>N/A</p>
 															</span>
 														</div>
-														
+
 														<!-- F5 Away Spread Odds -->
 														<div class="total game-box">
 															<span v-if="item.is_live == false && item.odds.length">
@@ -842,7 +842,7 @@
 																<p>N/A</p>
 															</span>
 														</div>
-														
+
 														<!-- F5 Away Total Odds -->
 														<div class="mi game-box">
 															<span v-if="item.is_live == false && item.odds.length">
@@ -941,29 +941,29 @@
 														</div>
 													</div>
 												</div> -->
-											</div>	
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>	
-			   </div>	
+					</div>
+			   </div>
 			</div>
 			</div>
-		</div>	
-		
-		
-		
-		
-		
+		</div>
+
+
+
+
+
 </div>
 </template>
 
 <script>
     import moment from 'moment'
 // import { threadId } from 'worker_threads';
-	
+
 	export default {
         data() {
             return {
@@ -1027,7 +1027,7 @@
             }
         },
 
-        created() {		
+        created() {
 			this.moment = moment;
 			// this.moment = moment.tz.setDefault('America/New_York');
 			// this.getCurrentDate();
@@ -1064,14 +1064,14 @@
 					this.f5Show = true;
 				}
 			},
-			
+
 			test() {
 				console.log(this.time + ' 00:00');
 				console.log('time now: ' + moment().format('MMMM Do YYYY, h:mm:ss a'));
 			},
-			
+
 			limitDate() {
-				
+
 				if(moment().subtract(1, 'd').isAfter(this.date)) {
 					alert('Odds are only available for today or tomorrow');
 					var date = new Date().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'});
@@ -1090,7 +1090,7 @@
 				// var previousDay = console.log('previous day: ' + moment(this.date).subtract(1, 'd').format('YYYY-MM-DD'));
 				// var nextDay = console.log('next day: ' + moment(this.date).add(1, 'd').format('YYYY-MM-DD'));
 			},
-			
+
 			// getCurrentDate() {
             //     var date = new Date().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'});
             //     this.date = moment(date).format('YYYY-MM-DD');
@@ -1111,7 +1111,7 @@
 
 			getOdds(date) {
 				this.isloading = true;
-				
+
 				if(this.leagues.length) {
 					for(let i=0; i< this.leagues.length; i++) {
 						if(this.leagues[i].name == this.leagueFilter) {
@@ -1155,7 +1155,7 @@
 				.catch(err => {
 					console.log(err.response.data.message);
 				})
-				
+
 				axios.get(`/api/stats/${this.auth.id}`)
                 .then(res => {
                     this.stats = res.data.stats;
@@ -1197,19 +1197,19 @@
 
 				// if(this.market_name == 'Run Line' || this.market_name == '1st Half Run Line') {
 				// 	if(this.odd_name.includes('+')) {
-						
+
 				// 	}
 				// }
 				console.log('setting bet details');
 			},
 
 			calculateToWin() {
-				
+
 				console.log('calculating to win');
 				if(this.risk < 0) {
 					this.odds
 				}
-				
+
 				if(this.odds > 0) {
 					if(this.risk < 0) {
 						this.to_win = (this.odds / 100) * 1;
@@ -1271,7 +1271,7 @@
 					})
 						this.disableButton = false;
 					}
-					
+
 				})
 				.catch(error => {
 					alert(error.response.data.message);
@@ -1303,7 +1303,7 @@
 			'league_prop',
 			'sport_prop'
         ],
-        
+
         mounted() {
             // console.log(this.auth.id);
         }

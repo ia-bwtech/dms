@@ -3,7 +3,7 @@
 
 @section('header')
 <style>
-    .banner-section span { 
+    .banner-section span {
 		display: inline-flex !important;
 	}
 
@@ -19,7 +19,7 @@
 	<div class="container">
 		<div class="row banner-row bg-white pt-96 pb-96">
 			<div class="col-12 text-center">
-				<h1><span class="prime-color">TheHunchATL Forum powered by Coachescall</span> <br></h1>
+				<h1><span class="prime-color">BLINDSIDEBETS Forum powered by Coachescall</span> <br></h1>
 			</div>
 		</div>
 	</div>

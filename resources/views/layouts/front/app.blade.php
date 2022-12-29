@@ -154,7 +154,7 @@
                         <ul class="list-unstyled mb-0 custom-list">
                             <li><a href="https://www.tiktok.com/@blindsidebets" target="_blank" rel="nofollow"><img src="{{ asset('assets/images/tiktok-icon.png') }}" alt="TikTok Icon" class="img-fluid"></a></li>
                             <li><a href="https://instagram.com/blindsidebets" target="_blank" rel="nofollow"><img src="{{ asset('assets/images/insta-icon.png') }}" alt="Instagram Icon" class="img-fluid"></a></li>
-                            <li><a href="https://twitter.com/TheHunchATL" target="_blank" rel="nofollow"><img src="{{ asset('assets/images/twitter-icon.png') }}" alt="Twitter Icon" class="img-fluid"></a></li>
+                            <li><a href="https://twitter.com/BLINDSIDEBETS" target="_blank" rel="nofollow"><img src="{{ asset('assets/images/twitter-icon.png') }}" alt="Twitter Icon" class="img-fluid"></a></li>
                             <li><a href="https://www.youtube.com/channel/UCxIHE3MLFgWITrDmMmDlHfg" target="_blank" rel="nofollow"><img src="{{ asset('assets/images/youtube-icon.png') }}" alt="Youtube Icon" class="img-fluid"></a></li>
                         </ul>
                     </div>

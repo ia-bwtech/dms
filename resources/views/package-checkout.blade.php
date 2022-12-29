@@ -160,7 +160,7 @@
 		//`Elements` instance that was used to create the Payment Element
 		elements,
 		confirmParams: {
-		// return_url: 'http://hunch-atl.test/payment-success',
+		// return_url: 'http://blindsidebets.test/payment-success',
 		return_url: "{{ url('/') }}/payment-success",
 		},
 	});
