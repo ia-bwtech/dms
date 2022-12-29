@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Hunch ATL | Dashboard</title>
+    <title>Blind Side Bets | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link
@@ -245,7 +245,7 @@
             class="brand-image img-circle elevation-3"
             style="opacity: 0.8"
           /> --}}
-          <span class="brand-text font-weight-light">THE HUNCH ATL</span>
+          <span class="brand-text font-weight-light">Blind Side Bets</span>
         </a>
 
        @include('admin.layouts.sidebar')

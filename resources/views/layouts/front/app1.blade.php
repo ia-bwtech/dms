@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-	<title>{{ config('app.name', 'The Hunch Atl') }}</title>
+	<title>{{ config('app.name', 'Blind Side Bets') }}</title>
 	<!-- Required Meta Tags -->
 
 	<!-- Favicon -->
@@ -64,7 +64,7 @@
 		<div class="row banner-row align-items-center justify-content-between">
 			<div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
 				<span>Sign Up to become Handicap Verified.</span>
-				<h1>Welcome To The Hunch ATL,<br>The <span class="prime-color">Amateur</span> & <span class="prime-color">Professional</span><br>Handicapper Network.</h1>
+				<h1>Welcome To Blind Side Bets,<br>The <span class="prime-color">Amateur</span> & <span class="prime-color">Professional</span><br>Handicapper Network.</h1>
 				<a class="custom-btn prime-bg" href="#">Get Started</a>
 				<ul class="list-unstyled mb-0 custom-list">
 					<li><a href="#" target="_blank" rel="nofollow"><img src="assets/images/tiktok-icon.png" alt="TikTok Icon" class="img-fluid"></a></li>
@@ -119,7 +119,7 @@
 						<option value="nbp">Nba</option>
 					</select>
 				</div>
-			</div>	
+			</div>
 		</div>
 		<div class="row mt-30">
 			<table>
@@ -362,24 +362,24 @@
 							</div>
 							<div class="col-12 form-group">
 								<button type="submit" value="submit" class="form-control prime-bg">Subscribe</button>
-							</div>	
-						</div>	
+							</div>
+						</div>
 					</form>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</div>
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<p class="mb-0">Copyright 2022 © The Hunch ATL, All Rights Reserved.</p>
+					<p class="mb-0">Copyright 2022 © Blind Side Bets, All Rights Reserved.</p>
 				</div>
 				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-end">
 					<ul class="list-unstyled mb-0">
 						<li><a href="#">Privacy Policy</a></li>
 						<li><a href="#">Terms of Service</a></li>
-					</ul>		
+					</ul>
 				</div>
 			</div>
 		</div>

@@ -16,7 +16,7 @@
                                         @guest
                                                             <span>Sign Up to become Handicap Verified.</span>
                                         @endguest
-                                        <h3>Welcome To The Hunch ATL</h3>
+                                        <h3>Welcome To Blind Side Bets</h3>
                                         <h1>The #1 Handicapper Verification Network</h1>
                                         @guest
                                                             <a class="custom-btn prime-bg" href="#howtouse">Learn More</a>

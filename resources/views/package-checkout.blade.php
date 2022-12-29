@@ -4,7 +4,7 @@
 <head>
 	<script src="https://js.stripe.com/v3/"></script>
 	<meta charset="UTF-8">
-  <title>Buy Package - The Hunch ATL</title>
+  <title>Buy Package - Blind Side Bets</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
@@ -28,7 +28,7 @@
 		</div>
 		<div id="right-col">
 			<h2>Payment</h2>
-			
+
 			<form action="">
 				<div class="form-group">
 					<label for="">Name</label>
@@ -62,18 +62,18 @@
 					const fundingSources = [
 						paypal.FUNDING.PAYPAL
 						]
-			
+
 					for (const fundingSource of fundingSources) {
 						const paypalButtonsComponent = paypal.Buttons({
 						fundingSource: fundingSource,
-			
+
 						// optional styling for buttons
 						// https://developer.paypal.com/docs/checkout/standard/customize/buttons-style-guide/
 						style: {
 							shape: 'pill',
 							height: 40,
 						},
-			
+
 						// set up the transaction
 						createOrder: (data, actions) => {
 							// pass in any options from the v2 orders create call:
@@ -88,10 +88,10 @@
 								},
 							],
 							}
-			
+
 							return actions.order.create(createOrderPayload)
 						},
-			
+
 						// finalize the transaction
 						onApprove: (data, actions) => {
 							const captureOrderHandler = (details) => {
@@ -100,10 +100,10 @@
 							console.log(details);
 							window.location.href = "/paypal/payment/success?data=" + JSON.stringify(details);
 							}
-			
+
 							return actions.order.capture().then(captureOrderHandler)
 						},
-			
+
 						// handle unrecoverable errors
 						onError: (err) => {
 							console.error(
@@ -112,7 +112,7 @@
 							console.log(err);
 						},
 						})
-			
+
 						if (paypalButtonsComponent.isEligible()) {
 						paypalButtonsComponent
 							.render('#paypal-button-container')
