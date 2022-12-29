@@ -349,7 +349,7 @@
 				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 third-col">
 					<h2>Contact Info</h2>
 					<ul class="list-unstyled mb-0">
-						<li><i class="fa-solid fa-envelope"></i><a href="mailto:info@thehunchatl.com">info@thehunchatl.com</a></li>
+						<li><i class="fa-solid fa-envelope"></i><a href="mailto:info@blindsidebets.com">info@blindsidebets.com</a></li>
 						<li><i class="fa-solid fa-phone"></i><a href="tel:12231123111">+1 223 1123 111</a></li>
 					</ul>
 				</div>

@@ -152,8 +152,8 @@
                         <img src="{{ asset('assets/images1/logo-footer.png') }}" alt="Footer Logo" class="img-fluid">
                         <p class="mt-4 mb-4">The Amateur & Professional Sports better Verification Network</p>
                         <ul class="list-unstyled mb-0 custom-list">
-                            <li><a href="https://www.tiktok.com/@thehunchatl" target="_blank" rel="nofollow"><img src="{{ asset('assets/images/tiktok-icon.png') }}" alt="TikTok Icon" class="img-fluid"></a></li>
-                            <li><a href="https://instagram.com/thehunchatl" target="_blank" rel="nofollow"><img src="{{ asset('assets/images/insta-icon.png') }}" alt="Instagram Icon" class="img-fluid"></a></li>
+                            <li><a href="https://www.tiktok.com/@blindsidebets" target="_blank" rel="nofollow"><img src="{{ asset('assets/images/tiktok-icon.png') }}" alt="TikTok Icon" class="img-fluid"></a></li>
+                            <li><a href="https://instagram.com/blindsidebets" target="_blank" rel="nofollow"><img src="{{ asset('assets/images/insta-icon.png') }}" alt="Instagram Icon" class="img-fluid"></a></li>
                             <li><a href="https://twitter.com/TheHunchATL" target="_blank" rel="nofollow"><img src="{{ asset('assets/images/twitter-icon.png') }}" alt="Twitter Icon" class="img-fluid"></a></li>
                             <li><a href="https://www.youtube.com/channel/UCxIHE3MLFgWITrDmMmDlHfg" target="_blank" rel="nofollow"><img src="{{ asset('assets/images/youtube-icon.png') }}" alt="Youtube Icon" class="img-fluid"></a></li>
                         </ul>
@@ -177,7 +177,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 third-col">
                         <h2>Contact Info</h2>
                         <ul class="list-unstyled mb-0">
-                            <li><i class="fa-solid fa-envelope"></i><a href="mailto:admin@thehunchatl.com">admin@thehunchatl.com</a></li>
+                            <li><i class="fa-solid fa-envelope"></i><a href="mailto:admin@blindsidebets.com">admin@blindsidebets.com</a></li>
                             {{-- <li><i class="fa-solid fa-phone"></i><a href="tel:12231123111">+1 223 1123 111</a></li> --}}
                         </ul>
                     </div>

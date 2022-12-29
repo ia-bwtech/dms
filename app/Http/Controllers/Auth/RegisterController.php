@@ -117,7 +117,7 @@ class RegisterController extends Controller
                 'name' => $user->name,
 
          ];
-            Mail::to('info@thehunchatl.com')->send(new RegistrationAlert($data));
+            Mail::to('info@blindsidebets.com')->send(new RegistrationAlert($data));
 
         // } catch (\Throwable $th) {
         //     Log::error($th);
