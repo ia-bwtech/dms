@@ -2,7 +2,7 @@
 {{-- @dd($__data) --}}
 @section('header')
 <style>
-    .banner-section span { 
+    .banner-section span {
 		display: inline-flex !important;
 	}
 </style>

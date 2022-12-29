@@ -61,7 +61,7 @@
         <div class="container-fluid ps-5 pe-5">
             <div class="row">
                 <nav class="navbar navbar-expand-lg p-0">
-                    <a class="navbar-brand" href="/"><img src="{{ asset('assets/images/header-logo-blk.png') }}" align="Logo" class="img-fluid"></a>
+                    <a class="navbar-brand" href="/"><img src="{{ asset('assets/images1/logo12.png') }}" align="Logo" class="img-fluid"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
                     </button>
