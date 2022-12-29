@@ -22,7 +22,6 @@
                     <h1>Welcome To Blind Side Bets</h1>
                     <h2>top sports bettor</h2>
                     <h3>leaderboard</h3>
-                    <a class="btn-borderred" href="#">Explore More</a>
                 </div>
             </div>
         </div>

@@ -40,7 +40,7 @@
                         <h1>Welcome To Blind Side Bets</h1>
                         <h2>The #1 Handicapper</h2>
                         <h3>Verification Network</h3>
-                        <a class="btn-borderred" href="#">Explore More</a>
+                        <a class="btn-borderred" href="#howtouse">Explore More</a>
                     </div>
                 </div>
             </div>

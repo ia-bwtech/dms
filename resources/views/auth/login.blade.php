@@ -3,18 +3,19 @@
 @section('header')
 <style>
     body{
-    background: url("/assets/images/bannerbglineas.png") center center no-repeat;
+    background: url("/assets/images1/createaccount-bg.png") center center no-repeat;
     background-size: cover;    }
 </style>
+<link rel="stylesheet" type="text/css" href="assets/css/styleguest.css">
 @endsection
 
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 d-flex align-items-center justify-content-center">
-                <div class="bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+            <div class="col-12 d-flex align-items-center justify-content-center user-creater">
+                <div class="shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
                     <div class="text-center text-md-center mb-4 mt-md-0">
-                        <a class="navbar-brand" href="/"><img src="assets/images/header-logo.png" align="Logo" class="img-fluid"></a>
+                        <a class="" href="/"><img src="assets/images1/create-user-log.png" align="Logo" class=""></a>
                     </div>
                     <div class="text-center text-md-center mb-4 mt-md-0">
                         <h1 class="mb-3 h3">{{ __('Welcome back') }}</h1>
@@ -95,10 +96,10 @@
                         </div>
                     </form>
                     <div class="d-flex justify-content-center align-items-center mt-4">
-                        <span class="fw-normal">
+                        {{-- <span class="fw-normal">
                             {{ __('Not registered?') }}
                             <a href="{{ route('register') }}" class="fw-bold">{{ __('Create account') }}</a>
-                        </span>
+                        </span> --}}
                     </div>
                 </div>
             </div>

@@ -10,7 +10,6 @@
                 <h1>Blind Side Bets</h1>
                 <h2>frequently asked</h2>
                 <h3>questions</h3>
-                <a class="btn-borderred" href="#">Explore More</a>
             </div>
         </div>
     </div>

@@ -5,23 +5,14 @@
 
 
         <!-- Banner Section1 -->
-        <section id="banner" class="banner-section banner-home">
+        <section id="banner" class="banner-section banner-row banner-row-handicapperpackages">
             <div class="container">
-                @if (session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Blind Side Bets</h1>
+                        <h2>Handicapper</h2>
+                        <h3>Packages</h3>
                     </div>
-                @endif
-                <div class="row banner-row align-items-center justify-content-between">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-dark text-center">
-                        <h1>Handicapper Packages</h1>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid zindexback">
-                <div class="row bannerimg-row">
-                    <img src="/assets/images/handicapperpackbanner1.jpg">
                 </div>
             </div>
         </section>

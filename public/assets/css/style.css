@@ -660,7 +660,7 @@ input#flexSwitchCheckChecked { float: none; }
 .banner-row {background-size: 100% 100%;height: 786px;display: flex;align-items: center;}
 .banner-row-home { background: url(/assets/images1/blindfirst-banner.png) center center no-repeat; }
 .banner-row-faq { background: url(/assets/images1/faq.png) center center no-repeat; }
-
+.banner-row-handicapperpackages{background: url(/assets/images1/handicapperpackages.png) center center no-repeat;}
 .banner-row-leaderboard { background: url(/assets/images1/leaderboardred.png) center center no-repeat; }
 
 h2.mt-4.mb-4 { color: #fff; }
