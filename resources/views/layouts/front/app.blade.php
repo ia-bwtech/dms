@@ -74,7 +74,7 @@
                             <li class="nav-item"><a class="nav-link @if(request()->url()==url('/my-ranking')) active @endif" href="/my-ranking">My Bets</a></li>
                             <li class="nav-item"><a class="nav-link @if(request()->url()==url('/leaderboard')) active @endif" href="/leaderboard">Leaderboard</a></li>
                             {{-- <li class="nav-item"><a class="nav-link @if(request()->url()==url('/packages')) active @endif" href="/packages">Ranked Packages</a></li> --}}
-                            <li class="nav-item"><a class="nav-link @if(request()->url()==url('/socials')) active @endif" href="/socials">Social Media and Partner Offers</a></li>
+                            {{-- <li class="nav-item"><a class="nav-link @if(request()->url()==url('/socials')) active @endif" href="/socials">Social Media and Partner Offers</a></li> --}}
                             <li class="nav-item"><a class="nav-link @if(request()->url()==route('front.packages')) active @endif" href="{{route('front.packages')}}">Packages</a></li>
 
                             <li class="nav-item dropdown">
@@ -82,7 +82,7 @@
                                     Explore More
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item @if(request()->url()==url('/tournaments')) active @endif" href="/tournaments">Handicapper Tournaments</a></li>
+                                    {{-- <li><a class="dropdown-item @if(request()->url()==url('/tournaments')) active @endif" href="/tournaments">Handicapper Tournaments</a></li> --}}
                                     <li><a class="dropdown-item @if(request()->url()==url('/historical-records')) active @endif" href="/historical-records">Historical Records</a></li>
                                     <li><a class="dropdown-item @if(request()->url()==url('/forum')) active @endif" href="/forum">Forum</a></li>
                                     <li><a class="dropdown-item @if(request()->url()==url('/faq')) active @endif" href="/faq">FAQ</a></li>

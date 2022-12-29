@@ -3,7 +3,7 @@
 
 @section('header')
 <style>
-    .banner-section span { 
+    .banner-section span {
 		display: inline-flex !important;
 	}
 
@@ -18,18 +18,19 @@
 @endsection
 
 @section('content')
-<!-- Banner Section -->
-<section id="banner" class="banner-section">
-	<div class="container">
-		<div class="row banner-row bg-white pt-96 pb-96">
-			<div class="col-12 text-center">
-				<h1><span class="prime-color">Social Media</span> <br></h1>
-			</div>
-		</div>
-	</div>
+ <!-- Banner Section1 -->
+ <section id="banner" class="banner-section banner-row banner-row-social">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Blind Side Bets</h1>
+                <h2>Social Media</h2>
+                {{-- <h3>Packages</h3> --}}
+            </div>
+        </div>
+    </div>
 </section>
-<!-- Banner Section -->
-
+<!-- ./Banner Section -->
 
 
 {{-- <section id="handicapper" class="handicapper pt-120 pb-120 text-center">
@@ -54,7 +55,7 @@
         <h2 class="">WeWin Games - Sports Betting Made Easy</h2>
         <a target="_blank" href="https://www.wewingames.com/"><img src="{{ asset('images/wewingames.jpg') }}" class="img-fluid mt-5" alt=""></a>
     </div>
-    
+
     <div class="">
         <h2 class="mb-5">Instagram</h2>
         <!-- SnapWidget -->

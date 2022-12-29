@@ -23,7 +23,7 @@ class FrontController extends Controller
         if (isset($request->search)) {
             $users = User::has('packages', '>', 0)->with('packages')->where('name', 'like', '%' . $request->search . '%')->paginate(5);
         }
-        if ($request->ajax()) {
+        if ($request->query('ajax')==1) {
             return view('handicapper-packages-ajax', compact('users'));
         }
         return view('handicapper-packages');

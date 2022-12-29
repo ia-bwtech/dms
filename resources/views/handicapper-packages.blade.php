@@ -224,7 +224,7 @@
         function populateData() {
             $.ajax({
                 type: "GET",
-                url: "{{ route('front.packages') }}",
+                url: "{{ route('front.packages') }}?ajax=1",
                 success: function(data) {
                     $('#ajaxData').html(data)
                     // console.log($('.packagebox_slider').text()); /* ONLY remove the classes and handlers added on initialize */
@@ -245,7 +245,7 @@
             }
             $.ajax({
                 type: "GET",
-                url: "{{ route('front.packages') }}?page="+page,
+                url: "{{ route('front.packages') }}?page="+page+'&ajax=1',
                 data: data,
                 success: function(data) {
                     $('#ajaxData').html(data)
