@@ -19,13 +19,15 @@
         <!-- ./Banner Section -->
 
         <section id="packagesfilter" class="boxsection packagesfilter">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 packagesfiltercol">
-                        <select class="select-warp" id="sortBy" onchange="sort()">
-                            <option value="asc">Ascending</option>
-                            <option value="desc" selected>Descending</option>
-                        </select>
+                        <div class="search-warp">
+                            <input type="search" id="search" placeholder="What're you searching for?"
+                                aria-describedby="button-addon5" class="form-control" onkeyup="sort()">
+                            {{-- <button id="button-addon5" type="submit" class="btn btn-primary"><i
+                                    class="fa fa-search"></i></button> --}}
+                        </div>
 
                         <div class="radio-warp">
                             <div class="form-group">
@@ -53,14 +55,12 @@
                         </div>
 
 
-                        <div class="search-warp">
-                            <input type="search" id="search" placeholder="What're you searching for?"
-                                aria-describedby="button-addon5" class="form-control" onkeyup="sort()">
-                            {{-- <button id="button-addon5" type="submit" class="btn btn-primary"><i
-                                    class="fa fa-search"></i></button> --}}
-                        </div>
 
 
+                        <select class="select-warp" id="sortBy" onchange="sort()">
+                            <option value="asc">Ascending</option>
+                            <option value="desc" selected>Descending</option>
+                        </select>
                     </div>
                 </div>
             </div>

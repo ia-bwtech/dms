@@ -104,19 +104,19 @@
 
 @foreach ($users as $key=>$item)
 <section id="boxsection" class="boxsection @if($key%2!=0) bgbluelight @endif">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row align-items-center">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12">
                 <div class="packageboxhead">
                     <img src="/images/profile/{{$item->image}}" class="iconmain">
-                    <span class="title">{{ $item->name }}</span>
-                    <span class="line"></span>
-                    <span class="value">{{ $item->verified_wins }}-{{ $item->verified_losses }}</span>
+                    <p><span class="title">{{ $item->name }}</span></p>
+                   <span class="value">{{ $item->verified_wins }}-{{ $item->verified_losses }}</span>
                     <span class="per">({{ $item->verified_win_loss_percentage }}%)</span>
+
                 </div>
             </div>
 
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
                 <div class="packagebox_slider">
                     @foreach ($item->packages as $package)
                     <div class="packagebox">

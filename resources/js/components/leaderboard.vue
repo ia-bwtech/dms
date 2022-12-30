@@ -1,6 +1,6 @@
 <template>
   <section id="handicapper" class="handicapper pt-30 pb-120">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row mt-80">
         <div class="col-12 text-center">
           <h2>
@@ -28,14 +28,14 @@
             <span v-html="league.icon"></span> {{ league.name }}
           </li>
         </ul>
-        <input
+        <!-- <input
           type="text"
           class="form-control w-25"
           v-model="query"
           placeholder="Search Bettors"
           v-on:keyup="searchAfterDebounce"
-        />
-        <div
+        /> -->
+        <!-- <div
           class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 date-range-col"
         >
           <label>Date Range</label>
@@ -50,7 +50,7 @@
             <option value="30">30 days</option>
             <option value="all">All time</option>
           </select>
-        </div>
+        </div> -->
       </div>
       <div class="row mt-40">
         <table class="top">
@@ -59,9 +59,9 @@
               <th>Rank</th>
               <th>Icon</th>
               <th>Name</th>
-              <th>Wins</th>
+              <th>Wins11</th>
               <th>Losses</th>
-              <th>Win/Loss Percentage</th>
+              <th>Win%</th>
               <th @click="getBySorted('net_units')">Units <i class="fas fa-sort"></i></th>
               <th @click="getBySorted('roi')">ROI <i class="fas fa-sort"></i></th>
             </tr>
@@ -86,8 +86,8 @@
                       'images/profile/' + (item.image ?? 'default-avatar.jpg')
                     "
                     class="rounded-circle"
-                    width="80"
-                    height="80"
+                    width="50"
+                    height="50"
                     style="object-fit: contain"
                     alt="Profile Image"
                 /></a>
