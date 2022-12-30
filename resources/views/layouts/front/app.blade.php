@@ -19,7 +19,7 @@
     <title>{{ config('app.name', 'Blind Side Bets') }}</title>
 
     <!-- Favicon -->
-	<link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}">
+	{{-- <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}"> --}}
 	<!-- Favicon -->
 
 	<!-- Css Links -->
