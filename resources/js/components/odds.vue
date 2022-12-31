@@ -1,5 +1,57 @@
 <template>
 <div>
+     <section id="banner" class="banner-section banner-row banner-row-handicapperprofile banner-row-my-rankig">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-5">
+                     <div class="name-pro">
+                                <h1>{{ auth.name ?? '-' }}</h1>
+
+                            </div>
+                </div>
+                <div class="col-7">
+
+                        <div class="row align-items-center">
+                            <table class="table bg-dark">
+                                <thead class="text-center text-white">
+                                    <th class="border-bottom-0">Total Bets</th>
+                                    <th class="border-bottom-0">Wins</th>
+                                    <th class="border-bottom-0">Losses</th>
+                                    <th class="border-bottom-0">Win %</th>
+                                    <th class="border-bottom-0">ROI</th>
+
+                                </thead>
+                                <tbody class="text-center text-white font-weight-bold">
+                                    <tr>
+                                        <td>{{ auth.verified_wins + auth.verified_losses }}</td>
+                                        <td>{{ auth.verified_wins ?? '-' }}</td>
+                                        <td>{{ auth.verified_losses ?? '-' }}</td>
+                                        <td>{{ auth.verified_win_loss_percentage ?? '-' }}</td>
+                                        <td>{{ auth.verified_roi ?? '-' }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    <div class="pro-image">
+                        <img :src="'images/profile/' + (auth.image ?? 'default-avatar.jpg')" width="316px" height="328px"
+                            class="sportsbettor-left-img">
+                    </div>
+
+                </div>
+
+                <!-- <div class="pro-con col-7">
+                    <p class="fs-6 text-white">orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+
+                    </p>
+                </div> -->
+            </div>
+            <div class="row">
+
+            </div>
+
+        </div>
+    </section>
     <div>
 		<div class="row">
 			<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -287,6 +339,7 @@
 														<!-- Home MoneyLine Odds -->
 														<div class="spread game-box">
 															<span v-if="item.is_live == false && item.odds.length">
+                                                                <label for="">{{item.odds.length}}</label>
 																<p v-for="odd in item.odds" :key="odd.id">
 																	<!-- <span v-if="item.sport == 'hockey'">
 																		<span v-if="odd.market_name == 'Moneyline 3-Way' && odd.name.includes(item.home_team)">
@@ -302,6 +355,8 @@
 																<p v-for="odd in item.odds" :key="odd.id"><span v-if="odd.market_name == 'Moneyline' && odd.name.includes(item.home_team)">{{ odd.price > 0 ? '+' + odd.price.toString() : odd.price }}</span></p>
 															</span> -->
 															<span v-else-if="item.is_live == true && item.odds.length">
+                                                                <label for="">{{item.odds.length}}</label>
+
 																<!-- <button @click="showError()" type="button">{{ item.home_money_line ? item.home_money_line : 'N/A' }}</button> -->
 																<p v-for="odd in item.odds" :key="odd.id">
 																	<!-- <span v-if="item.sport == 'hockey'">

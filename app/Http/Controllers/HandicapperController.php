@@ -29,6 +29,7 @@ class HandicapperController extends Controller
         ->where('bets.is_verified', 1)
         ->where('subscriptions.user_id', auth()->id())
         ->where('subscriptions.status', 1)
+        ->limit(10)
         ->get();
         // return $subscribedPicks;
 

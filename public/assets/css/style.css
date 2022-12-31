@@ -664,6 +664,7 @@ input#flexSwitchCheckChecked { float: none; }
 .banner-row-handicapperpackages{background: url(/assets/images1/handicapperpackages.png) center center no-repeat;}
 .banner-row-leaderboard { background: url(/assets/images1/leaderboardred.png) center center no-repeat; }
 .banner-row-social { background: url(/assets/images1/socialmedia.png) center center no-repeat; }
+.banner-row-handicapperprofile { background: url(/assets/images1/handicapperprofile.png) center center no-repeat; }
 
 
 h2.mt-4.mb-4 { color: #fff; }
@@ -1130,4 +1131,73 @@ aa { max-width: none; }
 .packagesfilter .row.align-items-center .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-xs-12.packagesfiltercol {
     padding-top: 0 !important;
     margin-top: 0 !important;
+}
+.banner-row-handicapperprofile .col-7 {
+    display: flex;
+    margin: 0 auto;
+}
+
+.pro-image {
+    margin-top: -170px;
+    margin-left: -120px;
+    position: relative;
+    z-index: 9999;
+}
+
+table.table.bg-dark {
+    z-index: 111111;
+    position: relative;
+    border-radius: 0;
+    background: transparent linear-gradient(102deg, #7B121D 0%, #7B121D 0%, #B8514F 100%) 0% 0% no-repeat padding-box;
+    border: 5px solid var(--unnamed-color-ffffff);
+    border: 5px solid #FFFFFF;
+    padding: 0 0 !important;
+}
+
+.pro-image:after {content: '';background: #B8514F 0% 0% no-repeat padding-box;width: 628px;height: 120px;position: absolute;right: 0;bottom: 17px;z-index: -1;}
+
+.name-pro {
+    padding: 0;
+    margin-bottom: 18px;
+}
+
+
+.banner-row-handicapperprofile {
+    height: auto;
+    padding: 215px 0 92px 0 !important;
+}
+
+.sub-picks tbody tr td{
+    padding: 12px 0px !important;
+
+}
+thead.text-center.text-white {
+    padding: 0 0;
+}
+
+.banner-row-my-rankig table.table.bg-dark {
+    width: 700px;
+}
+
+.banner-row-my-rankig  .col-7 {
+    justify-content: flex-end;
+}
+
+.banner-row-my-rankig thead.text-center.text-white {
+    text-align: left;
+}
+
+.banner-row-my-rankig tbody.text-center.text-white.font-weight-bold {
+    text-align: left;
+}
+
+.banner-row-my-rankig th.border-bottom-0 {
+    padding-top: 15px;
+}
+
+    .banner-row-my-rankig .pro-image:after {
+    width: 678px;
+    height: 170px;
+    bottom: -9px;
+    right: -30px;
 }

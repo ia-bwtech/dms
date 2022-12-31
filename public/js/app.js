@@ -6436,12 +6436,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
 /* harmony export */ });
 var render = function render() {
-  var _vm$auth$image, _vm$auth$verified_win, _vm$auth$unverified_w, _vm$auth$verified_los, _vm$auth$unverified_l, _ref, _ref2, _ref3, _ref4, _vm$auth$bio;
+  var _vm$auth$name, _vm$auth$verified_win, _vm$auth$verified_los, _vm$auth$verified_win2, _vm$auth$verified_roi, _vm$auth$image, _vm$auth$image2, _vm$auth$verified_win3, _vm$auth$unverified_w, _vm$auth$verified_los2, _vm$auth$unverified_l, _ref, _ref2, _ref3, _ref4, _vm$auth$bio;
 
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("div", [_c("div", {
+  return _c("div", [_c("section", {
+    staticClass: "banner-section banner-row banner-row-handicapperprofile banner-row-my-rankig",
+    attrs: {
+      id: "banner"
+    }
+  }, [_c("div", {
+    staticClass: "container-fluid"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-5"
+  }, [_c("div", {
+    staticClass: "name-pro"
+  }, [_c("h1", [_vm._v(_vm._s((_vm$auth$name = _vm.auth.name) !== null && _vm$auth$name !== void 0 ? _vm$auth$name : "-"))])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-7"
+  }, [_c("div", {
+    staticClass: "row align-items-center"
+  }, [_c("table", {
+    staticClass: "table bg-dark"
+  }, [_vm._m(0), _vm._v(" "), _c("tbody", {
+    staticClass: "text-center text-white font-weight-bold"
+  }, [_c("tr", [_c("td", [_vm._v(_vm._s(_vm.auth.verified_wins + _vm.auth.verified_losses))]), _vm._v(" "), _c("td", [_vm._v(_vm._s((_vm$auth$verified_win = _vm.auth.verified_wins) !== null && _vm$auth$verified_win !== void 0 ? _vm$auth$verified_win : "-"))]), _vm._v(" "), _c("td", [_vm._v(_vm._s((_vm$auth$verified_los = _vm.auth.verified_losses) !== null && _vm$auth$verified_los !== void 0 ? _vm$auth$verified_los : "-"))]), _vm._v(" "), _c("td", [_vm._v(_vm._s((_vm$auth$verified_win2 = _vm.auth.verified_win_loss_percentage) !== null && _vm$auth$verified_win2 !== void 0 ? _vm$auth$verified_win2 : "-"))]), _vm._v(" "), _c("td", [_vm._v(_vm._s((_vm$auth$verified_roi = _vm.auth.verified_roi) !== null && _vm$auth$verified_roi !== void 0 ? _vm$auth$verified_roi : "-"))])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "pro-image"
+  }, [_c("img", {
+    staticClass: "sportsbettor-left-img",
+    attrs: {
+      src: "images/profile/" + ((_vm$auth$image = _vm.auth.image) !== null && _vm$auth$image !== void 0 ? _vm$auth$image : "default-avatar.jpg"),
+      width: "316px",
+      height: "328px"
+    }
+  })])])]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  })])]), _vm._v(" "), _c("div", [_c("div", {
     staticClass: "row"
   }, [_c("div", {
     staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12"
@@ -6464,7 +6496,7 @@ var render = function render() {
       "object-fit": "contain"
     },
     attrs: {
-      src: "images/profile/" + ((_vm$auth$image = _vm.auth.image) !== null && _vm$auth$image !== void 0 ? _vm$auth$image : "default-avatar.jpg"),
+      src: "images/profile/" + ((_vm$auth$image2 = _vm.auth.image) !== null && _vm$auth$image2 !== void 0 ? _vm$auth$image2 : "default-avatar.jpg"),
       width: "350",
       height: "350",
       alt: "Profile Image"
@@ -6487,9 +6519,9 @@ var render = function render() {
     staticClass: "ranking-box"
   }, [_c("span", [_vm._v(_vm._s(_vm.auth.is_verified == 1 ? _vm.auth.verified_wins + _vm.auth.verified_losses : _vm.auth.unverified_wins + _vm.auth.unverified_losses))]), _vm._v(" "), _c("p", [_vm._v("Total Bets")])]), _vm._v(" "), _c("div", {
     staticClass: "ranking-box"
-  }, [_c("span", [_vm._v(_vm._s(_vm.auth.is_verified == 1 ? (_vm$auth$verified_win = _vm.auth.verified_wins) !== null && _vm$auth$verified_win !== void 0 ? _vm$auth$verified_win : "-" : (_vm$auth$unverified_w = _vm.auth.unverified_wins) !== null && _vm$auth$unverified_w !== void 0 ? _vm$auth$unverified_w : "-"))]), _vm._v(" "), _c("p", [_vm._v("Wins")])]), _vm._v(" "), _c("div", {
+  }, [_c("span", [_vm._v(_vm._s(_vm.auth.is_verified == 1 ? (_vm$auth$verified_win3 = _vm.auth.verified_wins) !== null && _vm$auth$verified_win3 !== void 0 ? _vm$auth$verified_win3 : "-" : (_vm$auth$unverified_w = _vm.auth.unverified_wins) !== null && _vm$auth$unverified_w !== void 0 ? _vm$auth$unverified_w : "-"))]), _vm._v(" "), _c("p", [_vm._v("Wins")])]), _vm._v(" "), _c("div", {
     staticClass: "ranking-box"
-  }, [_c("span", [_vm._v(_vm._s(_vm.auth.is_verified == 1 ? (_vm$auth$verified_los = _vm.auth.verified_losses) !== null && _vm$auth$verified_los !== void 0 ? _vm$auth$verified_los : "-" : (_vm$auth$unverified_l = _vm.auth.unverified_losses) !== null && _vm$auth$unverified_l !== void 0 ? _vm$auth$unverified_l : "-"))]), _vm._v(" "), _c("p", [_vm._v("Losses")])]), _vm._v(" "), _c("div", {
+  }, [_c("span", [_vm._v(_vm._s(_vm.auth.is_verified == 1 ? (_vm$auth$verified_los2 = _vm.auth.verified_losses) !== null && _vm$auth$verified_los2 !== void 0 ? _vm$auth$verified_los2 : "-" : (_vm$auth$unverified_l = _vm.auth.unverified_losses) !== null && _vm$auth$unverified_l !== void 0 ? _vm$auth$unverified_l : "-"))]), _vm._v(" "), _c("p", [_vm._v("Losses")])]), _vm._v(" "), _c("div", {
     staticClass: "ranking-box"
   }, [_c("span", [_vm._v(_vm._s(_vm.auth.is_verified == 1 ? (_ref = _vm.auth.verified_win_loss_percentage + "%") !== null && _ref !== void 0 ? _ref : "-" : (_ref2 = _vm.auth.unverified_win_loss_percentage + "%") !== null && _ref2 !== void 0 ? _ref2 : "-"))]), _vm._v(" "), _c("p", [_vm._v("Win %")])]), _vm._v(" "), _c("div", {
     staticClass: "ranking-box"
@@ -6514,7 +6546,7 @@ var render = function render() {
     staticClass: "row"
   }, [_c("div", {
     staticClass: "col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
-  }, [_vm._m(0), _vm._v(" "), _c("h2", {
+  }, [_vm._m(1), _vm._v(" "), _c("h2", {
     staticClass: "pl-95"
   }, [_vm._v("My Bets")]), _vm._v(" "), _c("div", {
     staticClass: "pl-95 pr-120 pt-55 pb-55 mt-40"
@@ -6536,7 +6568,7 @@ var render = function render() {
     }
   })], 1)], 1) : _vm.pendingBets.length == 0 ? _c("div", {
     staticClass: "ber-l-r"
-  }, [_vm._m(1)]) : _vm._l(_vm.pendingBets, function (pendingBet) {
+  }, [_vm._m(2)]) : _vm._l(_vm.pendingBets, function (pendingBet) {
     return _c("div", {
       key: pendingBet.id,
       staticClass: "ber-l-r"
@@ -6651,7 +6683,7 @@ var render = function render() {
     }
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(2), _vm._v(" "), _c("form", {
+  }, [_vm._m(3), _vm._v(" "), _c("form", {
     attrs: {
       enctype: "multipart/form-data"
     },
@@ -6865,7 +6897,7 @@ var render = function render() {
     }, [_vm._v(_vm._s(bet.to_win) + "u")]), _vm._v(" "), _c("div", {
       staticClass: "base-pick__status"
     }, [_vm._v("5:20 AM")])])])])])]);
-  }), 0)]), _vm._v(" "), _vm._m(3)])])])])])]), _vm._v(" "), _c("div", {
+  }), 0)]), _vm._v(" "), _vm._m(4)])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12",
     attrs: {
       id: "track-bets-col"
@@ -6951,7 +6983,7 @@ var render = function render() {
     }
   }, [_c("div", {
     staticClass: "box-menu"
-  }, [_c("ul", {}, [_vm._m(4), _vm._v(" "), _c("li", [_c("a", {
+  }, [_c("ul", {}, [_vm._m(5), _vm._v(" "), _c("li", [_c("a", {
     attrs: {
       href: "#F5"
     }
@@ -7007,7 +7039,11 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(item.home_team))])])]), _vm._v(" "), _c("div", {
       staticClass: "spread game-box"
-    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+    }, [item.is_live == false && item.odds.length ? _c("span", [_c("label", {
+      attrs: {
+        "for": ""
+      }
+    }, [_vm._v(_vm._s(item.odds.length))]), _vm._v(" "), _vm._l(item.odds, function (odd) {
       return _c("p", {
         key: odd.id
       }, [odd.market_name == "Moneyline" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
@@ -7022,7 +7058,11 @@ var render = function render() {
           }
         }
       }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
-    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+    })], 2) : item.is_live == true && item.odds.length ? _c("span", [_c("label", {
+      attrs: {
+        "for": ""
+      }
+    }, [_vm._v(_vm._s(item.odds.length))]), _vm._v(" "), _vm._l(item.odds, function (odd) {
       return _c("p", {
         key: odd.id
       }, [odd.market_name == "Moneyline" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
@@ -7035,7 +7075,7 @@ var render = function render() {
           }
         }
       }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
-    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
+    })], 2) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
       staticClass: "total game-box"
     }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
       return _c("span", {
@@ -7793,6 +7833,23 @@ var render = function render() {
 };
 
 var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("thead", {
+    staticClass: "text-center text-white"
+  }, [_c("th", {
+    staticClass: "border-bottom-0"
+  }, [_vm._v("Total Bets")]), _vm._v(" "), _c("th", {
+    staticClass: "border-bottom-0"
+  }, [_vm._v("Wins")]), _vm._v(" "), _c("th", {
+    staticClass: "border-bottom-0"
+  }, [_vm._v("Losses")]), _vm._v(" "), _c("th", {
+    staticClass: "border-bottom-0"
+  }, [_vm._v("Win %")]), _vm._v(" "), _c("th", {
+    staticClass: "border-bottom-0"
+  }, [_vm._v("ROI")])]);
+}, function () {
   var _vm = this,
       _c = _vm._self._c;
 
