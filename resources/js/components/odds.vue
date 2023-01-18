@@ -1,6 +1,6 @@
 <template>
-
-<section id="banner" class="banner-section banner-row banner-row-handicapperprofile banner-row-my-rankig">
+<div>
+<section id="banner" class="banner-section banner-row banner-row-handicapperprofile banner-row-my-rankig odds-vue">
 <div class="container-fluid">
 <div class="row">
 <div class="col-5">
@@ -41,80 +41,84 @@ class="sportsbettor-left-img">
 </section>
 	
 <div class="main-content">
-<div class="container">
+<div class="container-fluid">
 <div class="row">
 
-
-	<section id="mybets" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-		<div class="container">
-		<div class="row">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 my-bets-col">
-			<a href="#track-bets-col" id="btn-mobile-only">Make Bets <br><i class="fa-solid fa-arrow-down"></i></a>
-			<h2 class="pl-95">My Bets</h2>
-			<div class=" pl-95 pr-120 pt-55 pb-55 mt-40">
-				<div class="row">
-				<div v-if="pendingBetsLoading" class="ber-l-r">
-					<content-placeholders :rounded="true">
-					<content-placeholders-heading :img="true" />
-					<content-placeholders-text :lines="3" />
-					</content-placeholders>
-				</div>
-				<div v-else-if="pendingBets.length == 0" class="ber-l-r">
-					<div class="slider-box unit-slider-box">
-					<h3>No current Active Bets</h3>
-					</div>
-				</div>
-				<div v-else v-for="pendingBet in pendingBets" :key="pendingBet.id" class="ber-l-r">
-					<div class="slider-box unit-slider-box col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 custom-col">
-					<h3>{{ pendingBet.odd_name + ' (' + pendingBet.odds + ')' }}</h3>
-					<h6><i>{{ pendingBet.market_name }}</i></h6><br>
-					<h3 class="prime-color mb-1">{{ pendingBet.risk + 'u' }}</h3>
-					<small>{{ pendingBet.home_team + ' VS ' + pendingBet.away_team }}</small>
-					<small class="prime-color">Pending</small>
-					</div>
-				</div>
+	<section id="mybets" class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
+		<a href="#track-bets-col" id="btn-mobile-only">Make Bets <br><i class="fa-solid fa-arrow-down"></i></a>
+		<h2 class="mybets-title">My Bets</h2>
+		<div class="mybets-warp">
+			<div v-if="pendingBetsLoading" class="mybets-item mybets-placeholders">
+				<content-placeholders :rounded="true">
+				<content-placeholders-heading :img="true" />
+				<content-placeholders-text :lines="3" />
+				</content-placeholders>
+			</div>
+			<div v-else-if="pendingBets.length == 0" class="mybets-item mybets-null">
+				<div class="">
+				<h3>No current Active Bets</h3>
 				</div>
 			</div>
+			<div v-else v-for="pendingBet in pendingBets" :key="pendingBet.id" class="mybets-item mybets-block">
+				<div class="">
+				<h3>{{ pendingBet.odd_name + ' (' + pendingBet.odds + ')' }}</h3>
+				<h6><i>{{ pendingBet.market_name }}</i></h6><br>
+				<h3 class="prime-color mb-1">{{ pendingBet.risk + 'u' }}</h3>
+				<small>{{ pendingBet.home_team + ' VS ' + pendingBet.away_team }}</small>
+				<small class="prime-color">Pending</small>
+				</div>
 			</div>
-		</div>
 		</div>
 	</section>
 
-
-	<section id="track-bets-col" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-		<div class="container">
-		<div class="row">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<h2>Track Bets</h2>
-			<div class="track-bets pt-55 pb-55 pr-42 pl-22 mt-40">
-
-			<div class="bets-selection">
-				<select class="w-100 mb-4" @change="getOdds(date)" v-model="date">
-				<option :value="moment().format('YYYY-MM-DD')">{{ moment().format('dddd, MMMM Do') }}</option>
-				<option :value="moment().add(1, 'd').format('YYYY-MM-DD')">{{ moment().add(1, 'd').format('dddd, MMMM Do') }}</option>
-				</select>
-				<!-- <input type="date" v-model="date" @change="limitDate()"> -->
-			</div>
-			<div id="" class="bets-selection">
-				<select v-model="leagueFilter" @change="getOdds()">
-				<option v-for="item in leagues" :key="item.id" :value="item.name"><span v-html="item.icon"></span> {{ item.name }}</option>
-				</select>
-			</div>
-			<div id="modal">
-				<div class="box-menu">
-					<ul class="">
-						<li class="active"><a href="#Game">Game</a></li>
-						<li>
-						<a href="#F5">
-							<span v-if="sport == 'baseball'">F5</span>
-							<span v-else-if="sport == 'soccer' || sport == 'basketball' || sport == 'football'">1st H</span>
-						</a>
-						</li>
-						<!-- <li v-show="hockeyShow">
-						<a href="#F5">1P</a>
-						</li> -->
-					</ul>
+	<section id="netunit"  class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+		<h2 class="netunit-title">Net Units</h2>
+			<div class="netunit-warp">
+				<div v-for="item in units" :key="item.id" @click="setStatsDetails(item, item.name)" data-bs-toggle="modal" data-bs-target="#statsmodal" class="netunit-item">
+					<h3>{{ item.name }}</h3>
+					<h3 class="mb-1"><span v-if="item.net_units > 0" class="success-color">{{ item.net_units }}u</span><span v-else class="danger-color">{{ item.net_units }}u</span></h3>
+					<small>{{ item.wins + '-' +  item.losses}}</small>
+					<small class="prime-color">W/L%: {{ item.win_loss_percentage + '%' }}</small>
+					<small class="prime-color">ROI%: {{ item.roi + '%' }}</small>
 				</div>
+			</div>
+	</section>
+
+	<section id="trackbets" class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
+		<div class="trackbets-head">
+			<h2 class="trackbets-title">Track Your Bets</h2>
+			<div class="track-bets trackbets-warp">
+				<div class="trackbets-date">
+					<label>Date</label>
+					<select @change="getOdds(date)" v-model="date">
+						<option :value="moment().format('YYYY-MM-DD')">{{ moment().format('dddd, MMMM Do') }}</option>
+						<option :value="moment().add(1, 'd').format('YYYY-MM-DD')">{{ moment().add(1, 'd').format('dddd, MMMM Do') }}</option>
+					</select>
+					<!-- <input type="date" v-model="date" @change="limitDate()"> -->
+				</div>
+				<div class="trackbets-cat">
+					<label>Leagues</label>
+					<select v-model="leagueFilter" @change="getOdds()">
+						<option v-for="item in leagues" :key="item.id" :value="item.name"><span v-html="item.icon"></span> {{ item.name }}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="trackbets-tabs">
+			<div class="box-menu">
+				<ul class="">
+					<li class="active"><a href="#Game">Game</a></li>
+					<li>
+					<a href="#F5">
+						<span v-if="sport == 'baseball'">F5</span>
+						<span v-else-if="sport == 'soccer' || sport == 'basketball' || sport == 'football'">1st H</span>
+					</a>
+					</li>
+					<!-- <li v-show="hockeyShow">
+					<a href="#F5">1P</a>
+					</li> -->
+				</ul>
+			</div>
 				<div class="tab-content">
 				<div class="box" id="Game" style="display:block;">
 					<div class="row m-0">
@@ -163,7 +167,41 @@ class="sportsbettor-left-img">
 							</div>
 							<!-- Home Point Spread OR Asian Handicap OR Run Line Odds OR Puck Line -->
 							<div class="total game-box">
-							<span v-if="item.is_live == false && item.odds.length">
+								<!-- testblock -->
+								<span v-if="item.is_live == false && item.odds.length">
+								<span v-for="odd in item.odds" :key="odd.id">
+								<span v-if="odd.market_name == 'Run Line' && odd.name.includes(item.home_team)">
+									<button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal">
+									{{ odd.bet_points > 0 ? '+' + odd.bet_points.toString() : odd.bet_points }}<br>
+									<small>{{ odd.price > 0 ? '+' + odd.price.toString() : odd.price }}</small>
+									</button>
+								</span>
+								<span v-else-if="odd.market_name == 'Asian Handicap' && odd.name.includes(item.home_team)">
+									<button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal">
+									{{ odd.bet_points > 0 ? '+' + odd.bet_points.toString() : odd.bet_points }}<br>
+									<small>{{ odd.price > 0 ? '+' + odd.price.toString() : odd.price }}</small>
+									</button>
+								</span>
+								<span v-else-if="odd.market_name == 'Point Spread' && odd.name.includes(item.home_team)">
+									<button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal">
+									{{ odd.bet_points > 0 ? '+' + odd.bet_points.toString() : odd.bet_points }}<br>
+									<small>{{ odd.price > 0 ? '+' + odd.price.toString() : odd.price }}</small>
+									</button>
+								</span>
+								<span v-else-if="odd.market_name == 'Puck Line' && odd.name.includes(item.home_team)">
+									<button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal">
+									{{ odd.bet_points > 0 ? '+' + odd.bet_points.toString() : odd.bet_points }}<br>
+									<small>{{ odd.price > 0 ? '+' + odd.price.toString() : odd.price }}</small>
+									</button>
+								</span>
+								</span>
+							</span>
+							<!-- /.testblock -->
+
+
+
+
+								<span v-if="item.is_live == false && item.odds.length">
 								<span v-for="odd in item.odds" :key="odd.id">
 								<span v-if="odd.market_name == 'Run Line' && odd.name.includes(item.home_team)">
 									<button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal">
@@ -438,7 +476,7 @@ class="sportsbettor-left-img">
 						<content-placeholders-text :lines="3" />
 						</content-placeholders>
 					</span>
-					<span v-else v-for="item in data" :key="item.id">
+					<span v-else v-for="item in data" :key="item.id" class="bet-warpitem">
 						<div class="bet-detail">
 						<div class="bet-date">
 							<p>{{ moment(item.start_date).format('hh:mm a YYYY-MM-DD') }} - Bet MGM</p>
@@ -721,55 +759,19 @@ class="sportsbettor-left-img">
 				</div>
 				</div>
 			</div>
-			</div>                
-			</div>
-		</div>
-		</div>
 	</section>
 
 
-	<section id="netunit"  class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-		<div class="container">
-		<div class="row">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<h2 class="pl-95 mt-60">Net Units</h2>
-			<div class="unit_slider breakdown_slider pl-95 pr-120 pt-55 pb-55 mt-40">
-				<div id="" class="slider-row-new">
-				<div class="row">
-					<div v-for="item in units" :key="item.id" @click="setStatsDetails(item, item.name)" data-bs-toggle="modal" data-bs-target="#statsmodal" style="cursor: pointer;" class="slider-box unit-slider-box col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<h3>{{ item.name }}</h3>
-					<h3 class="mb-1"><span v-if="item.net_units > 0" class="success-color">{{ item.net_units }}u</span><span v-else class="danger-color">{{ item.net_units }}u</span></h3>
-					<small>{{ item.wins + '-' +  item.losses}}</small>
-					<small class="prime-color">W/L%: {{ item.win_loss_percentage + '%' }}</small>
-					<small class="prime-color">ROI%: {{ item.roi + '%' }}</small>
-					</div>
-				</div>
-				</div>
-			</div>                  
-			</div>
-		</div>
-		</div>
-	</section>
 
-	<section id="netunileague"  class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-		<div class="container">
-		<div class="row">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<h2 class="pl-95 mt-60">Net Units by League</h2>
-			<div class="unit_slider breakdown_slider pl-95 pr-120 pt-55 pb-55 mt-40">
-				<div id="" class="slider-row-new">
-				<div class="row">
-					<div v-for="item in sports_units" :key="item.id" @click="setStatsDetails(item, item.league)" data-bs-toggle="modal" data-bs-target="#statsmodal" style="cursor: pointer;" class="slider-box unit-slider-box col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-					<span v-html="item.league_icon" style="font-size: 50px;"></span>
-					<h3>{{ item.league }}</h3>
-					<h3 :class="item.net_units > 0 ? 'success-color' : 'danger-color'">{{ item.net_units }}u</h3>
-					<small class="gray-text">{{ item.wins + '-' +  item.losses}}</small>
-					</div>
-				</div>
-				</div>
-			</div>                  
+	<section id="netunileague"  class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+		<h2 class="">Net Units by League</h2>
+		<div class="netunileague-warp">
+			<div v-for="item in sports_units" :key="item.id" @click="setStatsDetails(item, item.league)" data-bs-toggle="modal" data-bs-target="#statsmodal" style="cursor: pointer;" class="netunileague-item">
+				<span v-html="item.league_icon" style="font-size: 50px;"></span>
+				<h3>{{ item.league }}</h3>
+				<h3 :class="item.net_units > 0 ? 'success-color' : 'danger-color'">{{ item.net_units }}u</h3>
+				<small class="gray-text">{{ item.wins + '-' +  item.losses}}</small>
 			</div>
-		</div>
 		</div>
 	</section>
 
@@ -859,7 +861,7 @@ aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
 </div>
 
 
-
+</div>
 </template>
 
 <script>
