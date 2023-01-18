@@ -1,11 +1,6 @@
 @extends('layouts.front.app')
 @section('header')
-<style>
-    .card {
-		box-shadow: unset;
-    	background: transparent;
-	}
-</style>
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/my-ranking-style.css') }}">
 @endsection
 
 @section('content')
@@ -55,7 +50,7 @@
 </section> --}}
 <!-- Banner Section -->
 
-{{-- 
+ {{-- 
 <section id="netunit-blase" class="pb-120">
 	<div class="container">
 		<div class="row">
@@ -83,10 +78,10 @@
 			</div>
 		</div>
 	</div>
-</section> 
---}}
+</section>  --}}
 
 <!-- Net Units -->
+<odds-component></odds-component>
 @if(request()->input('league'))
 <odds-component :auth='@json(Auth::user())' :league_prop='@json(request()->input('league'))' :sport_prop='@json(request()->input('sport'))'></odds-component>
 @else
