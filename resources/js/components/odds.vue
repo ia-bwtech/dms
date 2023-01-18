@@ -48,7 +48,7 @@ class="sportsbettor-left-img">
 	<section id="mybets" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
 		<div class="container">
 		<div class="row">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 my-bets-col">
 			<a href="#track-bets-col" id="btn-mobile-only">Make Bets <br><i class="fa-solid fa-arrow-down"></i></a>
 			<h2 class="pl-95">My Bets</h2>
 			<div class=" pl-95 pr-120 pt-55 pb-55 mt-40">
