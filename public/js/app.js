@@ -6508,9 +6508,17 @@ var render = function render() {
     return _c("div", {
       key: pendingBet.id,
       staticClass: "mybets-item mybets-block"
-    }, [_c("div", {}, [_c("h3", [_vm._v(_vm._s(pendingBet.odd_name + " (" + pendingBet.odds + ")"))]), _vm._v(" "), _c("h6", [_c("i", [_vm._v(_vm._s(pendingBet.market_name))])]), _c("br"), _vm._v(" "), _c("h3", {
-      staticClass: "prime-color mb-1"
-    }, [_vm._v(_vm._s(pendingBet.risk + "u"))]), _vm._v(" "), _c("small", [_vm._v(_vm._s(pendingBet.home_team + " VS " + pendingBet.away_team))]), _vm._v(" "), _c("small", {
+    }, [_c("div", {}, [_c("h3", [_vm._v(_vm._s(pendingBet.odd_name + " (" + pendingBet.odds + ")"))]), _vm._v(" "), _c("div", {
+      staticClass: "linebw-warp"
+    }, [_c("p", [_vm._v(_vm._s(pendingBet.market_name))]), _vm._v(" "), _c("span", {
+      staticClass: "line"
+    }), _vm._v(" "), _c("span", {
+      staticClass: "prime-color"
+    }, [_vm._v(_vm._s(pendingBet.risk + "u"))])]), _vm._v(" "), _c("div", {
+      staticClass: "vs-warp"
+    }, [_vm._v(_vm._s(pendingBet.home_team) + " "), _c("span", {
+      staticClass: "vs-br"
+    }, [_vm._v("VS")]), _vm._v(" " + _vm._s(pendingBet.away_team))]), _vm._v(" "), _c("p", {
       staticClass: "prime-color"
     }, [_vm._v("Pending")])])]);
   })], 2)]), _vm._v(" "), _c("section", {
@@ -7530,9 +7538,6 @@ var render = function render() {
     return _c("div", {
       key: item.id,
       staticClass: "netunileague-item",
-      staticStyle: {
-        cursor: "pointer"
-      },
       attrs: {
         "data-bs-toggle": "modal",
         "data-bs-target": "#statsmodal"
@@ -7543,17 +7548,20 @@ var render = function render() {
         }
       }
     }, [_c("span", {
+      staticClass: "league-icon",
       staticStyle: {
         "font-size": "50px"
       },
       domProps: {
         innerHTML: _vm._s(item.league_icon)
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(_vm._s(item.league))]), _vm._v(" "), _c("h3", {
+    }), _vm._v(" "), _c("div", {
+      staticClass: "league-icon-desc"
+    }, [_c("h5", [_vm._v(_vm._s(item.league))]), _vm._v(" "), _c("h3", {
       "class": item.net_units > 0 ? "success-color" : "danger-color"
     }, [_vm._v(_vm._s(item.net_units) + "u")]), _vm._v(" "), _c("small", {
       staticClass: "gray-text"
-    }, [_vm._v(_vm._s(item.wins + "-" + item.losses))])]);
+    }, [_vm._v(_vm._s(item.wins + "-" + item.losses))])])]);
   }), 0)])])])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade bd-example-modal-lg",
     attrs: {
@@ -7741,8 +7749,8 @@ var render = function render() {
       width: "15",
       height: "15",
       xmlns: "http://www.w3.org/2000/svg",
-      fill: "#00C358",
-      stroke: "#00C358",
+      fill: "#b82132",
+      stroke: "#b82132",
       "stroke-width": "0"
     }
   }, [_c("title", [_vm._v("Right Arrow")]), _c("path", {

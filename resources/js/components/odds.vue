@@ -62,10 +62,13 @@ class="sportsbettor-left-img">
 			<div v-else v-for="pendingBet in pendingBets" :key="pendingBet.id" class="mybets-item mybets-block">
 				<div class="">
 				<h3>{{ pendingBet.odd_name + ' (' + pendingBet.odds + ')' }}</h3>
-				<h6><i>{{ pendingBet.market_name }}</i></h6><br>
-				<h3 class="prime-color mb-1">{{ pendingBet.risk + 'u' }}</h3>
-				<small>{{ pendingBet.home_team + ' VS ' + pendingBet.away_team }}</small>
-				<small class="prime-color">Pending</small>
+				<div class="linebw-warp">
+					<p>{{ pendingBet.market_name }}</p>
+					<span class="line"></span>
+					<span class="prime-color">{{ pendingBet.risk + 'u' }}</span>
+				</div>
+				<div class="vs-warp">{{ pendingBet.home_team }} <span class="vs-br">VS</span> {{pendingBet.away_team }}</div>
+				<p class="prime-color">Pending</p>
 				</div>
 			</div>
 		</div>
@@ -766,11 +769,13 @@ class="sportsbettor-left-img">
 	<section id="netunileague"  class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
 		<h2 class="">Net Units by League</h2>
 		<div class="netunileague-warp">
-			<div v-for="item in sports_units" :key="item.id" @click="setStatsDetails(item, item.league)" data-bs-toggle="modal" data-bs-target="#statsmodal" style="cursor: pointer;" class="netunileague-item">
-				<span v-html="item.league_icon" style="font-size: 50px;"></span>
-				<h3>{{ item.league }}</h3>
-				<h3 :class="item.net_units > 0 ? 'success-color' : 'danger-color'">{{ item.net_units }}u</h3>
-				<small class="gray-text">{{ item.wins + '-' +  item.losses}}</small>
+			<div v-for="item in sports_units" :key="item.id" @click="setStatsDetails(item, item.league)" data-bs-toggle="modal" data-bs-target="#statsmodal" class="netunileague-item">
+				<span class="league-icon" v-html="item.league_icon" style="font-size: 50px;"></span>
+				<div class="league-icon-desc">
+					<h5>{{ item.league }}</h5>
+					<h3 :class="item.net_units > 0 ? 'success-color' : 'danger-color'">{{ item.net_units }}u</h3>
+					<small class="gray-text">{{ item.wins + '-' +  item.losses}}</small>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -825,7 +830,7 @@ aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
 </div>
 <form @submit.prevent="placeBet()" enctype="multipart/form-data">
 <div class="modal-body">
-	<div class="custom-1k22v0u e17ni7210"><div class="custom-yyq9fm ez1k6ur0"><span>{{ stats_modal.net_units }}u</span><svg viewBox="0 0 24 24" width="15" height="15" xmlns="http://www.w3.org/2000/svg" class="net-units-module__arrow custom-inrq evhdyr10" fill="#00C358" stroke="#00C358" stroke-width="0"><title>Right Arrow</title><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></div><div class="net-unit-performance__details"><div class="net-unit-performance__roi">ROI <span>{{ stats_modal.roi }}%</span></div><div class="net-unit-performance__record">Record <span>{{ stats_modal.wins + ' - ' + stats_modal.losses }}</span></div><div class="net-unit-performance__wins">Wins <span>{{ stats_modal.win_loss_percentage }}%</span></div></div></div>
+	<div class="custom-1k22v0u e17ni7210"><div class="custom-yyq9fm ez1k6ur0"><span>{{ stats_modal.net_units }}u</span><svg viewBox="0 0 24 24" width="15" height="15" xmlns="http://www.w3.org/2000/svg" class="net-units-module__arrow custom-inrq evhdyr10" fill="#b82132" stroke="#b82132" stroke-width="0"><title>Right Arrow</title><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></div><div class="net-unit-performance__details"><div class="net-unit-performance__roi">ROI <span>{{ stats_modal.roi }}%</span></div><div class="net-unit-performance__record">Record <span>{{ stats_modal.wins + ' - ' + stats_modal.losses }}</span></div><div class="net-unit-performance__wins">Wins <span>{{ stats_modal.win_loss_percentage }}%</span></div></div></div>
 	<div class=" custom-1ajbsre e1fgk38m0">
 	<div v-for="bet in stats_modal.bets" :key="bet.id" class="pick-list__bet-cell custom-f3mmnx e15xu35g0">
 		<div class=" custom-1lle6oa e1j6txfk1">
