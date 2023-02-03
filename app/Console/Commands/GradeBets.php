@@ -46,8 +46,8 @@ class GradeBets extends Command
     {
         $bets = Bet::where('status', 1)->get();
 
-        foreach($bets as $item) {
-            
+        foreach ($bets as $item) {
+
             //Temporary NCAAF fix
             // if($item->league == 'NCAAF') {
             //     $item->league = 'NCAA';
@@ -57,7 +57,7 @@ class GradeBets extends Command
             // if($item->league == 'NCAAB') {
             //     $item->league = 'NCAA';
             // }
-            
+
             $game = Http::get('https://api-external.oddsjam.com/api/v2/grader', [
                 'key' => '0483697b-57b6-4787-9bdc-1fc4688bcee7',
                 'sport' => $item->sport,
@@ -66,27 +66,26 @@ class GradeBets extends Command
                 'market_name' => $item->market_name,
                 'bet_name' => $item->odd_name,
             ]);
-        
+
             $game = json_decode($game);
-            
-            if(isset($game->errors)) {
+
+            if (isset($game->errors)) {
                 continue;
             }
-            if($game->data->betResult == "Pending") {
+            if ($game->data->betResult == "Pending") {
                 continue;
             }
-            if($game->data->betResult == "Refunded") {
+            if ($game->data->betResult == "Refunded") {
                 $item->is_won = 2; //2 is refunded status
                 $item->status = 0;
                 $item->save();
             }
-            if($game->data->betResult == "Cancelled") {
+            if ($game->data->betResult == "Cancelled") {
                 $item->is_won = 2; //2 is refunded status
                 $item->status = 0;
                 $item->save();
-            }
-            else if($game->data->betResult == "Won") {
-                if($item->is_verified == 1) {
+            } else if ($game->data->betResult == "Won") {
+                if ($item->is_verified == 1) {
                     $item->user->verified_units += $item->to_win;
                     $item->user->verified_wins += 1;
                     $item->user->verified_plays += 1;
@@ -95,8 +94,7 @@ class GradeBets extends Command
                     $item->is_won = 1;
                     $item->status = 0;
                     $item->save();
-                }
-                else if($item->is_verified == 0) {
+                } else if ($item->is_verified == 0) {
                     $item->user->unverified_units += $item->to_win;
                     $item->user->unverified_wins += 1;
                     $item->user->unverified_plays += 1;
@@ -108,15 +106,17 @@ class GradeBets extends Command
                 }
 
                 try {
-                    Mail::to($item->user)->send(new BetWon($item));
+                    if ($item->user->emailoption->bet_won == 1) {
+
+                        Mail::to($item->user)->send(new BetWon($item));
+                    }
                 } catch (\Throwable $th) {
                     Log::error($th);
                 }
 
                 // Log::error('Won bet: ' + $item->odd_name);
-            }
-            else if($game->data->betResult == "Lost") {
-                if($item->is_verified == 1) {
+            } else if ($game->data->betResult == "Lost") {
+                if ($item->is_verified == 1) {
                     $item->user->verified_units -= $item->risk;
                     $item->user->verified_losses += 1;
                     $item->user->verified_plays += 1;
@@ -125,8 +125,7 @@ class GradeBets extends Command
                     $item->is_won = 0;
                     $item->status = 0;
                     $item->save();
-                }
-                else if($item->is_verified == 0) {
+                } else if ($item->is_verified == 0) {
                     $item->user->unverified_units -= $item->risk;
                     $item->user->unverified_losses += 1;
                     $item->user->unverified_plays += 1;
@@ -138,58 +137,59 @@ class GradeBets extends Command
                 }
 
                 try {
-                    Mail::to($item->user)->send(new BetLost($item));
+                    if ($item->user->emailoption->bet_lost == 1) {
+
+                        Mail::to($item->user)->send(new BetLost($item));
+                    }
                 } catch (\Throwable $th) {
                     Log::error($th);
                 }
             }
 
-            if($item->status == 0) {
+            if ($item->status == 0) {
                 $user = User::with('bets')->where('id', $item->user_id)->first();
 
                 $verifiedRisk = 0;
                 $unverifiedRisk = 0;
-                foreach($user->bets as $bet) {
-                    if($bet->status == 0) {                        //Check for active or inactive bets
-                        if($bet->is_won != 2) {                    //Check for non refunded bets
-                            if($bet->is_verified == 1) {
+                foreach ($user->bets as $bet) {
+                    if ($bet->status == 0) {                        //Check for active or inactive bets
+                        if ($bet->is_won != 2) {                    //Check for non refunded bets
+                            if ($bet->is_verified == 1) {
                                 $verifiedRisk += $bet->risk;
-                            }
-                            else if($bet->is_verified == 0) {
+                            } else if ($bet->is_verified == 0) {
                                 $unverifiedRisk += $bet->risk;
                             }
                         }
                     }
                 }
 
-                if($user->is_verified == 1) {
+                if ($user->is_verified == 1) {
                     //Calculating Win Loss Percentage
                     $total = $user->verified_wins + $user->verified_losses;
-                    if($total > 0) {
-                        $user->verified_win_loss_percentage = ($user->verified_wins/$total) * 100;
+                    if ($total > 0) {
+                        $user->verified_win_loss_percentage = ($user->verified_wins / $total) * 100;
                         $user->verified_win_loss_percentage = round($user->verified_win_loss_percentage, 1);
                         $user->save();
                     }
-    
+
                     //Calculating ROI
-                    if($verifiedRisk != 0) {
-                        $user->verified_roi = ($user->verified_units/$verifiedRisk) * 100;
+                    if ($verifiedRisk != 0) {
+                        $user->verified_roi = ($user->verified_units / $verifiedRisk) * 100;
                         $user->verified_roi = round($user->verified_roi, 1);
                         $user->save();
                     }
-                }
-                else if($user->is_verified == 0) {
+                } else if ($user->is_verified == 0) {
                     //Calculating Win Loss Percentage
                     $total = $user->unverified_wins + $user->unverified_losses;
-                    if($total > 0) {
-                        $user->unverified_win_loss_percentage = ($user->unverified_wins/$total) * 100;
+                    if ($total > 0) {
+                        $user->unverified_win_loss_percentage = ($user->unverified_wins / $total) * 100;
                         $user->unverified_win_loss_percentage = round($user->unverified_win_loss_percentage, 1);
                         $user->save();
                     }
-    
+
                     //Calculating ROI
-                    if($unverifiedRisk != 0) {
-                        $user->unverified_roi = ($user->unverified_units/$unverifiedRisk) * 100;
+                    if ($unverifiedRisk != 0) {
+                        $user->unverified_roi = ($user->unverified_units / $unverifiedRisk) * 100;
                         $user->unverified_roi = round($user->unverified_roi, 1);
                         $user->save();
                     }
@@ -197,7 +197,6 @@ class GradeBets extends Command
 
                 Log::info('Successfully graded a bet and calculated stats at ' . date('Y-m-d H:i:s A'));
             }
-
         }
     }
 }

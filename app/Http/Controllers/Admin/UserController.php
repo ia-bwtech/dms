@@ -5,10 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Agent;
 use App\Http\Controllers\Controller;
 use App\Models\Bet;
+use App\Models\Package;
+use App\Models\ReferralCode;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -30,6 +34,11 @@ class UserController extends Controller
         //     return $next($request);
         // });
     }
+    public function profile_edit()
+    {
+        $user = auth()->user();
+        return view('admin.user.profile_edit', compact('user'));
+    }
     public function ajax(Request $request)
     {
 
@@ -38,6 +47,18 @@ class UserController extends Controller
             if (isset($request->is_handicapper)) {
                 // dd($request->all());
                 $users = $users->where('users.is_handicapper', $request->is_handicapper);
+            }
+            if (isset($request->stripe_connected)) {
+                $users = $users->where('users.stripe_connected', $request->stripe_connected);
+            }
+            if (isset($request->referral_code)) {
+                $users = $users->where('users.referral_code', $request->referral_code);
+            }
+            if (isset($request->nobets)) {
+                $search = $request->nobets;
+                $users = $users->whereHas('bets', function ($query) use ($search) {
+                    $query->where('created_at', '<=', now()->subDays($search));
+                });
             }
             if ($request->date_start != null && $request->date_end != null) {
                 $users->whereBetween('created_at', [$request->date_start, $request->date_end]);
@@ -107,8 +128,8 @@ class UserController extends Controller
         }
 
         $roles = Role::all();
-
-        return view('admin.user.index', compact(['users', 'roles']));
+        $referral_codes = ReferralCode::all();
+        return view('admin.user.index', compact(['users', 'roles', 'referral_codes']));
     }
 
     public function customers(Request $request)
@@ -157,9 +178,34 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8'],
+        ]);
 
-        User::create($request->except('password') + ['password' => Hash::make($request->password)]);
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
+        $user = User::create($request->except('password') + ['password' => Hash::make($request->password)]);
+        $this->updateImage($request, $user);
         return redirect()->route('admins.users.index');
+    }
+
+    public function updateImage($request, $user)
+    {
+        if ($request->image_remove == 1) {
+            User::where('id', $user->id)->update(['image' => null]);
+        }
+        if ($request->hasFile('image')) {
+            $a = \Str::random(5);
+            $image = $request->file('image');
+            $nameonly = preg_replace('/\..+$/', '', $image->getClientOriginalName());
+            $filename = $nameonly . '_' . $a . '.' . $image->getClientOriginalExtension();
+            $image->move('images/profile', $filename);
+
+            User::where('id', $user->id)->update(['image' => $filename]);
+        }
     }
 
     /**
@@ -211,7 +257,10 @@ class UserController extends Controller
             ]);
         }
         $user = User::find($id);
-        return view('admin.user.show', compact('user'));
+        $packages = Package::where('user_id', $user->id)->paginate(10);
+        $bets = Bet::where('user_id', $user->id)->orderBy('created_at', 'desc')->paginate(10);
+
+        return view('admin.user.show', compact('user', 'packages', 'bets'));
     }
 
     public function betfilter($request)
@@ -237,14 +286,17 @@ class UserController extends Controller
      * @param  \App\user  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, user $user)
+    public function update(Request $request, $id)
     {
+        $user = User::find($id);
         if ($request->password != '' && $request->password != null) {
-            $user->update($request->except('password') + ['password' => Hash::make($request->password)]);
+            $user->update($request->except('password', 'image') + ['password' => Hash::make($request->password)]);
+            $this->updateImage($request, $user);
         } else {
-            $user->update($request->except('password'));
+            $user->update($request->except('password', 'image'));
+            $this->updateImage($request, $user);
         }
-        return redirect()->route('admins.users.index');
+        return redirect()->back();
     }
 
     /**

@@ -38,24 +38,22 @@ class RegisterController extends Controller
     protected $redirectTo;
 
     public function redirectTo()
-        {
+    {
 
-            if(auth()->user()->hasRole('admin')) {
-                $this->redirectTo = '/admin/dashboard';
-                return $this->redirectTo;
-            }
-            else if(auth()->user()->is_handicapper==1) {
-                $this->redirectTo = '/handicapper/thankyou';
-                return $this->redirectTo;
-            }
-            else if(auth()->user()->is_handicapper==0) {
-                $this->redirectTo = '/bettor/thankyou';
-                return $this->redirectTo;
-            }
-
-            $this->redirectTo = '/';
+        if (auth()->user()->hasRole('admin')) {
+            $this->redirectTo = '/admin/dashboard';
+            return $this->redirectTo;
+        } else if (auth()->user()->is_handicapper == 1) {
+            $this->redirectTo = '/handicapper/thankyou';
+            return $this->redirectTo;
+        } else if (auth()->user()->is_handicapper == 0) {
+            $this->redirectTo = '/bettor/thankyou';
             return $this->redirectTo;
         }
+
+        $this->redirectTo = '/';
+        return $this->redirectTo;
+    }
 
     /**
      * Create a new controller instance.
@@ -77,6 +75,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'referral_code' => ['nullable', 'exists:referral_codes,name'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -94,9 +93,12 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'referral_code' => $data['referral_code'],
             'password' => Hash::make($data['password']),
-            'is_handicapper'=>$data['is_handicapper']
+            'is_handicapper' => $data['is_handicapper']
         ]);
+        $this->addAdminPackage();
+        $this->emailoptions();
 
         if (request()->hasFile('image')) {
             $imageName = $user->id . '-' . $user->name . '-' . request()->file('image')->getClientOriginalName();
@@ -111,24 +113,24 @@ class RegisterController extends Controller
 
         //Email to new registered user
         // try {
-            Mail::to(User::find($user->id))->send(new NewRegistration());
-            $data = [
-                'user_email' => $user->email,
-                'name' => $user->name,
-
-         ];
-            Mail::to('info@blindsidebets.com')->send(new RegistrationAlert($data));
+        Mail::to(User::find($user->id))->send(new NewRegistration());
+        $data = [
+            'user_email' => $user->email,
+            'name' => $user->name,
+            'subject' => 'New User Registered',
+            'referral_code' => $user->referral_code
+        ];
+        Mail::to('info@thehunchatl.com')->send(new RegistrationAlert($data));
 
         // } catch (\Throwable $th) {
-        //     Log::error($th);
+        // Log::error($th);
         // }
 
         if (App::environment('local')) {
-			$stripeKey = config('values.stripe_test');
-		}
-		else if(App::environment('production')) {
-			$stripeKey = config('values.stripe_live');
-		}
+            $stripeKey = config('values.stripe_test');
+        } else if (App::environment('production')) {
+            $stripeKey = config('values.stripe_live');
+        }
 
         $stripe = new \Stripe\StripeClient($stripeKey);
 

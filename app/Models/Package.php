@@ -9,7 +9,9 @@ class Package extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'user_id','name','price','description','duration','from_date','to_date','status','is_admin'
+    ];
 
     /**
      * Get the user that owns the Package
@@ -19,5 +21,8 @@ class Package extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+    public function subscribers(){
+        return $this->hasMany(Subscription::class,'package_id');
     }
 }

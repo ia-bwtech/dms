@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\CMS;
+use App\Models\ReferralCode;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Collection;
@@ -35,9 +37,21 @@ class AppServiceProvider extends ServiceProvider
          * @param string $pageName
          * @return array
          */
+        $cms = CMS::get();
+        if (isset($_SERVER['HTTP_HOST']) && !empty($_SERVER['HTTP_HOST'])) {
+            $str = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+            $last = explode('/', $str);
+            // echo $last[1];
+            view()->share('last', $last);
+        }
+        $referral_codes = ReferralCode::all();
+
+        view()->share('cms', $cms);
+        view()->share('referral_codes', $referral_codes);
+
         Collection::macro('paginate', function ($perPage, $total = null, $page = null, $pageName = 'page') {
             $page = $page ?: LengthAwarePaginator::resolveCurrentPage($pageName);
-        
+
             return new LengthAwarePaginator(
                 $total ? $this : $this->forPage($page, $perPage)->values(),
                 $total ?: $this->count(),

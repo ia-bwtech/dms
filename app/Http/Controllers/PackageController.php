@@ -84,8 +84,7 @@ class PackageController extends Controller
 		$user = User::find($data->user_id);
 
 		try {
-
-			if(in_array($data->user->id, [2])) {
+            if(in_array($data->user->id, [2]) || $data->is_admin==1) {
 				$amount = $data->price * 100;
 				// return 'amount: ' . $amount;
 
@@ -97,7 +96,7 @@ class PackageController extends Controller
 					'payment_method_types' => ['card'],
 					'description' => $data->id,
 				]);
-
+                // dd($intent->client_secret);
 				return view('package-checkout', compact('data', 'intent', 'stripePublishableKey'));
 			}
 			else if($user->payment_cut_percentage == 0) {
@@ -165,6 +164,7 @@ class PackageController extends Controller
 			}
 
 		} catch (\Throwable $th) {
+            dd($data);
 			Log::error($th);
 			return redirect()->back()->with('error', 'Error. Please try again later.');
 		}
