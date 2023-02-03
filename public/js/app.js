@@ -5619,17 +5619,17 @@ __webpack_require__.r(__webpack_exports__);
       opposite_spread_calculation: '',
       leagues: {},
       // leagueFilter: {
-      // 	leagueName: 'mlb',
-      // 	sportName: 'baseball'
+      //  leagueName: 'mlb',
+      //  sportName: 'baseball'
       // },
       // leagueFilter: {
-      // 	created_at: '',
-      // 	icon: '',
-      // 	id: '',
-      // 	name: 'MLB',
-      // 	sport: {},
-      // 	sport_id: '',
-      // 	updated_at: '',
+      //  created_at: '',
+      //  icon: '',
+      //  id: '',
+      //  name: 'MLB',
+      //  sport: {},
+      //  sport_id: '',
+      //  updated_at: '',
       // },
       leagueFilter: '',
       sportFilter: '',
@@ -5677,7 +5677,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     // log(item) {
-    // 	console.log(item)
+    //  console.log(item)
     // },
     toggleDisplay: function toggleDisplay(show) {
       if (this.gameShow == show) {
@@ -5761,8 +5761,8 @@ __webpack_require__.r(__webpack_exports__);
           _this2.sport = _this2.data[0].sport;
           _this2.league = _this2.data[0].league;
         } // if(this.data.length > 0) {
-        // 	this.sport = this.data[0].sport;
-        // 	this.league = this.data[0].league;
+        //  this.sport = this.data[0].sport;
+        //  this.league = this.data[0].league;
         // }
 
 
@@ -5808,8 +5808,8 @@ __webpack_require__.r(__webpack_exports__);
       this.odd_name = odd_name;
       this.sport = sport;
       this.league = league; // if(this.market_name == 'Run Line' || this.market_name == '1st Half Run Line') {
-      // 	if(this.odd_name.includes('+')) {
-      // 	}
+      //  if(this.odd_name.includes('+')) {
+      //  }
       // }
 
       console.log('setting bet details');
@@ -6436,13 +6436,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
 /* harmony export */ });
 var render = function render() {
-  var _vm$auth$name, _vm$auth$verified_win, _vm$auth$verified_los, _vm$auth$verified_win2, _vm$auth$verified_roi, _vm$auth$image, _vm$auth$image2, _vm$auth$verified_win3, _vm$auth$unverified_w, _vm$auth$verified_los2, _vm$auth$unverified_l, _ref, _ref2, _ref3, _ref4, _vm$auth$bio;
+  var _vm$auth$name, _vm$auth$verified_win, _vm$auth$verified_los, _vm$auth$verified_win2, _vm$auth$verified_roi, _vm$auth$image;
 
   var _vm = this,
       _c = _vm._self._c;
 
   return _c("div", [_c("section", {
-    staticClass: "banner-section banner-row banner-row-handicapperprofile banner-row-my-rankig",
+    staticClass: "banner-section banner-row banner-row-handicapperprofile banner-row-my-rankig odds-vue",
     attrs: {
       id: "banner"
     }
@@ -6473,87 +6473,23 @@ var render = function render() {
     }
   })])])]), _vm._v(" "), _c("div", {
     staticClass: "row"
-  })])]), _vm._v(" "), _c("div", [_c("div", {
-    staticClass: "row"
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "main-content"
   }, [_c("div", {
-    staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12"
+    staticClass: "container-fluid"
+  }, [_c("div", {
+    staticClass: "row"
   }, [_c("section", {
-    staticClass: "banner-section profile-section pb-60",
+    staticClass: "col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7",
     attrs: {
-      id: "banner"
+      id: "mybets"
     }
-  }, [_c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "row banner-row justify-content-center pt-70 pb-70 bg-white"
-  }, [_c("div", {
-    staticClass: "col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"
-  }, [_c("div", {
-    staticClass: "card align-items-center position-relative"
-  }, [_c("img", {
-    staticClass: "rounded-circle border border-info",
-    staticStyle: {
-      "object-fit": "contain"
-    },
-    attrs: {
-      src: "images/profile/" + ((_vm$auth$image2 = _vm.auth.image) !== null && _vm$auth$image2 !== void 0 ? _vm$auth$image2 : "default-avatar.jpg"),
-      width: "350",
-      height: "350",
-      alt: "Profile Image"
-    }
-  }), _vm._v(" "), _c("div", {
-    staticClass: "card-body mb-5"
-  }, [_c("a", {
-    attrs: {
-      href: "handicappers/" + _vm.auth.id
-    }
-  }, [_c("h2", {
-    staticClass: "mt-4 mb-4"
-  }, [_vm._v(_vm._s(_vm.auth.name))])]), _vm._v(" "), _c("verified-component", {
-    attrs: {
-      auth: _vm.auth
-    }
-  }), _vm._v(" "), _c("div", {
-    staticClass: "ranking-detail"
-  }, [_c("div", {
-    staticClass: "ranking-box"
-  }, [_c("span", [_vm._v(_vm._s(_vm.auth.is_verified == 1 ? _vm.auth.verified_wins + _vm.auth.verified_losses : _vm.auth.unverified_wins + _vm.auth.unverified_losses))]), _vm._v(" "), _c("p", [_vm._v("Total Bets")])]), _vm._v(" "), _c("div", {
-    staticClass: "ranking-box"
-  }, [_c("span", [_vm._v(_vm._s(_vm.auth.is_verified == 1 ? (_vm$auth$verified_win3 = _vm.auth.verified_wins) !== null && _vm$auth$verified_win3 !== void 0 ? _vm$auth$verified_win3 : "-" : (_vm$auth$unverified_w = _vm.auth.unverified_wins) !== null && _vm$auth$unverified_w !== void 0 ? _vm$auth$unverified_w : "-"))]), _vm._v(" "), _c("p", [_vm._v("Wins")])]), _vm._v(" "), _c("div", {
-    staticClass: "ranking-box"
-  }, [_c("span", [_vm._v(_vm._s(_vm.auth.is_verified == 1 ? (_vm$auth$verified_los2 = _vm.auth.verified_losses) !== null && _vm$auth$verified_los2 !== void 0 ? _vm$auth$verified_los2 : "-" : (_vm$auth$unverified_l = _vm.auth.unverified_losses) !== null && _vm$auth$unverified_l !== void 0 ? _vm$auth$unverified_l : "-"))]), _vm._v(" "), _c("p", [_vm._v("Losses")])]), _vm._v(" "), _c("div", {
-    staticClass: "ranking-box"
-  }, [_c("span", [_vm._v(_vm._s(_vm.auth.is_verified == 1 ? (_ref = _vm.auth.verified_win_loss_percentage + "%") !== null && _ref !== void 0 ? _ref : "-" : (_ref2 = _vm.auth.unverified_win_loss_percentage + "%") !== null && _ref2 !== void 0 ? _ref2 : "-"))]), _vm._v(" "), _c("p", [_vm._v("Win %")])]), _vm._v(" "), _c("div", {
-    staticClass: "ranking-box"
-  }, [_c("span", [_vm._v(_vm._s(_vm.auth.is_verified == 1 ? (_ref3 = _vm.auth.verified_roi + "%") !== null && _ref3 !== void 0 ? _ref3 : "-" : (_ref4 = _vm.auth.unverified_roi + "%") !== null && _ref4 !== void 0 ? _ref4 : "-"))]), _vm._v(" "), _c("p", [_vm._v("ROI")])])])], 1), _vm._v(" "), _c("div", {
-    staticClass: "my-ranking-hatl"
-  }, [_c("h2", {
-    staticClass: "mb-3"
-  }, [_vm._v("BLINDSIDEBETS")]), _vm._v(" "), _c("a", {
-    attrs: {
-      href: "mailto:" + _vm.auth.email
-    }
-  }, [_vm._v(_vm._s(_vm.auth.email))]), _vm._v(" "), _c("p", {
-    staticClass: "card-text mt-5 text-light"
-  }, [_vm._v(_vm._s((_vm$auth$bio = _vm.auth.bio) !== null && _vm$auth$bio !== void 0 ? _vm$auth$bio : ""))])])])])])])]), _vm._v(" "), _c("section", {
-    staticClass: "pb-120",
-    attrs: {
-      id: "netunit"
-    }
-  }, [_c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
   }, [_vm._m(1), _vm._v(" "), _c("h2", {
-    staticClass: "pl-95"
+    staticClass: "mybets-title"
   }, [_vm._v("My Bets")]), _vm._v(" "), _c("div", {
-    staticClass: "pl-95 pr-120 pt-55 pb-55 mt-40"
-  }, [_c("div", {
-    staticClass: "row"
+    staticClass: "mybets-warp"
   }, [_vm.pendingBetsLoading ? _c("div", {
-    staticClass: "ber-l-r"
+    staticClass: "mybets-item mybets-placeholders"
   }, [_c("content-placeholders", {
     attrs: {
       rounded: true
@@ -6567,47 +6503,37 @@ var render = function render() {
       lines: 3
     }
   })], 1)], 1) : _vm.pendingBets.length == 0 ? _c("div", {
-    staticClass: "ber-l-r"
+    staticClass: "mybets-item mybets-null"
   }, [_vm._m(2)]) : _vm._l(_vm.pendingBets, function (pendingBet) {
     return _c("div", {
       key: pendingBet.id,
-      staticClass: "ber-l-r"
-    }, [_c("div", {
-      staticClass: "slider-box unit-slider-box col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 custom-col"
-    }, [_c("h3", [_vm._v(_vm._s(pendingBet.odd_name + " (" + pendingBet.odds + ")"))]), _vm._v(" "), _c("h6", [_c("i", [_vm._v(_vm._s(pendingBet.market_name))])]), _c("br"), _vm._v(" "), _c("h3", {
-      staticClass: "prime-color mb-1"
-    }, [_vm._v(_vm._s(pendingBet.risk + "u"))]), _vm._v(" "), _c("small", [_vm._v(_vm._s(pendingBet.home_team + " VS " + pendingBet.away_team))]), _vm._v(" "), _c("small", {
+      staticClass: "mybets-item mybets-block"
+    }, [_c("div", {}, [_c("h3", [_vm._v(_vm._s(pendingBet.odd_name + " (" + pendingBet.odds + ")"))]), _vm._v(" "), _c("div", {
+      staticClass: "linebw-warp"
+    }, [_c("p", [_vm._v(_vm._s(pendingBet.market_name))]), _vm._v(" "), _c("span", {
+      staticClass: "line"
+    }), _vm._v(" "), _c("span", {
+      staticClass: "prime-color"
+    }, [_vm._v(_vm._s(pendingBet.risk + "u"))])]), _vm._v(" "), _c("div", {
+      staticClass: "vs-warp"
+    }, [_vm._v(_vm._s(pendingBet.home_team) + " "), _c("span", {
+      staticClass: "vs-br"
+    }, [_vm._v("VS")]), _vm._v(" " + _vm._s(pendingBet.away_team))]), _vm._v(" "), _c("p", {
       staticClass: "prime-color"
     }, [_vm._v("Pending")])])]);
-  })], 2)])])])])]), _vm._v(" "), _c("section", {
-    staticClass: "pb-120",
+  })], 2)]), _vm._v(" "), _c("section", {
+    staticClass: "col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5",
     attrs: {
       id: "netunit"
     }
-  }, [_c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
   }, [_c("h2", {
-    staticClass: "pl-95"
+    staticClass: "netunit-title"
   }, [_vm._v("Net Units")]), _vm._v(" "), _c("div", {
-    staticClass: "unit_slider pl-95 pr-120 pt-55 pb-55 mt-40"
-  }, [_c("div", {
-    staticClass: "slider-row-new",
-    attrs: {
-      id: ""
-    }
-  }, [_c("div", {
-    staticClass: "row"
+    staticClass: "netunit-warp"
   }, _vm._l(_vm.units, function (item) {
     return _c("div", {
       key: item.id,
-      staticClass: "slider-box unit-slider-box col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12",
-      staticStyle: {
-        cursor: "pointer"
-      },
+      staticClass: "netunit-item",
       attrs: {
         "data-bs-toggle": "modal",
         "data-bs-target": "#statsmodal"
@@ -6628,24 +6554,990 @@ var render = function render() {
     }, [_vm._v("W/L%: " + _vm._s(item.win_loss_percentage + "%"))]), _vm._v(" "), _c("small", {
       staticClass: "prime-color"
     }, [_vm._v("ROI%: " + _vm._s(item.roi + "%"))])]);
-  }), 0)])]), _vm._v(" "), _c("h2", {
-    staticClass: "pl-95 mt-60"
-  }, [_vm._v("Net Units by League")]), _vm._v(" "), _c("div", {
-    staticClass: "unit_slider breakdown_slider pl-95 pr-120 pt-55 pb-55 mt-40"
-  }, [_c("div", {
-    staticClass: "slider-row-new",
+  }), 0)]), _vm._v(" "), _c("section", {
+    staticClass: "col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7",
     attrs: {
-      id: ""
+      id: "trackbets"
     }
   }, [_c("div", {
-    staticClass: "row"
+    staticClass: "trackbets-head"
+  }, [_c("h2", {
+    staticClass: "trackbets-title"
+  }, [_vm._v("Track Your Bets")]), _vm._v(" "), _c("div", {
+    staticClass: "track-bets trackbets-warp"
+  }, [_c("div", {
+    staticClass: "trackbets-date"
+  }, [_c("label", [_vm._v("Date")]), _vm._v(" "), _c("select", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.date,
+      expression: "date"
+    }],
+    on: {
+      change: [function ($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.date = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }, function ($event) {
+        return _vm.getOdds(_vm.date);
+      }]
+    }
+  }, [_c("option", {
+    domProps: {
+      value: _vm.moment().format("YYYY-MM-DD")
+    }
+  }, [_vm._v(_vm._s(_vm.moment().format("dddd, MMMM Do")))]), _vm._v(" "), _c("option", {
+    domProps: {
+      value: _vm.moment().add(1, "d").format("YYYY-MM-DD")
+    }
+  }, [_vm._v(_vm._s(_vm.moment().add(1, "d").format("dddd, MMMM Do")))])])]), _vm._v(" "), _c("div", {
+    staticClass: "trackbets-cat"
+  }, [_c("label", [_vm._v("Leagues")]), _vm._v(" "), _c("select", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.leagueFilter,
+      expression: "leagueFilter"
+    }],
+    on: {
+      change: [function ($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.leagueFilter = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }, function ($event) {
+        return _vm.getOdds();
+      }]
+    }
+  }, _vm._l(_vm.leagues, function (item) {
+    return _c("option", {
+      key: item.id,
+      domProps: {
+        value: item.name
+      }
+    }, [_c("span", {
+      domProps: {
+        innerHTML: _vm._s(item.icon)
+      }
+    }), _vm._v(" " + _vm._s(item.name))]);
+  }), 0)])])]), _vm._v(" "), _c("div", {
+    staticClass: "trackbets-tabs"
+  }, [_c("div", {
+    staticClass: "box-menu"
+  }, [_c("ul", {}, [_vm._m(3), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "#F5"
+    }
+  }, [_vm.sport == "baseball" ? _c("span", [_vm._v("F5")]) : _vm.sport == "soccer" || _vm.sport == "basketball" || _vm.sport == "football" ? _c("span", [_vm._v("1st H")]) : _vm._e()])])])]), _vm._v(" "), _c("div", {
+    staticClass: "tab-content"
+  }, [_c("div", {
+    staticClass: "box",
+    staticStyle: {
+      display: "block"
+    },
+    attrs: {
+      id: "Game"
+    }
+  }, [_c("div", {
+    staticClass: "row m-0"
+  }, [_vm.isloading ? _c("span", [_c("content-placeholders", {
+    attrs: {
+      rounded: true
+    }
+  }, [_c("content-placeholders-heading", {
+    attrs: {
+      img: true
+    }
+  }), _vm._v(" "), _c("content-placeholders-text", {
+    attrs: {
+      lines: 3
+    }
+  })], 1)], 1) : _vm.noGames ? _c("span", [_c("p", [_vm._v("No games available. Please try a different date or league.")])]) : _vm._l(_vm.data, function (item) {
+    return _c("span", {
+      key: item.id
+    }, [_c("div", {
+      staticClass: "bet-detail"
+    }, [_c("div", {
+      staticClass: "bet-date"
+    }, [item.is_live == 1 ? _c("span", {
+      staticStyle: {
+        "font-size": "12px"
+      }
+    }, [_vm._v("🟢 ")]) : _vm._e(), _c("span", [_vm._v(_vm._s(_vm.moment(item.start_date).format("hh:mm a YYYY-MM-DD")) + " - Bet MGM")])]), _vm._v(" "), _c("div", {
+      staticClass: "bet-description"
+    }, [_c("div", {
+      staticClass: "game-name"
+    }, [_c("div", {
+      staticClass: "team-name"
+    }, [_c("img", {
+      attrs: {
+        src: item.home_logo ? item.home_logo : "images/teams/default-team.png",
+        alt: "Team Logo"
+      }
+    }), _vm._v(" "), _c("p", {
+      attrs: {
+        title: item.home_team
+      }
+    }, [_vm._v(_vm._s(item.home_team))])])]), _vm._v(" "), _c("div", {
+      staticClass: "spread game-box"
+    }, [item.is_live == false && item.odds.length ? _c("span", [_c("label", {
+      attrs: {
+        "for": ""
+      }
+    }, [_vm._v(_vm._s(item.odds.length))]), _vm._v(" "), _vm._l(item.odds, function (odd) {
+      return _c("p", {
+        key: odd.id
+      }, [odd.market_name == "Moneyline" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
+    })], 2) : item.is_live == true && item.odds.length ? _c("span", [_c("label", {
+      attrs: {
+        "for": ""
+      }
+    }, [_vm._v(_vm._s(item.odds.length))]), _vm._v(" "), _vm._l(item.odds, function (odd) {
+      return _c("p", {
+        key: odd.id
+      }, [odd.market_name == "Moneyline" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
+    })], 2) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
+      staticClass: "total game-box"
+    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "Run Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : _vm._e(), _vm._v(" "), item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "Run Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "Run Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
+      staticClass: "mi game-box"
+    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "Total Runs" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "Total Runs" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])])]), _vm._v(" "), _c("div", {
+      staticClass: "bet-description mt-3"
+    }, [_c("div", {
+      staticClass: "game-name"
+    }, [_c("div", {
+      staticClass: "team-name"
+    }, [_c("img", {
+      attrs: {
+        src: item.away_logo ? item.away_logo : "images/teams/default-team.png",
+        alt: "Team Logo"
+      }
+    }), _vm._v(" "), _c("p", [_vm._v(_vm._s(item.away_team))])])]), _vm._v(" "), _c("div", {
+      staticClass: "spread game-box"
+    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("p", {
+        key: odd.id
+      }, [odd.market_name == "Moneyline" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
+    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("p", {
+        key: odd.id
+      }, [odd.market_name == "Moneyline" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
+    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
+      staticClass: "total game-box"
+    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "Run Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "Run Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
+      staticClass: "mi game-box"
+    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "Total Runs" && odd.name.includes("Under") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "Total Runs" && odd.name.includes("Under") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])])])])]);
+  })], 2)]), _vm._v(" "), _c("div", {
+    staticClass: "box",
+    staticStyle: {
+      display: "none"
+    },
+    attrs: {
+      id: "F5"
+    }
+  }, [_c("div", {
+    staticClass: "row m-0"
+  }, [_vm.isloading ? _c("span", [_c("content-placeholders", {
+    attrs: {
+      rounded: true
+    }
+  }, [_c("content-placeholders-heading", {
+    attrs: {
+      img: true
+    }
+  }), _vm._v(" "), _c("content-placeholders-text", {
+    attrs: {
+      lines: 3
+    }
+  })], 1)], 1) : _vm._l(_vm.data, function (item) {
+    return _c("span", {
+      key: item.id,
+      staticClass: "bet-warpitem"
+    }, [_c("div", {
+      staticClass: "bet-detail"
+    }, [_c("div", {
+      staticClass: "bet-date"
+    }, [_c("p", [_vm._v(_vm._s(_vm.moment(item.start_date).format("hh:mm a YYYY-MM-DD")) + " - Bet MGM")])]), _vm._v(" "), _c("div", {
+      staticClass: "bet-description"
+    }, [_c("div", {
+      staticClass: "game-name"
+    }, [_c("div", {
+      staticClass: "team-name"
+    }, [_c("img", {
+      attrs: {
+        src: item.home_logo ? item.home_logo : "images/teams/default-team.png",
+        alt: "Team Logo"
+      }
+    }), _vm._v(" "), _c("p", [_vm._v(_vm._s(item.home_team))])])]), _vm._v(" "), _c("div", {
+      staticClass: "spread game-box"
+    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("p", {
+        key: odd.id
+      }, [odd.market_name == "1st Half Moneyline" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
+    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("p", {
+        key: odd.id
+      }, [odd.market_name == "1st Half Moneyline" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
+    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
+      staticClass: "total game-box"
+    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "1st Half Run Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "1st Half Run Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
+      staticClass: "mi game-box"
+    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "1st Half Total Runs" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "1st Half Total Runs" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])])]), _vm._v(" "), _c("div", {
+      staticClass: "bet-description mt-3"
+    }, [_c("div", {
+      staticClass: "game-name"
+    }, [_c("div", {
+      staticClass: "team-name"
+    }, [_c("img", {
+      attrs: {
+        src: item.away_logo ? item.away_logo : "images/teams/default-team.png",
+        alt: "Team Logo"
+      }
+    }), _vm._v(" "), _c("p", [_vm._v(_vm._s(item.away_team))])])]), _vm._v(" "), _c("div", {
+      staticClass: "spread game-box"
+    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("p", {
+        key: odd.id
+      }, [odd.market_name == "1st Half Moneyline" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
+    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("p", {
+        key: odd.id
+      }, [odd.market_name == "1st Half Moneyline" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
+    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
+      staticClass: "total game-box"
+    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "1st Half Run Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "1st Half Run Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
+      staticClass: "mi game-box"
+    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "1st Half Total Runs" && odd.name.includes("Under") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "modal",
+          "data-bs-target": "#datamodal"
+        },
+        on: {
+          click: function click($event) {
+            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      return _c("span", {
+        key: odd.id
+      }, [odd.market_name == "1st Half Total Runs" && odd.name.includes("Under") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.showError();
+          }
+        }
+      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])])])])]);
+  })], 2)])])])]), _vm._v(" "), _c("section", {
+    staticClass: "col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5",
+    attrs: {
+      id: "netunileague"
+    }
+  }, [_c("h2", {}, [_vm._v("Net Units by League")]), _vm._v(" "), _c("div", {
+    staticClass: "netunileague-warp"
   }, _vm._l(_vm.sports_units, function (item) {
     return _c("div", {
       key: item.id,
-      staticClass: "slider-box unit-slider-box col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12",
-      staticStyle: {
-        cursor: "pointer"
-      },
+      staticClass: "netunileague-item",
       attrs: {
         "data-bs-toggle": "modal",
         "data-bs-target": "#statsmodal"
@@ -6656,18 +7548,21 @@ var render = function render() {
         }
       }
     }, [_c("span", {
+      staticClass: "league-icon",
       staticStyle: {
         "font-size": "50px"
       },
       domProps: {
         innerHTML: _vm._s(item.league_icon)
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(_vm._s(item.league))]), _vm._v(" "), _c("h3", {
+    }), _vm._v(" "), _c("div", {
+      staticClass: "league-icon-desc"
+    }, [_c("h5", [_vm._v(_vm._s(item.league))]), _vm._v(" "), _c("h3", {
       "class": item.net_units > 0 ? "success-color" : "danger-color"
     }, [_vm._v(_vm._s(item.net_units) + "u")]), _vm._v(" "), _c("small", {
       staticClass: "gray-text"
-    }, [_vm._v(_vm._s(item.wins + "-" + item.losses))])]);
-  }), 0)])])])])]), _vm._v(" "), _c("div", {
+    }, [_vm._v(_vm._s(item.wins + "-" + item.losses))])])]);
+  }), 0)])])])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade bd-example-modal-lg",
     attrs: {
       id: "datamodal",
@@ -6683,7 +7578,7 @@ var render = function render() {
     }
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(3), _vm._v(" "), _c("form", {
+  }, [_vm._m(4), _vm._v(" "), _c("form", {
     attrs: {
       enctype: "multipart/form-data"
     },
@@ -6854,8 +7749,8 @@ var render = function render() {
       width: "15",
       height: "15",
       xmlns: "http://www.w3.org/2000/svg",
-      fill: "#00C358",
-      stroke: "#00C358",
+      fill: "#b82132",
+      stroke: "#b82132",
       "stroke-width": "0"
     }
   }, [_c("title", [_vm._v("Right Arrow")]), _c("path", {
@@ -6897,939 +7792,7 @@ var render = function render() {
     }, [_vm._v(_vm._s(bet.to_win) + "u")]), _vm._v(" "), _c("div", {
       staticClass: "base-pick__status"
     }, [_vm._v("5:20 AM")])])])])])]);
-  }), 0)]), _vm._v(" "), _vm._m(4)])])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12",
-    attrs: {
-      id: "track-bets-col"
-    }
-  }, [_c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
-  }, [_c("h2", [_vm._v("Track Bets")]), _vm._v(" "), _c("div", {
-    staticClass: "track-bets pt-55 pb-55 pr-42 pl-22 mt-40"
-  }, [_c("div", {
-    staticClass: "bets-selection"
-  }, [_c("select", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.date,
-      expression: "date"
-    }],
-    staticClass: "w-100 mb-4",
-    on: {
-      change: [function ($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
-          return o.selected;
-        }).map(function (o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val;
-        });
-        _vm.date = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
-      }, function ($event) {
-        return _vm.getOdds(_vm.date);
-      }]
-    }
-  }, [_c("option", {
-    domProps: {
-      value: _vm.moment().format("YYYY-MM-DD")
-    }
-  }, [_vm._v(_vm._s(_vm.moment().format("dddd, MMMM Do")))]), _vm._v(" "), _c("option", {
-    domProps: {
-      value: _vm.moment().add(1, "d").format("YYYY-MM-DD")
-    }
-  }, [_vm._v(_vm._s(_vm.moment().add(1, "d").format("dddd, MMMM Do")))])])]), _vm._v(" "), _c("div", {
-    staticClass: "bets-selection",
-    attrs: {
-      id: ""
-    }
-  }, [_c("select", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.leagueFilter,
-      expression: "leagueFilter"
-    }],
-    on: {
-      change: [function ($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
-          return o.selected;
-        }).map(function (o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val;
-        });
-        _vm.leagueFilter = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
-      }, function ($event) {
-        return _vm.getOdds();
-      }]
-    }
-  }, _vm._l(_vm.leagues, function (item) {
-    return _c("option", {
-      key: item.id,
-      domProps: {
-        value: item.name
-      }
-    }, [_c("span", {
-      domProps: {
-        innerHTML: _vm._s(item.icon)
-      }
-    }), _vm._v(" " + _vm._s(item.name))]);
-  }), 0)]), _vm._v(" "), _c("div", {
-    attrs: {
-      id: "modal"
-    }
-  }, [_c("div", {
-    staticClass: "box-menu"
-  }, [_c("ul", {}, [_vm._m(5), _vm._v(" "), _c("li", [_c("a", {
-    attrs: {
-      href: "#F5"
-    }
-  }, [_vm.sport == "baseball" ? _c("span", [_vm._v("F5")]) : _vm.sport == "soccer" || _vm.sport == "basketball" || _vm.sport == "football" ? _c("span", [_vm._v("1st H")]) : _vm._e()])])])]), _vm._v(" "), _c("div", {
-    staticClass: "tab-content"
-  }, [_c("div", {
-    staticClass: "box",
-    staticStyle: {
-      display: "block"
-    },
-    attrs: {
-      id: "Game"
-    }
-  }, [_c("div", {
-    staticClass: "row m-0"
-  }, [_vm.isloading ? _c("span", [_c("content-placeholders", {
-    attrs: {
-      rounded: true
-    }
-  }, [_c("content-placeholders-heading", {
-    attrs: {
-      img: true
-    }
-  }), _vm._v(" "), _c("content-placeholders-text", {
-    attrs: {
-      lines: 3
-    }
-  })], 1)], 1) : _vm.noGames ? _c("span", [_c("p", [_vm._v("No games available. Please try a different date or league.")])]) : _vm._l(_vm.data, function (item) {
-    return _c("span", {
-      key: item.id
-    }, [_c("div", {
-      staticClass: "bet-detail"
-    }, [_c("div", {
-      staticClass: "bet-date"
-    }, [item.is_live == 1 ? _c("span", {
-      staticStyle: {
-        "font-size": "12px"
-      }
-    }, [_vm._v("🟢 ")]) : _vm._e(), _c("span", [_vm._v(_vm._s(_vm.moment(item.start_date).format("hh:mm a YYYY-MM-DD")) + " - Bet MGM")])]), _vm._v(" "), _c("div", {
-      staticClass: "bet-description"
-    }, [_c("div", {
-      staticClass: "game-name"
-    }, [_c("div", {
-      staticClass: "team-name"
-    }, [_c("img", {
-      attrs: {
-        src: item.home_logo ? item.home_logo : "images/teams/default-team.png",
-        alt: "Team Logo"
-      }
-    }), _vm._v(" "), _c("p", {
-      attrs: {
-        title: item.home_team
-      }
-    }, [_vm._v(_vm._s(item.home_team))])])]), _vm._v(" "), _c("div", {
-      staticClass: "spread game-box"
-    }, [item.is_live == false && item.odds.length ? _c("span", [_c("label", {
-      attrs: {
-        "for": ""
-      }
-    }, [_vm._v(_vm._s(item.odds.length))]), _vm._v(" "), _vm._l(item.odds, function (odd) {
-      return _c("p", {
-        key: odd.id
-      }, [odd.market_name == "Moneyline" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
-    })], 2) : item.is_live == true && item.odds.length ? _c("span", [_c("label", {
-      attrs: {
-        "for": ""
-      }
-    }, [_vm._v(_vm._s(item.odds.length))]), _vm._v(" "), _vm._l(item.odds, function (odd) {
-      return _c("p", {
-        key: odd.id
-      }, [odd.market_name == "Moneyline" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
-    })], 2) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
-      staticClass: "total game-box"
-    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "Run Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "Run Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
-      staticClass: "mi game-box"
-    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "Total Runs" && odd.name.includes("Over") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "Total Runs" && odd.name.includes("Over") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])])]), _vm._v(" "), _c("div", {
-      staticClass: "bet-description mt-3"
-    }, [_c("div", {
-      staticClass: "game-name"
-    }, [_c("div", {
-      staticClass: "team-name"
-    }, [_c("img", {
-      attrs: {
-        src: item.away_logo ? item.away_logo : "images/teams/default-team.png",
-        alt: "Team Logo"
-      }
-    }), _vm._v(" "), _c("p", [_vm._v(_vm._s(item.away_team))])])]), _vm._v(" "), _c("div", {
-      staticClass: "spread game-box"
-    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("p", {
-        key: odd.id
-      }, [odd.market_name == "Moneyline" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
-    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("p", {
-        key: odd.id
-      }, [odd.market_name == "Moneyline" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
-    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
-      staticClass: "total game-box"
-    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "Run Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "Run Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
-      staticClass: "mi game-box"
-    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "Total Runs" && odd.name.includes("Under") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "Total Runs" && odd.name.includes("Under") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])])])])]);
-  })], 2)]), _vm._v(" "), _c("div", {
-    staticClass: "box",
-    staticStyle: {
-      display: "none"
-    },
-    attrs: {
-      id: "F5"
-    }
-  }, [_c("div", {
-    staticClass: "row m-0"
-  }, [_vm.isloading ? _c("span", [_c("content-placeholders", {
-    attrs: {
-      rounded: true
-    }
-  }, [_c("content-placeholders-heading", {
-    attrs: {
-      img: true
-    }
-  }), _vm._v(" "), _c("content-placeholders-text", {
-    attrs: {
-      lines: 3
-    }
-  })], 1)], 1) : _vm._l(_vm.data, function (item) {
-    return _c("span", {
-      key: item.id
-    }, [_c("div", {
-      staticClass: "bet-detail"
-    }, [_c("div", {
-      staticClass: "bet-date"
-    }, [_c("p", [_vm._v(_vm._s(_vm.moment(item.start_date).format("hh:mm a YYYY-MM-DD")) + " - Bet MGM")])]), _vm._v(" "), _c("div", {
-      staticClass: "bet-description"
-    }, [_c("div", {
-      staticClass: "game-name"
-    }, [_c("div", {
-      staticClass: "team-name"
-    }, [_c("img", {
-      attrs: {
-        src: item.home_logo ? item.home_logo : "images/teams/default-team.png",
-        alt: "Team Logo"
-      }
-    }), _vm._v(" "), _c("p", [_vm._v(_vm._s(item.home_team))])])]), _vm._v(" "), _c("div", {
-      staticClass: "spread game-box"
-    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("p", {
-        key: odd.id
-      }, [odd.market_name == "1st Half Moneyline" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
-    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("p", {
-        key: odd.id
-      }, [odd.market_name == "1st Half Moneyline" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
-    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
-      staticClass: "total game-box"
-    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "1st Half Run Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "1st Half Run Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
-      staticClass: "mi game-box"
-    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "1st Half Total Runs" && odd.name.includes("Over") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "1st Half Total Runs" && odd.name.includes("Over") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])])]), _vm._v(" "), _c("div", {
-      staticClass: "bet-description mt-3"
-    }, [_c("div", {
-      staticClass: "game-name"
-    }, [_c("div", {
-      staticClass: "team-name"
-    }, [_c("img", {
-      attrs: {
-        src: item.away_logo ? item.away_logo : "images/teams/default-team.png",
-        alt: "Team Logo"
-      }
-    }), _vm._v(" "), _c("p", [_vm._v(_vm._s(item.away_team))])])]), _vm._v(" "), _c("div", {
-      staticClass: "spread game-box"
-    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("p", {
-        key: odd.id
-      }, [odd.market_name == "1st Half Moneyline" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
-    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("p", {
-        key: odd.id
-      }, [odd.market_name == "1st Half Moneyline" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])]) : _vm._e()]);
-    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
-      staticClass: "total game-box"
-    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "1st Half Run Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "1st Half Run Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
-      staticClass: "mi game-box"
-    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "1st Half Total Runs" && odd.name.includes("Under") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#datamodal"
-        },
-        on: {
-          click: function click($event) {
-            _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
-      return _c("span", {
-        key: odd.id
-      }, [odd.market_name == "1st Half Total Runs" && odd.name.includes("Under") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
-        attrs: {
-          type: "button"
-        },
-        on: {
-          click: function click($event) {
-            return _vm.showError();
-          }
-        }
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
-    }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])])])])]);
-  })], 2)])])])])])])])])])])]);
+  }), 0)]), _vm._v(" "), _vm._m(5)])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -7865,9 +7828,18 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", {
-    staticClass: "slider-box unit-slider-box"
-  }, [_c("h3", [_vm._v("No current Active Bets")])]);
+  return _c("div", {}, [_c("h3", [_vm._v("No current Active Bets")])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("li", {
+    staticClass: "active"
+  }, [_c("a", {
+    attrs: {
+      href: "#Game"
+    }
+  }, [_vm._v("Game")])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -7899,17 +7871,6 @@ var staticRenderFns = [function () {
       "data-bs-dismiss": "modal"
     }
   }, [_vm._v("Close")])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("li", {
-    staticClass: "active"
-  }, [_c("a", {
-    attrs: {
-      href: "#Game"
-    }
-  }, [_vm._v("Game")])]);
 }];
 render._withStripped = true;
 
