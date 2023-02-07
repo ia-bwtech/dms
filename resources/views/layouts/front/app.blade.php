@@ -2,7 +2,22 @@
 {{-- @dd(auth()->user()->hasRole('admin')) --}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    @auth
 
+    @if (auth()->user()->is_admin == 1)
+        @php
+            $route = route('admins.dashboard.index');
+        @endphp
+    @elseif(auth()->user()->is_handicapper == 1)
+        @php
+            $route = route('handicapperscrm.dashboard.index');
+        @endphp
+    @else
+        @php
+            $route = route('bettorscrm.dashboard.index');
+        @endphp
+    @endif
+@endauth
 <head>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -98,29 +113,41 @@
                             @auth
                             {{-- Mobile Dashboard --}}
                             <li class="nav-item dropdown login-btn  mobiledashboardbtn">
-                                <a class="nav-link dropdown-toggle" href="{{ auth()->user()->hasRole('admin') ? route('admin.dashboard') : route('user.dashboard') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                                <a class="nav-link dropdown-toggle" href="{{ $route }}" id="navbarDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dashboard
                                 </a>
+
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     @role('admin')
-                                    <li><a class="dropdown-item @if(request()->routeIs('admin.dashboard')) active @endif" href="{{ route('admin.dashboard') }}">Dashboard Home</a></li>
-                                    <li><a class="dropdown-item @if(request()->routeIs('admin.handicappers')) active @endif" href="{{ route('admin.handicappers') }}">Handicappers</a></li>
-                                    <li><a class="dropdown-item @if(request()->routeIs('faqs')) active @endif" href="{{ route('faqs') }}">FAQs</a></li>
-                                    <li><a class="dropdown-item @if(request()->routeIs('admin.bets')) active @endif" href="{{ route('admin.bets') }}">All Bets</a></li>
+                                        <li><a class="dropdown-item @if (request()->routeIs('admin.dashboard')) active @endif"
+                                                href="{{ route('admin.dashboard') }}">Dashboard Home</a></li>
+                                        <li><a class="dropdown-item @if (request()->routeIs('admin.handicappers')) active @endif"
+                                                href="{{ route('admin.handicappers') }}">Handicappers</a></li>
+                                        <li><a class="dropdown-item @if (request()->routeIs('faqs')) active @endif"
+                                                href="{{ route('faqs') }}">FAQs</a></li>
+                                        <li><a class="dropdown-item @if (request()->routeIs('admin.bets')) active @endif"
+                                                href="{{ route('admin.bets') }}">All Bets</a></li>
                                     @endrole
                                     @role('user')
-                                    <li><a class="dropdown-item @if(request()->routeIs('user.dashboard')) active @endif" href="{{ route('user.dashboard') }}">Dashboard Home</a></li>
-                                    <li><a class="dropdown-item @if(request()->routeIs('user.packages')) active @endif" href="{{ route('user.packages') }}">Packages</a></li>
-                                    <li><a class="dropdown-item @if(request()->routeIs('user.payments')) active @endif" href="{{ route('user.payments') }}">Payments Setup</a></li>
-                                    <li><a class="dropdown-item @if(request()->routeIs('user.bets')) active @endif" href="{{ route('user.bets') }}">My Bets</a></li>
-                                    <li><a class="dropdown-item @if(request()->routeIs('user.subscribers')) active @endif" href="{{ route('user.subscribers') }}">My Subscribers</a></li>
+                                        <li><a class="dropdown-item @if (request()->routeIs('user.dashboard')) active @endif"
+                                                href="{{ route('user.dashboard') }}">Dashboard Home</a></li>
+                                        <li><a class="dropdown-item @if (request()->routeIs('user.packages')) active @endif"
+                                                href="{{ route('user.packages') }}">Packages</a></li>
+                                        <li><a class="dropdown-item @if (request()->routeIs('user.payments')) active @endif"
+                                                href="{{ route('user.payments') }}">Payments Setup</a></li>
+                                        <li><a class="dropdown-item @if (request()->routeIs('user.bets')) active @endif"
+                                                href="{{ route('user.bets') }}">My Bets</a></li>
+                                        <li><a class="dropdown-item @if (request()->routeIs('user.subscribers')) active @endif"
+                                                href="{{ route('user.subscribers') }}">My Subscribers</a></li>
                                     @endrole
                                 </ul>
                             </li>
 
                             {{-- Admin Dashboard --}}
-                            <li class="nav-item desktopdashboardbtn"><a class="nav-link login-btn prime-bg" href="{{ auth()->user()->hasRole('admin') ? route('admin.dashboard') : route('user.dashboard') }}">Dashboard</a></li>
-
+                            <li class="nav-item desktopdashboardbtn"><a class="nav-link login-btn prime-bg"
+                                href="{{ $route }}">Dashboard</a></li>
                             <li class="nav-item">
                                 <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
