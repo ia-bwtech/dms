@@ -135,7 +135,7 @@
 
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="ajaxupdate">
                                 <meta name="csrf-token" content="{{ csrf_token() }}" />
                                 @forelse ($user->bets as $item)
                                     <tr>
@@ -160,11 +160,11 @@
 
 
                                         {{-- <td>
-                                            <a href="{{ route('admins.users.show', $item->id) }}" class="float-left mr-3"><i
+                                            <a href="{{ route($last[1].'.users.show', $item->id) }}" class="float-left mr-3"><i
                                                     class="fas fa-eye"></i></a>
-                                            <a href="{{ route('admins.users.edit', $item->id) }}" class="float-left"><i
+                                            <a href="{{ route($last[1].'.users.edit', $item->id) }}" class="float-left"><i
                                                     class="fas fa-edit"></i></a>
-                                            <form action="{{ route('admins.users.destroy', $item->id) }}" method="POST">
+                                            <form action="{{ route($last[1].'.users.destroy', $item->id) }}" method="POST">
                                                 @method('delete') @csrf <button class="btn btn-link pt-0"><i
                                                         class="fas fa-trash-alt"></i></button>
                                             </form>

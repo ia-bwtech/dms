@@ -19,7 +19,7 @@
                     <!-- /.card-header -->
                     <!-- form start -->
                     <div class="col-md-8">
-                        <form action="{{ route('admins.users.update',$user->id) }}" method="POST" class="form-horizontal"
+                        <form action="{{ route($last[1].'.users.update',$user->id) }}" method="POST" class="form-horizontal"
                             enctype="multipart/form-data">
                             @csrf
                             @method('put')
@@ -70,6 +70,22 @@
                                             <option @if($user->is_handicapper==0) selected @endif value="0">No</option>
 
                                         </select>
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Bio</label>
+                                    <div class="col-sm-6">
+                                        <textarea class="form-control" name="bio" id="" cols="30"
+                                            rows="8">{{$user->bio}}</textarea>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">payment cut percentage</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" value="{{$user->payment_cut_percentage}}" name="payment_cut_percentage" class="form-control">
                                     </div>
 
                                 </div>

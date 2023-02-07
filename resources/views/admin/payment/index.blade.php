@@ -67,7 +67,8 @@
                         <br>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
-                                <form style="display: flex;" action="{{ route('admins.payments.index') }}">
+                                <form style="display: flex;" onsubmit="event.preventDefault();"
+                                    action="{{ route($last[1] . '.payments.index') }}">
                                     <div class="input-group border rounded-pill m-1 ">
                                         <input name="keyword" id="keyword" type="search" placeholder="Search"
                                             aria-describedby="button-addon3" class="form-control bg-none border-0">
@@ -80,8 +81,8 @@
 
                                 {{-- <a href="{{ route('products.import') }}"><button type="button"
                                         class="btn btn-danger rounded-pill specialbutton m-1">Import products</button></a> --}}
-                                {{-- <a href="{{ route('admins.payments.create') }}"><button type="button"
-                                        class="btn btn-primary rounded-pill rounded-bill m-1">Add Payment</button></a> --}}
+                                {{-- <a href="{{ route($last[1].'.payments.create') }}"><button type="button"
+                                        class="btn btn-primary rounded-pill rounded-bill m-1 d-none">Add Payment</button></a> --}}
                             </div>
                         </div>
 
@@ -91,16 +92,17 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Transaction ID</th>
-                                    <th>user name</th>
+                                    <th>Payment To</th>
+                                    <th>Purchased By</th>
                                     <th>package name</th>
                                     <th>package owner name</th>
+                                    <th>Payment Cut Percentage</th>
                                     <th>amount</th>
                                     <th>status</th>
                                     <th>Created At</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="ajaxupdate">
                                 <meta name="csrf-token" content="{{ csrf_token() }}" />
                                 @include('admin.payment.paymenttable')
                             </tbody>
@@ -144,7 +146,4 @@
             $('.filters').toggle(300);
         }
     </script>
-
-
-
 @endsection

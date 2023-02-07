@@ -35,7 +35,7 @@
                 <th> Value </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="ajaxupdate">
                 <tr>
                   <td> {{$user->id}} </td>
                   <td>{{$user->name}}</td>

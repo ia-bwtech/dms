@@ -14,7 +14,7 @@
                     }
                 </style>
 
-                @include('admin.layouts.date-filter', ['role' => 0, 'route' => 'betsajax'])
+                @include('admin.layouts.date-filter', ['role' => 0, 'route' => 'betsajax','verified'=>1,'is_won'=>1,'status'=>1])
 
             </div>
 
@@ -67,7 +67,7 @@
                         <br>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
-                                <form style="display: flex;" action="{{ route('admins.bets.index') }}">
+                                <form style="display: flex;"  onsubmit="event.preventDefault();" action="{{ route($last[1].'.bets.index') }}">
                                     <div class="input-group border rounded-pill m-1 ">
                                         <input name="keyword" id="keyword" type="search" placeholder="Search"
                                             aria-describedby="button-addon3" class="form-control bg-none border-0">
@@ -80,8 +80,8 @@
 
                                 {{-- <a href="{{ route('products.import') }}"><button type="button"
                                         class="btn btn-danger rounded-pill specialbutton m-1">Import products</button></a> --}}
-                                <a href="{{ route('admins.bets.create') }}"><button type="button"
-                                        class="btn btn-primary rounded-pill rounded-bill m-1">Add Bet</button></a>
+                                {{-- <a href="{{ route($last[1].'.bets.create') }}"><button type="button"
+                                        class="btn btn-primary rounded-pill rounded-bill m-1 d-none">Add Bet</button></a> --}}
                             </div>
                         </div>
 
@@ -91,7 +91,7 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Game ID</th>
+                                    {{-- <th>Game ID</th> --}}
                                     <th>User</th>
                                     <th>Won</th>
                                     <th>Verified</th>
@@ -103,13 +103,14 @@
                                     <th>To Win</th>
                                     <th>Home Team</th>
                                     <th>Away Team</th>
-                                    <th>Wagered Team</th>
+                                    <th>Graded</th>
+                                    {{-- <th>Wagered Team</th> --}}
 
                                     <th>Date</th>
 
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="ajaxupdate">
                                 <meta name="csrf-token" content="{{ csrf_token() }}" />
                                 @include('admin.bet.bettable')
                             </tbody>

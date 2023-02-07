@@ -4,16 +4,17 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
+                <div class="col-sm-9">
                     <h1 class="m-0">Dashboard</h1>
                 </div>
+                @include('admin.layouts.date-filter', [
+                    'role' => 0,
+                    'route' => 'dashboardajax',
+                    'show' => 1,
+                ])
+
                 <!-- /.col -->
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v1</li>
-                    </ol>
-                </div>
+
                 <!-- /.col -->
             </div>
             <!-- /.row -->
@@ -21,106 +22,107 @@
         <!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-<style>
-  .dashboardcards{
-    height: 105px;
-    font-size: 1.5rem;
-  }
-  .dashboardcards h5{
-    font-weight: 510;
-    font-size: 1.5rem;
+    <style>
+        .dashboardcards {
+            height: 105px;
+            font-size: 1.5rem;
+        }
 
-  }
-</style>
+        .dashboardcards h5 {
+            font-weight: 510;
+            font-size: 1.5rem;
+
+        }
+        </style>
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
-            <div class="row">
+            <div class="row datefilter" id="datefilter">
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <div class="callout callout-danger dashboardcards">
                         <h5>Total Earnings</h5>
-                        <p>{{($total_earnings)/100}}</p>
+                        <p>{{ $total_earnings / 100 }}</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="callout callout-danger dashboardcards">
-                      <h5>Users</h5>
-                      <p>{{$users}}</p>
-                  </div>
-              </div>
-              <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="callout callout-danger dashboardcards">
-                    <h5>Handicappers</h5>
-                    <p>{{$handicappers}}</p>
+                    <!-- small box -->
+                    <div class="callout callout-danger dashboardcards">
+                        <h5>Total Earnings By Handicappers</h5>
+                        <p>{{ $total_handicapper_earnings}}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="callout callout-danger dashboardcards">
-                  <h5>Sport Bettors</h5>
-                  <p>{{$bettors}}</p>
-              </div>
-          </div>
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="callout callout-danger dashboardcards">
-                <h5>Bets</h5>
-                <p>{{$bets}}</p>
-            </div>
-        </div>
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="callout callout-danger dashboardcards">
-              <h5>Total Earnings By Handicappers</h5>
-              <p>{{($total_earnings)/100}}</p>
-          </div>
-      </div>
-      <div class="col-lg-3 col-6">
-        <!-- small box -->
-        <div class="callout callout-danger dashboardcards">
-            <h5>Teams</h5>
-            <p>{{$teams}}</p>
-        </div>
-    </div>
-    <div class="col-lg-3 col-6">
-      <!-- small box -->
-      <div class="callout callout-danger dashboardcards">
-          <h5>Sports</h5>
-          <p>{{$sports}}</p>
-      </div>
-  </div>
-  <div class="col-lg-3 col-6">
-    <!-- small box -->
-    <div class="callout callout-danger dashboardcards">
-        <h5>Users</h5>
-        <p>{{$users}}</p>
-    </div>
-</div>
-<div class="col-lg-3 col-6">
-  <!-- small box -->
-  <div class="callout callout-danger dashboardcards">
-      <h5>Total Games</h5>
-      <p>{{$games}}</p>
-  </div>
-</div>
-<div class="col-lg-3 col-6">
-  <!-- small box -->
-  <div class="callout callout-danger dashboardcards">
-      <h5>Packages</h5>
-      <p>{{$packages}}</p>
-  </div>
-</div>
-<div class="col-lg-3 col-6">
-  <!-- small box -->
-  <div class="callout callout-danger dashboardcards">
-      <h5>Transactions</h5>
-      <p>{{$transactions}}</p>
-  </div>
-</div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="callout callout-danger dashboardcards">
+                        <h5>Users</h5>
+                        <p>{{ $users }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="callout callout-danger dashboardcards">
+                        <h5>Handicappers</h5>
+                        <p>{{ $handicappers }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="callout callout-danger dashboardcards">
+                        <h5>Sport Bettors</h5>
+                        <p>{{ $bettors }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="callout callout-danger dashboardcards">
+                        <h5>Bets</h5>
+                        <p>{{ $bets }}</p>
+                    </div>
+                </div>
+                {{-- <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="callout callout-danger dashboardcards">
+                        <h5>Teams</h5>
+                        <p>{{ $teams }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="callout callout-danger dashboardcards">
+                        <h5>Sports</h5>
+                        <p>{{ $sports }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="callout callout-danger dashboardcards">
+                        <h5>Users</h5>
+                        <p>{{ $users }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="callout callout-danger dashboardcards">
+                        <h5>Total Games</h5>
+                        <p>{{ $games }}</p>
+                    </div>
+                </div> --}}
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="callout callout-danger dashboardcards">
+                        <h5>Packages</h5>
+                        <p>{{ $packages }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="callout callout-danger dashboardcards">
+                        <h5>Transactions</h5>
+                        <p>{{ $transactions }}</p>
+                    </div>
+                </div>
             </div>
             <!-- /.row -->
             <!-- Main row -->
