@@ -86,6 +86,8 @@
                                     <li><a class="dropdown-item @if(request()->url()==url('/historical-records')) active @endif" href="/historical-records">Historical Records</a></li>
                                     <li><a class="dropdown-item @if(request()->url()==url('/forum')) active @endif" href="/forum">Forum</a></li>
                                     <li><a class="dropdown-item @if(request()->url()==url('/faq')) active @endif" href="/faq">FAQ</a></li>
+                                    <li><a class="dropdown-item @if(request()->url()==url('/blog-listing')) active @endif" href="/blog-listing">News and Articles</a></li>
+
 
                                 </ul>
                             </li>
