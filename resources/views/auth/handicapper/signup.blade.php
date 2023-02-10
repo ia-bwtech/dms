@@ -101,7 +101,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="referral_code" placeholder="Referral Code (Optional)">
+                                    <input class="form-control" type="text" name="referral_code" placeholder="Referral Code (Optional)">
                                     @error('referral_code')
                                         <div class="invalid-feedback"> {{ $message }} </div>
                                     @enderror
