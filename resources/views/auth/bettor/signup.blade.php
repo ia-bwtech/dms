@@ -28,10 +28,10 @@
                         <h2>Why sign up as a <span>sports bettor?</span></h2>
 
                         <!-- <video class="howtouseimg" width="100%" height="100%" controls="controls"
-                                            poster="/assets/images/howtouseimg.jpg">
-                                            <source src="https://www.blindsidebets.com/videos/blindsidebets.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video> -->
+                                                poster="/assets/images/howtouseimg.jpg">
+                                                <source src="https://www.blindsidebets.com/videos/blindsidebets.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video> -->
                     </div>
                 </div>
 
@@ -92,6 +92,12 @@
                                     <input class="form-control" required type="password" name="password_confirmation"
                                         placeholder="Confirm Password">
                                     @error('password_confirmation')
+                                        <div class="invalid-feedback"> {{ $message }} </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="referral_code" placeholder="Referral Code (Optional)">
+                                    @error('referral_code')
                                         <div class="invalid-feedback"> {{ $message }} </div>
                                     @enderror
                                 </div>

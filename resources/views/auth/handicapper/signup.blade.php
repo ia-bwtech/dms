@@ -101,6 +101,12 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
+                                    <input type="text" name="referral_code" placeholder="Referral Code (Optional)">
+                                    @error('referral_code')
+                                        <div class="invalid-feedback"> {{ $message }} </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
                                     <input class="form-control" required id="file12" accept="image/png, image/jpeg"
                                         type="button" value="Profile Icon" style="color: #9b9b9b"
                                         onclick="openFileDialogue()">
