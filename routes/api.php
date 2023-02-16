@@ -38,8 +38,8 @@ Route::get('/net-units/{id}', [UserController::class, 'units']);
 Route::get('/net-units-sports/{id}', [UserController::class, 'sportsUnits']);
 Route::get('/pending-bets', [BetController::class, 'pendingBets']);
 
-//Hunch Records
-Route::get('/hunch/records/{leagueName}/{sportName}', [HandicapperController::class, 'hunchRecords']);
+//blind Records
+Route::get('/blind/records/{leagueName}/{sportName}', [HandicapperController::class, 'blindRecords']);
 Route::get('/leaderboard/search', [HandicapperController::class, 'leaderboardSearch']);
 
 Route::get('/top-sports/{leagueName}/{sportName}/{date}', [HandicapperController::class, 'topSportsCappers']);

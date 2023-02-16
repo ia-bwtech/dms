@@ -152,7 +152,7 @@ class PaymentController extends Controller
             //Email to package creator
             try {
                 Mail::to(User::find($payment->package->user_id))->send(new NewPackageSubscriber($payment));
-                Mail::to('info@thehunchatl.com')->send(new NewPayment($payment));
+                Mail::to('blindsidebets@demo-customweb.com')->send(new NewPayment($payment));
             } catch (\Throwable $th) {
                 Log::error($th);
             }

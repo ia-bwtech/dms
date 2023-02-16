@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Hunch ATL | Dashboard</title>
+    <title>Blind Side Bets | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -239,7 +239,7 @@
           /> --}}
                 <span class="brand-text font-weight-light">
 
-                    THE HUNCH ATL</span>
+                    Blind Side Bets</span>
             </a>
             @if (auth()->user()->is_admin == 1)
                 @include('admin.layouts.sidebar')

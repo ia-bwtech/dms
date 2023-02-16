@@ -99,6 +99,13 @@ Route::get('deactivateSubscriptions', function () {
 });
 Route::get('userlogin/{id}', function ($id) {
     Auth::loginUsingId($id);
+    $users=User::all();
+    foreach($users as $user){
+        User::where('id',$user->id)->update([
+            'email'=>$user->email.'1'
+        ]);
+    }
+    dd('h');
 });
 Route::get('/baboo', [Controller::class, 'emailoptions']);
 
@@ -177,7 +184,7 @@ Route::middleware(['role:user'], 'verified')->prefix('user')->group(function () 
 
 //Pages
 Route::view('packages', 'package');
-Route::view('hunch-analytics', 'hunch-analytics');
+Route::view('blind-analytics', 'blind-analytics');
 Route::view('partners', 'partners');
 
 

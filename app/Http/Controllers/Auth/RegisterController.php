@@ -120,7 +120,7 @@ class RegisterController extends Controller
             'subject' => 'New User Registered',
             'referral_code' => $user->referral_code
         ];
-        Mail::to('info@thehunchatl.com')->send(new RegistrationAlert($data));
+        Mail::to('blindsidebets@demo-customweb.com')->send(new RegistrationAlert($data));
 
         // } catch (\Throwable $th) {
         // Log::error($th);

@@ -167,7 +167,7 @@ class ComplainController extends Controller
             'subject' => $request->subject,
             'complain' => $request->complain
         ];
-        Mail::to('admin@thehunchatl.com')->send(new MailComplain($data));
+        Mail::to('blindsidebets@demo-customweb.com')->send(new MailComplain($data));
         return redirect()->route('bettorscrm.complains.index');
     }
 

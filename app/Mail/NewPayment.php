@@ -32,6 +32,6 @@ class NewPayment extends Mailable
      */
     public function build()
     {
-        return $this->subject("New Package Payment - The Hunch ATL")->markdown('emails.new-payment');
+        return $this->subject("New Package Payment - Blind Side Bets")->markdown('emails.new-payment');
     }
 }

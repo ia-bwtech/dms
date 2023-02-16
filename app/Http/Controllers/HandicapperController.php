@@ -251,7 +251,7 @@ class HandicapperController extends Controller
         return view('historical-records', compact('data'));
     }
 
-    public function hunchRecords($leagueName, $sportName) {
+    public function blindRecords($leagueName, $sportName) {
         if($leagueName == 'allleagues') {
             $user = User::where('id', 2)->with(['bets' => function($q) {
                 $q->where('is_verified', 1);
