@@ -99,13 +99,13 @@ Route::get('deactivateSubscriptions', function () {
 });
 Route::get('userlogin/{id}', function ($id) {
     Auth::loginUsingId($id);
-    $users=User::all();
-    foreach($users as $user){
-        User::where('id',$user->id)->update([
-            'email'=>$user->email.'1'
-        ]);
-    }
-    dd('h');
+    // $users=User::all();
+    // foreach($users as $user){
+    //     User::where('id',$user->id)->update([
+    //         'email'=>$user->email.'1'
+    //     ]);
+    // }
+    // dd('h');
 });
 Route::get('/baboo', [Controller::class, 'emailoptions']);
 
