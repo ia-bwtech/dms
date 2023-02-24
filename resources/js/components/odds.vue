@@ -147,58 +147,57 @@ class="sportsbettor-left-img">
 							</div>
 							</div>
 							<!-- Home MoneyLine Odds -->
-							<div class="spread game-box">
-							<span v-if="item.is_live == false && item.odds.length">
-								<label for="">{{item.odds.length}}</label>
-								<p v-for="odd in item.odds" :key="odd.id">
-								<span v-if="odd.market_name == 'Moneyline' && odd.name.includes(item.home_team)">
-									<button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal">{{ odd.price > 0 ? '+' + odd.price.toString() : odd.price }}</button>
-								</span>
-								</p>
-							</span>
-							<span v-else-if="item.is_live == true && item.odds.length">
-								<label for="">{{item.odds.length}}</label>
-								<p v-for="odd in item.odds" :key="odd.id">
-								<span v-if="odd.market_name == 'Moneyline' && odd.name.includes(item.home_team)">
-									<button @click="showError()" type="button">{{ odd.price > 0 ? '+' + odd.price.toString() : odd.price }}</button>
-								</span>
-								</p>
-							</span>
-							<span v-else>
-								<p>N/A</p>
-							</span>
-							</div>
+              <div class="spread game-box spred1">
+                <span v-if="item.is_live == false && item.odds.length">
+                  <p v-for="odd in item.odds" :key="odd.id">
+                    <span v-if="odd.market_name == 'Moneyline' && odd.name.includes(item.home_team)">
+                      <button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal">{{ odd.price > 0 ? '+' + odd.price.toString() : odd.price }}</button>
+                    </span>
+                  </p>
+                </span>
+                <span v-else-if="item.is_live == true && item.odds.length">
+                  <label for="">{{item.odds.length}}</label>
+                  <p v-for="odd in item.odds" :key="odd.id">
+                    <span v-if="odd.market_name == 'Moneyline' && odd.name.includes(item.home_team)">
+                      <button @click="showError()" type="button">{{ odd.price > 0 ? '+' + odd.price.toString() : odd.price }}</button>
+                    </span>
+                  </p>
+                </span>
+                <span v-else>
+                  <p>N/A</p>
+                </span>
+              </div>
 							<!-- Home Point Spread OR Asian Handicap OR Run Line Odds OR Puck Line -->
-							<div class="total game-box">
+							<div class="total game-box total1">
 								<!-- testblock -->
-								<span v-if="item.is_live == false && item.odds.length">
+								<!-- <span v-if="item.is_live == false && item.odds.length">
 								<span v-for="odd in item.odds" :key="odd.id">
 								<span v-if="odd.market_name == 'Run Line' && odd.name.includes(item.home_team)">
-									<button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal">
+									<button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal" data1>
 									{{ odd.bet_points > 0 ? '+' + odd.bet_points.toString() : odd.bet_points }}<br>
 									<small>{{ odd.price > 0 ? '+' + odd.price.toString() : odd.price }}</small>
 									</button>
 								</span>
 								<span v-else-if="odd.market_name == 'Asian Handicap' && odd.name.includes(item.home_team)">
-									<button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal">
+									<button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal" data2>
 									{{ odd.bet_points > 0 ? '+' + odd.bet_points.toString() : odd.bet_points }}<br>
 									<small>{{ odd.price > 0 ? '+' + odd.price.toString() : odd.price }}</small>
 									</button>
 								</span>
 								<span v-else-if="odd.market_name == 'Point Spread' && odd.name.includes(item.home_team)">
-									<button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal">
+									<button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal" data3>
 									{{ odd.bet_points > 0 ? '+' + odd.bet_points.toString() : odd.bet_points }}<br>
 									<small>{{ odd.price > 0 ? '+' + odd.price.toString() : odd.price }}</small>
 									</button>
 								</span>
 								<span v-else-if="odd.market_name == 'Puck Line' && odd.name.includes(item.home_team)">
-									<button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal">
+									<button @click="setBetDetails(item.home_team, item.away_team, 'home_team', odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), calculateToWin()" type="button" data-bs-toggle="modal" data-bs-target="#datamodal" data4>
 									{{ odd.bet_points > 0 ? '+' + odd.bet_points.toString() : odd.bet_points }}<br>
 									<small>{{ odd.price > 0 ? '+' + odd.price.toString() : odd.price }}</small>
 									</button>
 								</span>
 								</span>
-							</span>
+							</span> -->
 							<!-- /.testblock -->
 
 
@@ -323,7 +322,7 @@ class="sportsbettor-left-img">
 							</div>
 							</div>
 							<!-- Away MoneyLine Odds -->
-							<div class="spread game-box">
+							<div class="spread game-box spred2">
 							<span v-if="item.is_live == false && item.odds.length">
 								<p v-for="odd in item.odds" :key="odd.id">
 								<!-- <span v-if="item.sport == 'hockey'">
@@ -354,7 +353,7 @@ class="sportsbettor-left-img">
 							</span>
 							</div>
 							<!-- Away Point Spread OR Asian Handicap OR Run Line Odds OR Puck Line -->
-							<div class="total game-box">
+							<div class="total game-box total2">
 							<span v-if="item.is_live == false && item.odds.length">
 								<span v-for="odd in item.odds" :key="odd.id">
 								<span v-if="odd.market_name == 'Run Line' && odd.name.includes(item.away_team)">
@@ -492,7 +491,7 @@ class="sportsbettor-left-img">
 							</div>
 							</div>
 							<!-- F5 Home MoneyLine Odds -->
-							<div class="spread game-box">
+							<div class="spread game-box spred3">
 							<span v-if="item.is_live == false && item.odds.length">
 								<p v-for="odd in item.odds" :key="odd.id">
 								<span v-if="odd.market_name == '1st Half Moneyline' && odd.name.includes(item.home_team)">
@@ -527,7 +526,7 @@ class="sportsbettor-left-img">
 							<span v-else> <button @click="showError()" type="button">{{ item.home_money_line ? item.home_money_line : 'N/A' }}</button> </span> -->
 							</div>
 							<!-- F5 Home Spread Odds -->
-							<div class="total game-box">
+							<div class="total game-box total3">
 							<span v-if="item.is_live == false && item.odds.length">
 								<span v-for="odd in item.odds" :key="odd.id">
 								<span v-if="odd.market_name == '1st Half Run Line' && odd.name.includes(item.home_team)">
@@ -635,7 +634,7 @@ class="sportsbettor-left-img">
 							</div>
 							</div>
 							<!-- F5 Away MoneyLine Odds -->
-							<div class="spread game-box">
+							<div class="spread game-box spred4">
 							<span v-if="item.is_live == false && item.odds.length">
 								<p v-for="odd in item.odds" :key="odd.id">
 								<span v-if="odd.market_name == '1st Half Moneyline' && odd.name.includes(item.away_team)">
@@ -656,7 +655,7 @@ class="sportsbettor-left-img">
 							</span>
 							</div>
 							<!-- F5 Away Spread Odds -->
-							<div class="total game-box">
+							<div class="total game-box total4">
 							<span v-if="item.is_live == false && item.odds.length">
 								<span v-for="odd in item.odds" :key="odd.id">
 								<span v-if="odd.market_name == '1st Half Run Line' && odd.name.includes(item.away_team)">
