@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Models;
+
 use Spatie\Permission\Traits\HasRoles;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -18,7 +20,7 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array<int, string>
      */
-    protected $guarded = [];
+    protected $guarded = ['image_remove'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -64,6 +66,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Package::class, 'user_id', 'id');
     }
 
+    public function emailoption()
+    {
+        return $this->hasOne(EmailOption::class, 'user_id', 'id');
+    }
+
     /**
      * Get all of the subscriptions for the User
      *
@@ -72,5 +79,34 @@ class User extends Authenticatable implements MustVerifyEmail
     public function subscriptions()
     {
         return $this->hasMany(Subscription::class, 'user_id', 'id');
+    }
+    public function subscribedPicks1($id = null)
+    {
+        if ($id == null) {
+
+            $subscribedPicks = Bet::join('users', 'bets.user_id', 'users.id')
+                ->join('packages', 'users.id', 'packages.user_id')
+                ->join('subscriptions', 'packages.id', 'subscriptions.package_id')
+                ->select('bets.*', 'users.name as package_owner')
+                ->where('bets.is_verified', 1)
+                ->where('bets.status', 1)
+                ->where('subscriptions.user_id', auth()->id())
+                ->where('subscriptions.status', 1)
+                ->orderBy('bets.id','desc')
+                ->get();
+        } else {
+            $subscribedPicks = DB::table('bets')
+                ->join('users', 'bets.user_id', 'users.id')
+                ->join('packages', 'users.id', 'packages.user_id')
+                ->join('subscriptions', 'packages.id', 'subscriptions.package_id')
+                ->select('bets.*', 'users.name as package_owner')
+                ->where('bets.user_id', $id)
+                ->where('bets.status', 1)
+                ->where('bets.is_verified', 1)
+                ->where('subscriptions.user_id', auth()->id())
+                ->where('subscriptions.status', 1)
+                ->get();
+        }
+        return $subscribedPicks;
     }
 }

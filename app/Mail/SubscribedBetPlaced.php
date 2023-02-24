@@ -32,6 +32,6 @@ class SubscribedBetPlaced extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.subscribed-bet-placed');
+        return $this->subject($this->data->user->name.' Placed A Bet')->markdown('emails.subscribed-bet-placed');
     }
 }

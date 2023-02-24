@@ -12,7 +12,7 @@ class AdminController extends Controller
     public function index() {
         $data = Bet::with('user')->whereDate('created_at', Carbon::today())->get();
         $activeBets = Bet::where('status', 1)->count();
-        
+        return redirect()->route('admins.dashboard.index');
         return view('dashboard.admin.index', compact('data', 'activeBets'));
     }
 
@@ -22,7 +22,7 @@ class AdminController extends Controller
             $query->where('stripe_connected', 1)
             ->orWhere('paypal_connected', 1);
         })->get();
-        
+
         return view('dashboard.admin.handicappers', compact('data', 'paymentVerifiedCappers'));
     }
 
@@ -46,7 +46,7 @@ class AdminController extends Controller
         $data->payment_cut_percentage = $request->payment_cut_percentage;
         $data->save();
         return redirect('/admin/handicappers')->with('success', "Profile Updated");
-        
+
         // if ($request->payment_cut_percentage) {
         //     return $request;
         //     auth()->user()->update(['payment_cut_percentage' => $request->payment_cut_percentage]);

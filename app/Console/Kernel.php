@@ -22,7 +22,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->command('telescope:prune --hours=48')->daily();
-        $schedule->command('odds:fetch')->everyFiveMinutes()->withoutOverlapping();
+        $schedule->command('deactivate:cron')->everyMinute();
+        $schedule->command('odds:fetch')->everyMinute()->withoutOverlapping();
         $schedule->command('bets:grade')->everyTenMinutes()->withoutOverlapping();
     }
 
@@ -33,7 +34,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }

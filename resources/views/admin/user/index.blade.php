@@ -67,7 +67,7 @@
                         <br>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
-                                <form style="display: flex;" action="{{ route('users.index') }}">
+                                <form style="display: flex;"  onsubmit="event.preventDefault();" action="{{ route($last[1].'.users.index') }}">
                                     <div class="input-group border rounded-pill m-1 ">
                                         <input name="keyword" id="keyword" type="search" placeholder="Search"
                                             aria-describedby="button-addon3" class="form-control bg-none border-0">
@@ -80,8 +80,8 @@
 
                                 {{-- <a href="{{ route('products.import') }}"><button type="button"
                                         class="btn btn-danger rounded-pill specialbutton m-1">Import products</button></a> --}}
-                                <a href="{{ route('admins.users.create') }}"><button type="button"
-                                        class="btn btn-primary rounded-pill rounded-bill m-1">Add User</button></a>
+                                <a href="{{ route($last[1].'.users.create') }}"><button type="button"
+                                        class="btn btn-primary rounded-pill rounded-bill m-1 d-none">Add User</button></a>
                             </div>
                         </div>
 
@@ -96,16 +96,16 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     {{-- <th>Status</th> --}}
+                                    <th>Packages</th>
                                     <th>verified plays</th>
-                                    <th>unverified plays</th>
                                     <th>verified wins</th>
-                                    <th>unverified wins</th>
                                     <th>verified roi</th>
+                                    <th>Last Bet Placed On</th>
                                     <th>Created At</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="ajaxupdate">
                                 <meta name="csrf-token" content="{{ csrf_token() }}" />
                                 @include('admin.user.usertable')
                             </tbody>
@@ -239,5 +239,26 @@
             });
 
         }
+    </script>
+     <script>
+        $('form').submit(function(event) {
+            event.preventDefault();
+            var form = $(this)[0];
+            $.confirm({
+                title: 'Confirm!',
+                content: 'Are you sure you want to perform this action?',
+                confirmButtonClass: 'btn-success',
+                buttons: {
+                    confirm: function() {
+                        // $.alert('Confirmed!');
+                        form.submit();
+
+                    },
+                    cancel: function() {
+                        // $.alert('Canceled!');
+                    }
+                }
+            });
+        });
     </script>
 @endsection

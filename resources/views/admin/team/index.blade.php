@@ -93,7 +93,7 @@
                         <br>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
-                                <form style="display: flex;" action="{{ route('admins.teams.index') }}">
+                                <form style="display: flex;"  onsubmit="event.preventDefault();" action="{{ route($last[1].'.teams.index') }}">
                                     <div class="input-group border rounded-pill m-1 ">
                                         <input name="keyword" id="keyword" type="search" placeholder="Search"
                                             aria-describedby="button-addon3" class="form-control bg-none border-0">
@@ -106,8 +106,8 @@
 
                                 {{-- <a href="{{ route('products.import') }}"><button type="button"
                                         class="btn btn-danger rounded-pill specialbutton m-1">Import products</button></a> --}}
-                                <a href="{{ route('admins.teams.create') }}"><button type="button"
-                                        class="btn btn-primary rounded-pill rounded-bill m-1">Add Team</button></a>
+                                <a href="{{ route($last[1].'.teams.create') }}"><button type="button"
+                                        class="btn btn-primary rounded-pill rounded-bill m-1 d-none">Add Team</button></a>
                             </div>
                         </div>
 
@@ -128,7 +128,7 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="ajaxupdate">
                                 <meta name="csrf-token" content="{{ csrf_token() }}" />
                                 @include('admin.team.ajaxtable')
                             </tbody>

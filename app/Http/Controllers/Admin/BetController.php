@@ -4,9 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Agent;
 use App\Http\Controllers\Controller;
+use App\Mail\BetPlaced;
+use App\Mail\SubscribedBetPlaced;
 use App\Models\Bet;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Permission\Models\Role;
 
@@ -34,30 +40,54 @@ class BetController extends Controller
 
         if ($request->keyword == null || $request->keyword == ' ') {
             $bets = Bet::orderBy('created_at', 'desc');
+
             if (isset($request->is_handicapper)) {
-                // dd($request->all());
                 $bets = $bets->where('bets.is_handicapper', $request->is_handicapper);
             }
             if ($request->date_start != null && $request->date_end != null) {
                 $bets->whereBetween('created_at', [$request->date_start, $request->date_end]);
             }
+            if ($request->is_verified != null || $request->is_verified === 0) {
+                $bets = $bets->where('is_verified', $request->is_verified);
+            }
+            if ($request->is_won != null || $request->is_won === 0) {
+                $bets = $bets->where('is_won', $request->is_won);
+            }
+            if ($request->status != null || $request->status === 0) {
+                $bets = $bets->where('status', $request->status);
+            }
             $bets = $bets->paginate(25);
         } else {
 
-            $bets = Bet::where('sport', 'like', '%' . $request->keyword . '%')
-                ->orWhere('league', 'like', '%' . $request->keyword . '%')
-                ->orWhere('market_name', 'like', '%' . $request->keyword . '%')
-                ->orWhere('game_id', 'like', '%' . $request->keyword . '%')
-                ->paginate(25)->setPath('');
-            if ($request->date_start != null && $request->date_end != null) {
-                $bets=Bet::where(function($query) use ($request){
-                    $query->where('sport', 'like', '%' . $request->keyword . '%')
+
+            $bets = Bet::where(function ($query) use ($request) {
+                $query->where('sport', 'like', '%' . $request->keyword . '%')
                     ->orWhere('league', 'like', '%' . $request->keyword . '%')
                     ->orWhere('market_name', 'like', '%' . $request->keyword . '%')
+                    ->orWhere('is_won', 'like', '%' . $request->keyword . '%')
                     ->orWhere('game_id', 'like', '%' . $request->keyword . '%');
+            });
+            if ($request->is_verified != null || $request->is_verified === 0) {
+                $bets = $bets->where('is_verified', $request->is_verified);
+            }
+            if ($request->is_won != null || $request->is_won === 0) {
+                $bets = $bets->where('is_won', $request->is_won);
+            }
+            if ($request->status != null || $request->status === 0) {
+                $bets = $bets->where('status', $request->status);
+            }
+            $bets = $bets->paginate(25)->setPath('');
+
+            if ($request->date_start != null && $request->date_end != null) {
+                $bets = Bet::where(function ($query) use ($request) {
+                    $query->where('sport', 'like', '%' . $request->keyword . '%')
+                        ->orWhere('league', 'like', '%' . $request->keyword . '%')
+                        ->orWhere('market_name', 'like', '%' . $request->keyword . '%')
+                        ->orWhere('is_won', 'like', '%' . $request->keyword . '%')
+                        ->orWhere('game_id', 'like', '%' . $request->keyword . '%');
                 })
-                ->whereBetween('created_at', [$request->date_start, $request->date_end])
-                ->paginate(25)->setPath('');
+                    ->whereBetween('created_at', [$request->date_start, $request->date_end])
+                    ->paginate(25)->setPath('');
             }
             $pagination = $bets->appends(array(
                 'keyword' => $request->keyword
@@ -155,7 +185,7 @@ class BetController extends Controller
     public function store(Request $request)
     {
 
-        Bet::create($request->except('password') + ['password' => Hash::make($request->password)]);
+        Bet::create($request->all());
         return redirect()->route('admins.bets.index');
     }
 
@@ -189,13 +219,47 @@ class BetController extends Controller
      * @param  \App\bet  $bet
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, bet $bet)
+    public function update(Request $request, $id)
     {
-        if ($request->password != '' && $request->password != null) {
-            $bet->update($request->except('password') + ['password' => Hash::make($request->password)]);
-        } else {
-            $bet->update($request->except('password'));
+        $bet = Bet::find($id);
+        // $bet->update($request->all());
+        $this->updateStats($bet, $request->is_won);
+        if ($bet) {
+            try {
+                $user = User::find($bet->user_id);
+                if ($user->emailoption->bet_placed == 1) {
+
+                    Mail::to(User::find($bet->user_id))->send(new BetPlaced($bet));
+                }
+            } catch (\Throwable $th) {
+                Log::error($th);
+            }
         }
+
+        //Check for package subscribers
+        if ($bet) {
+            $subscribers = DB::table('subscriptions')
+                ->join('users', 'subscriptions.user_id', 'users.id')
+                ->select('users.*')
+                ->where('subscriptions.package_owner_id', $request->user_id)
+                ->where('subscriptions.status', 1)
+                ->get();
+
+            if (count($subscribers) > 0) {
+                foreach ($subscribers as $subscriber) {
+                    try {
+                        // $user = User::find($subscriber->user_id);
+                        // if ($user->emailoption->subscribed_bet_placed == 1) {
+
+                            Mail::to($subscriber)->send(new SubscribedBetPlaced($bet));
+                        // }
+                    } catch (\Throwable $th) {
+                        Log::error($th);
+                    }
+                }
+            }
+        }
+
         return redirect()->route('admins.bets.index');
     }
 
@@ -303,5 +367,117 @@ class BetController extends Controller
     public function changepassword()
     {
         return view('admin.bet.changepassword');
+    }
+
+    public function updateStats($item, $result)
+    {
+        if ($result == 1) {
+            if ($item->is_verified == 1) {
+                $item->user->verified_units += $item->to_win;
+                $item->user->verified_wins += 1;
+                $item->user->verified_plays += 1;
+                $item->user->save();
+
+                $item->is_won = 1;
+                $item->status = 0;
+                $item->save();
+            } else if ($item->is_verified == 0) {
+                $item->user->unverified_units += $item->to_win;
+                $item->user->unverified_wins += 1;
+                $item->user->unverified_plays += 1;
+                $item->user->save();
+
+                $item->is_won = 1;
+                $item->status = 0;
+                $item->save();
+            }
+
+
+
+            // Log::error('Won bet: ' + $item->odd_name);
+        } else if ($result == 0) {
+            if ($item->is_verified == 1) {
+                if($item->user->verified_wins > 0){
+                    $item->user->verified_wins -= 1;
+                }
+                $item->user->verified_units -= $item->risk;
+                $item->user->verified_losses += 1;
+                $item->user->verified_plays += 1;
+                $item->user->save();
+
+                $item->is_won = 0;
+                $item->status = 0;
+                $item->save();
+            } else if ($item->is_verified == 0) {
+                if($item->user->unverified_wins > 0){
+                    $item->user->unverified_wins -= 1;
+                }
+                // $item->user->unverified_wins -= 1;
+                $item->user->unverified_units -= $item->risk;
+                $item->user->unverified_losses += 1;
+                $item->user->unverified_plays += 1;
+
+                $item->user->save();
+
+                $item->is_won = 0;
+                $item->status = 0;
+                $item->save();
+            }
+        }
+    }
+    public function calculateStats1($user_id)
+    {
+        $user = User::with('bets')->where('id', $user_id)->first();
+        if (count($user->bets) != 0) {
+
+            $verifiedRisk = 0;
+            $unverifiedRisk = 0;
+            foreach ($user->bets as $item) {
+                if ($item->status == 0) {                        //Check for active or inactive bets
+                    if ($item->is_won != 2) {                    //Check for non refunded bets
+                        if ($item->is_verified == 1) {
+                            $verifiedRisk += $item->risk;
+                        } else if ($item->is_verified == 0) {
+                            $unverifiedRisk += $item->risk;
+                        }
+                    }
+                }
+            }
+
+            if ($user->is_verified == 1) {
+                //Calculating Win Loss Percentage
+                $total = $user->verified_wins + $user->verified_losses;
+                if ($total > 0) {
+                    dd($user->id);
+                    $user->verified_win_loss_percentage = ($user->verified_wins / $total) * 100;
+                    $user->verified_win_loss_percentage = round($user->verified_win_loss_percentage, 1);
+                    $user->save();
+                }
+
+                //Calculating ROI
+                if ($verifiedRisk != 0) {
+                    $user->verified_roi = ($user->verified_units / $verifiedRisk) * 100;
+                    $user->verified_roi = round($user->verified_roi, 1);
+                    $user->save();
+                }
+            } else if ($user->is_verified == 0) {
+                //Calculating Win Loss Percentage
+                $total = $user->unverified_wins + $user->unverified_losses;
+                if ($total > 0) {
+                    $user->unverified_win_loss_percentage = ($user->unverified_wins / $total) * 100;
+                    $user->unverified_win_loss_percentage = round($user->unverified_win_loss_percentage, 1);
+                    $user->save();
+                }
+
+                //Calculating ROI
+                if ($unverifiedRisk != 0) {
+                    $user->unverified_roi = ($user->unverified_units / $unverifiedRisk) * 100;
+                    $user->unverified_roi = round($user->unverified_roi, 1);
+                    $user->save();
+                }
+            }
+        }
+
+        return;
     }
 }

@@ -19,11 +19,13 @@
                     <!-- /.card-header -->
                     <!-- form start -->
                     <div class="col-md-8 " >
-                        <form action="{{ route('admins.users.store') }}" method="POST" class="form-horizontal"
+                        <form action="{{ route($last[1].'.users.store') }}" method="POST" class="form-horizontal"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
-
+                                @if($errors->any())
+                                {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
+                            @endif
                                 {{-- <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Role</label>
                                     <div class="col-sm-6">
@@ -60,14 +62,26 @@
 
                                 </div>
                                 <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Handicapper</label>
+                                    <div class="col-sm-6">
+                                        <select required class="form-control" name="is_handicapper" id="is_handicapper">
+                                            <option value="">Select</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+
+                                        </select>
+                                    </div>
+
+                                </div>
+                                {{-- <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Phone</label>
                                     <div class="col-sm-6">
                                         <input required type="number" name="phone" class="form-control">
                                     </div>
 
-                                </div>
+                                </div> --}}
 
-                                <div class="form-group row">
+                                {{-- <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Status</label>
                                     <div class="col-sm-6">
                                         <select required class="form-control" name="status" id="status">
@@ -79,15 +93,15 @@
                                     </div>
 
 
-                                </div>
-                                {{-- <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Address</label>
+                                </div> --}}
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Bio</label>
                                     <div class="col-sm-6">
-                                        <textarea required class="form-control" name="address" id="" cols="30"
+                                        <textarea class="form-control" name="bio" id="" cols="30"
                                             rows="8"></textarea>
                                     </div>
 
-                                </div> --}}
+                                </div>
 
                                 <div class="form-group row">
                                     <div class="offset-sm-2 col-sm-10">

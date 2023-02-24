@@ -12,9 +12,9 @@
         {{-- <td>{{ optional($item)->created_at->diffForHumans() }}</td> --}}
 
         {{-- <td>
-            <a href="{{ route('admins.games.show', $item->id) }}" class="float-left mr-3"><i class="fas fa-eye"></i></a>
-            <a href="{{ route('admins.games.edit', $item->id) }}" class="float-left"><i class="fas fa-edit"></i></a>
-            <form action="{{ route('admins.games.destroy', $item->id) }}" method="POST">
+            <a href="{{ route($last[1].'.games.show', $item->id) }}" class="float-left mr-3"><i class="fas fa-eye"></i></a>
+            <a href="{{ route($last[1].'.games.edit', $item->id) }}" class="float-left"><i class="fas fa-edit"></i></a>
+            <form action="{{ route($last[1].'.games.destroy', $item->id) }}" method="POST">
                 @method('delete') @csrf <button class="btn btn-link pt-0"><i class="fas fa-trash-alt"></i></button>
             </form>
         </td> --}}

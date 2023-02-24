@@ -19,7 +19,7 @@
                     <!-- /.card-header -->
                     <!-- form start -->
                     <div class="col-md-8">
-                        <form action="{{ route('admins.users.update',$user->id) }}" method="POST" class="form-horizontal"
+                        <form action="{{ route($last[1].'.users.update',$user->id) }}" method="POST" class="form-horizontal"
                             enctype="multipart/form-data">
                             @csrf
                             @method('put')

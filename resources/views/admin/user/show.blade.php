@@ -15,93 +15,69 @@
                 <!-- Horizontal Form -->
                 <div class="card card-info">
                     <div class="card-header">
-                        <h3 class="card-title">Add users</h3>
+                        <h3 class="card-title">User</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <form action="#" method="POST" class="form-horizontal" enctype="multipart/form-data">
                             @csrf
                             @method('put')
                             <div class="card-body">
+                                <div class="row invoice-info">
+                                    <div class="col-sm-6 invoice-col">
+                                        <label class="m-4" for="">Name:</label>
+                                        <label class="m-4" for="">{{ $user->name }}</label>
+                                        <br>
+                                        <label class="m-4" for="">Verified Wins:</label>
+                                        <label class="m-4"
+                                            for="">{{ $user->verified_wins ? $user->verified_wins : 0 }}</label>
+                                        <br>
+                                        <label class="m-4" for="">Verified Losses:</label>
+                                        <label class="m-4"
+                                            for="">{{ $user->verified_losses ? $user->verified_losses : 0 }}</label>
+                                        <br>
 
-                                {{-- <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Roles</label>
-                                    <div class="col-sm-6">
-                                     <select required class="form-control" name="role_id" id="role_id">
-                                        @foreach ($roles as $item)
-                                        <option @if ($user->role_id == $item->id) selected @endif value="{{$item->id}}">{{$item->name}}</option>
-                                        @endforeach
-                                    </select>
+                                        <label class="m-4" for="">Verified Plays:</label>
+                                        <label class="m-4"
+                                            for="">{{ $user->verified_plays ? $user->verified_plays : 0 }}</label>
+                                        <br>
+                                        <label class="m-4" for="">Verified ROI:</label>
+                                        <label class="m-4"
+                                            for="">{{ $user->verified_roi ? $user->verified_roi : 0 }}</label>
+                                        <br>
+
+
                                     </div>
 
-                                </div> --}}
 
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
-                                    <div class="col-sm-6">
-                                        <input disabled value="{{ $user->name }}" required type="text" name="name"
-                                            class="form-control">
-                                    </div>
 
-                                </div>
+                                    <div class="col-sm-6 invoice-col">
+                                        <label class="m-4" for="">Email:</label>
+                                        <label class="m-4" for="">{{ $user->email }}</label>
+                                        <br>
+                                        <label class="m-4" for="">Un Verified Wins:</label>
+                                        <label class="m-4"
+                                            for="">{{ $user->unverified_wins ? $user->unverified_wins : 0 }}</label>
+                                        <br>
+                                        <label class="m-4" for="">Un Verified Losses:</label>
+                                        <label class="m-4"
+                                            for="">{{ $user->unverified_losses ? $user->unverified_losses : 0 }}</label>
+                                        <br>
 
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                                    <div class="col-sm-6">
-                                        <input disabled type="email" value="{{ $user->email }}" required type="text"
-                                            name="email" class="form-control">
-                                    </div>
+                                        <label class="m-4" for="">Un Verified Plays:</label>
+                                        <label class="m-4"
+                                            for="">{{ $user->unverified_plays ? $user->unverified_plays : 0 }}</label>
+                                        <br>
+                                        <label class="m-4" for="">Un Verified ROI:</label>
+                                        <label class="m-4"
+                                            for="">{{ $user->unverified_roi ? $user->unverified_roi : 0 }}</label>
+                                        <br>
 
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Wins</label>
-                                    <div class="col-sm-6">
-                                        <input disabled value="{{ $user->verified_wins ? $user->verified_wins : 0 }}"
-                                            required type="number" name="verified_wins" class="form-control">
-                                    </div>
-
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Losses</label>
-                                    <div class="col-sm-6">
-                                        <input disabled value="{{ $user->verified_losses ? $user->verified_losses : 0 }}"
-                                            required type="number" name="verified_losses" class="form-control">
-                                    </div>
-
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Status</label>
-                                    <div class="col-sm-6">
-                                        <select disabled required class="form-control" name="status" id="status">
-                                            <option value="">Select</option>
-                                            <option @if ($user->status == 1) selected @endif value="1">Active
-                                            </option>
-                                            <option @if ($user->status == 0) selected @endif value="0">In
-                                                Active</option>
-
-                                        </select>
                                     </div>
 
                                 </div>
 
-
-                                {{-- <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Profile Image</label>
-                                    <div class="col-sm-6">
-                                        <input type="file" name="image" class="form-control">
-                                    </div>
-
-                                </div> --}}
-
-                                {{-- <div class="form-group row">
-                                    <div class="offset-sm-2 col-sm-10">
-                                        <button type="submit" class="btn btn-info">Submit</button>
-                                    </div>
-                                </div> --}}
                             </div>
                             <!-- /.card-body -->
                             {{-- <div class="card-footer">
@@ -118,7 +94,7 @@
                     </div>
                     <div class="card-header">
                         @include('admin.layouts.date-filter', [
-                            'role' => 1,
+                            'role' => 0,
                             'route' => 'usersajax',
                             'show' => 1,
                             'smallview' => 1,
@@ -126,7 +102,8 @@
                         <br>
                         <div class="card-tools mt-4">
                             <div class="input-group input-group-sm">
-                                <form style="display: flex;" action="{{ route('users.index') }}">
+                                <form style="display: flex;" onsubmit="event.preventDefault();"
+                                    action="{{ route('users.index') }}">
                                     <div class="input-group border rounded-pill m-1 ">
                                         <input name="keyword" id="keyword" type="search" placeholder="Search"
                                             aria-describedby="button-addon3" class="form-control bg-none border-0">
@@ -139,8 +116,8 @@
 
                                 {{-- <a href="{{ route('products.import') }}"><button type="button"
                                         class="btn btn-danger rounded-pill specialbutton m-1">Import products</button></a> --}}
-                                {{-- <a href="{{ route('admins.users.create') }}"><button type="button"
-                                        class="btn btn-primary rounded-pill rounded-bill m-1">Add User</button></a> --}}
+                                {{-- <a href="{{ route($last[1].'.users.create') }}"><button type="button"
+                                        class="btn btn-primary rounded-pill rounded-bill m-1 d-none">Add User</button></a> --}}
                             </div>
                         </div>
 
@@ -154,7 +131,6 @@
                                     <th>User</th>
                                     <th>Won</th>
                                     <th>Verified</th>
-                                    <th>Sport</th>
                                     <th>League</th>
                                     <th>Risk</th>
                                     <th>Odds</th>
@@ -164,14 +140,14 @@
                                     <th>Home Team</th>
                                     <th>Away Team</th>
                                     <th>Wagered Team</th>
-
+                                    <th>Graded</th>
                                     <th>Date</th>
 
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="ajaxupdate">
                                 <meta name="csrf-token" content="{{ csrf_token() }}" />
-                                @forelse ($user->bets as $item)
+                                @forelse ($bets as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->game_id }}</td>
@@ -187,6 +163,7 @@
                                         <td>{{ $item->home_team }}</td>
                                         <td>{{ $item->away_team }}</td>
                                         <td>{{ $item->wagered_team }}</td>
+                                        <td>{{ $item->status ? 'Pending' : 'Graded' }}</td>
 
                                         <td>{{ $item->created_at->format('d-M-Y') }}</td>
 
@@ -194,11 +171,11 @@
 
 
                                         {{-- <td>
-                                            <a href="{{ route('admins.users.show', $item->id) }}" class="float-left mr-3"><i
+                                            <a href="{{ route($last[1].'.users.show', $item->id) }}" class="float-left mr-3"><i
                                                     class="fas fa-eye"></i></a>
-                                            <a href="{{ route('admins.users.edit', $item->id) }}" class="float-left"><i
+                                            <a href="{{ route($last[1].'.users.edit', $item->id) }}" class="float-left"><i
                                                     class="fas fa-edit"></i></a>
-                                            <form action="{{ route('admins.users.destroy', $item->id) }}" method="POST">
+                                            <form action="{{ route($last[1].'.users.destroy', $item->id) }}" method="POST">
                                                 @method('delete') @csrf <button class="btn btn-link pt-0"><i
                                                         class="fas fa-trash-alt"></i></button>
                                             </form>
@@ -212,7 +189,95 @@
                             </tbody>
                         </table>
                         <div id="wow" class="align-right paginationstyle">
-                            {{-- {{ $users->links() }} --}}
+                            {{ $bets->links() }}
+                        </div>
+                    </div>
+
+
+                    <h1 style="text-align: center;">Packages ({{ $packages->total() }})</h1>
+                    <hr>
+
+                    <div class="align-right">
+                    </div>
+                    <div class="card-header">
+                        @include('admin.layouts.date-filter', [
+                            'role' => 0,
+                            'route' => 'usersajax',
+                            'show' => 1,
+                            'smallview' => 1,
+                        ])
+                        <br>
+                        <div class="card-tools mt-4">
+                            <div class="input-group input-group-sm">
+                                <form style="display: flex;" onsubmit="event.preventDefault();"
+                                    action="{{ route('users.index') }}">
+                                    <div class="input-group border rounded-pill m-1 ">
+                                        <input name="keyword" id="keyword" type="search" placeholder="Search"
+                                            aria-describedby="button-addon3" class="form-control bg-none border-0">
+                                        <div class="input-group-append border-0">
+                                            {{-- <button type="button" id="button-addon3" type="button"
+                                                class="btn btn-link text-blue"><i class="fa fa-search"></i></button> --}}
+                                        </div>
+                                    </div>
+                                </form>
+
+                                {{-- <a href="{{ route('products.import') }}"><button type="button"
+                                        class="btn btn-danger rounded-pill specialbutton m-1">Import products</button></a> --}}
+                                {{-- <a href="{{ route($last[1].'.users.create') }}"><button type="button"
+                                        class="btn btn-primary rounded-pill rounded-bill m-1 d-none">Add User</button></a> --}}
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-body table-responsive p-0">
+                        <table class="table table-hover text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Owner</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Description</th>
+                                    <th>Duration</th>
+                                    <th>Subscribers</th>
+                                    <th>Created At</th>
+                                    <th>Action</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <meta name="csrf-token" content="{{ csrf_token() }}" />
+                                @forelse ($packages as $item)
+                                    <tr>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->user->name }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->price }}</td>
+                                        <td style="word-break: break-word; white-space: normal;">{{ $item->description }}
+                                        </td>
+                                        <td>{{ $item->duration }}</td>
+                                        <td>{{ $item->subscribers->count() }}</td>
+                                        <td>{{ optional($item)->created_at->diffForHumans() }}</td>
+
+                                        <td>
+                                            <a href="{{ route($last[1].'.packages.edit', $item->id) }}"
+                                                class="float-left"><i class="fas fa-edit"></i></a>
+                                            <form action="{{ route($last[1].'.packages.destroy', $item->id) }}"
+                                                method="POST">
+                                                @method('delete') @csrf <button class="btn btn-link pt-0"><i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </form>
+                                        </td>
+
+
+                                    </tr>
+                                @empty
+                                    <p>No Data Found</p>
+                                @endforelse
+                            </tbody>
+                        </table>
+                        <div id="wow" class="align-right paginationstyle">
+                            {{ $packages->links() }}
                         </div>
                     </div>
                 </div>

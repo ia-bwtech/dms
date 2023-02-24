@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Agent;
 use App\Http\Controllers\Controller;
 use App\Models\Package;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -95,7 +96,7 @@ class PackageController extends Controller
 
 
             if (!$request->keyword) {
-                $packages = Package::orderBy('created_at', 'desc')->paginate(25);
+                $packages = Package::orderBy('created_at', 'desc')->where('is_admin','!=',1)->paginate(25);
             } else {
                 $packages = Package::where('name', 'like', '%' . $request->keyword . '%')
                     ->orWhere('email', 'like', '%' . $request->keyword . '%')
@@ -142,8 +143,8 @@ class PackageController extends Controller
      */
     public function create()
     {
-        $roles = Role::all();
-        return view('admin.package.create', compact('roles'));
+        $users = User::where('stripe_id','!=',null)->get();
+        return view('admin.package.create', compact('users'));
     }
 
     public function profile()
@@ -160,7 +161,7 @@ class PackageController extends Controller
     public function store(Request $request)
     {
 
-        Package::create($request->except('password') + ['password' => Hash::make($request->password)]);
+        Package::create($request->all());
         return redirect()->route('admins.packages.index');
     }
 
@@ -183,8 +184,8 @@ class PackageController extends Controller
      */
     public function edit(package $package)
     {
-        $roles = Role::all();
-        return view("admin.package.edit", compact('package', 'roles'));
+        $users = User::where('stripe_id','!=',null)->get();
+        return view("admin.package.edit", compact('package', 'users'));
     }
 
     /**

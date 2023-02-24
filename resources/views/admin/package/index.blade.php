@@ -1,6 +1,5 @@
 @extends('admin.layouts.app')
 @section('content')
-
     <section class="content-header">
         <div class="container-fluid">
             <div class="filtersdiv">
@@ -13,10 +12,9 @@
                     .filters .select2-container--default .select2-selection--single {
                         /* width: 220px; */
                     }
-
                 </style>
 
-                @include('admin.layouts.date-filter',['role'=>0,'route'=>'packagesajax'])
+                @include('admin.layouts.date-filter', ['role' => 0, 'route' => 'packagesajax'])
             </div>
 
             <div class="row mb-2">
@@ -56,7 +54,6 @@
             background: #1F6182;
             color: white;
         }
-
     </style>
     <div class="container-fluid">
         <div class="row">
@@ -69,7 +66,8 @@
                         <br>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
-                                <form style="display: flex;" action="{{ route('admins.packages.index') }}">
+                                <form style="display: flex;" onsubmit="event.preventDefault();"
+                                    action="{{ route($last[1] . '.packages.index') }}">
                                     <div class="input-group border rounded-pill m-1 ">
                                         <input name="keyword" id="keyword" type="search" placeholder="Search"
                                             aria-describedby="button-addon3" class="form-control bg-none border-0">
@@ -82,8 +80,9 @@
 
                                 {{-- <a href="{{ route('products.import') }}"><button type="button"
                                         class="btn btn-danger rounded-pill specialbutton m-1">Import products</button></a> --}}
-                                <a href="{{ route('admins.packages.create') }}"><button type="button"
-                                        class="btn btn-primary rounded-pill rounded-bill m-1">Add Package</button></a>
+                                <a href="{{ route($last[1] . '.packages.create') }}"><button type="button"
+                                        class="btn btn-primary rounded-pill rounded-bill m-1 d-none">Add
+                                        Package</button></a>
                             </div>
                         </div>
 
@@ -96,13 +95,15 @@
                                     <th>Owner</th>
                                     <th>Name</th>
                                     <th>Price</th>
-                                    <th>Description</th>
+                                    {{-- <th>Description</th> --}}
                                     <th>Duration</th>
+                                    <th>Active</th>
+                                    <th>Subscribers</th>
                                     <th>Created At</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="ajaxupdate">
                                 <meta name="csrf-token" content="{{ csrf_token() }}" />
                                 @include('admin.package.packagetable')
                             </tbody>
@@ -121,7 +122,8 @@
         </div>
     </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"
+        integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
 
     <script>
         var icon = document.getElementById("icon");
@@ -148,8 +150,36 @@
 
 
 
+<style>
+    .jconfirm-buttons .btn:nth-child(1){
+        background: green !important;
+        color: white !important;
+    }
+    .jconfirm-buttons .btn:nth-child(2){
+        background: red !important;
+        color: white !important;
+    }
+</style>
 
+    <script>
+        $('form').submit(function(event) {
+            event.preventDefault();
+            var form = $(this)[0];
+            $.confirm({
+                title: 'Confirm!',
+                content: 'Are you sure you want to perform this action?',
+                confirmButtonClass: 'btn-success',
+                buttons: {
+                    confirm: function() {
+                        // $.alert('Confirmed!');
+                        form.submit();
 
-
-
+                    },
+                    cancel: function() {
+                        // $.alert('Canceled!');
+                    }
+                }
+            });
+        });
+    </script>
 @endsection
