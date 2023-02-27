@@ -17,7 +17,7 @@
 	<div id="container">
 		<div id="left-col">
 			<div id="left-col-cont">
-				<a href="/"><img src="{{ asset('assets/images/header-logo2.png') }}" width="75%;" align="Logo" class="img-fluid"></a>
+				<a href="/"><img src="{{ asset('assets/images1/logo12.png') }}" width="75%;" align="Logo" class="img-fluid"></a>
 				<h2>Summary</h2>
 				<div class="item">
 				</div>
