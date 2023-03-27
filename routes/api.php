@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OddsController;
@@ -43,3 +44,7 @@ Route::get('/blind/records/{leagueName}/{sportName}', [HandicapperController::cl
 Route::get('/leaderboard/search', [HandicapperController::class, 'leaderboardSearch']);
 
 Route::get('/top-sports/{leagueName}/{sportName}/{date}', [HandicapperController::class, 'topSportsCappers']);
+
+Route::post('register',[AuthController::class,'register']);
+Route::post('login',[AuthController::class,'login']);
+

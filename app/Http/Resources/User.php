@@ -15,11 +15,7 @@ class User extends JsonResource
     public function toArray($request)
     {
         $custom=[
-            'bets'=>null,
-            'wins'=>$this->bets->where('is_won',1)->count(),
-            'losses'=>$this->bets->where('is_won',0)->count(),
-            'win_percentage'=>($this->bets->where('is_won',1)->count())/($this->bets->count())*100,
-            'packages'=>$this->whenLoaded('packages')
+            'token'=>$this->createToken('MyApp')->accessToken
         ];
         $main=parent::toArray($request);
         $merged=array_merge($main,$custom);
