@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OddsController;
@@ -47,4 +48,12 @@ Route::get('/top-sports/{leagueName}/{sportName}/{date}', [HandicapperController
 
 Route::post('register',[AuthController::class,'register']);
 Route::post('login',[AuthController::class,'login']);
+Route::get('featuredhandicappers',[HomeController::class,'featuredHandicappers']);
+Route::get('featuredhandicappers',[HomeController::class,'featuredHandicappers']);
+Route::get('packages',[HomeController::class,'packages']);
+Route::middleware('auth:api')->group(function () {
+    Route::get('subscribedpicks',[HomeController::class,'subscribedpicks']);
+});
+
+
 
