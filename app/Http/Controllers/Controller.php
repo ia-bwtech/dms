@@ -32,14 +32,14 @@ class Controller extends BaseController
     public function index1()
     {
         $data = $this->top10();
-        $hunchPackages = Package::where('user_id', 2)->get();
+        $blindPackages = Package::where('user_id', 2)->get();
         $featured = User::where('is_featured', 1)->with('packages')->first();
         $featuredHandicappers = $this->leaderboardApi('allleagues', 'allsports', 'all');
         // $bannersection=CMS::where('slug','home')->first();
         // dd($bannersection->content);
 
 
-        return view('welcome', compact('data', 'hunchPackages', 'featured', 'featuredHandicappers'));
+        return view('welcome', compact('data', 'blindPackages', 'featured', 'featuredHandicappers'));
     }
     public function deactivateSubscriptions()
     {

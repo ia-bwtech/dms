@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class User extends JsonResource
+class Handicapper extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,11 +14,6 @@ class User extends JsonResource
      */
     public function toArray($request)
     {
-        $custom=[
-            'token'=>$this->createToken('MyApp')->accessToken
-        ];
-        $main=parent::toArray($request);
-        $merged=array_merge($main,$custom);
-        return $merged;
+        return parent::toArray($request);
     }
 }

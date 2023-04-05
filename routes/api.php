@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OddsController;
@@ -38,8 +40,20 @@ Route::get('/net-units/{id}', [UserController::class, 'units']);
 Route::get('/net-units-sports/{id}', [UserController::class, 'sportsUnits']);
 Route::get('/pending-bets', [BetController::class, 'pendingBets']);
 
-//Hunch Records
-Route::get('/hunch/records/{leagueName}/{sportName}', [HandicapperController::class, 'hunchRecords']);
+//blind Records
+Route::get('/blind/records/{leagueName}/{sportName}', [HandicapperController::class, 'blindRecords']);
 Route::get('/leaderboard/search', [HandicapperController::class, 'leaderboardSearch']);
 
 Route::get('/top-sports/{leagueName}/{sportName}/{date}', [HandicapperController::class, 'topSportsCappers']);
+
+Route::post('register',[AuthController::class,'register']);
+Route::post('login',[AuthController::class,'login']);
+Route::get('featuredhandicappers',[HomeController::class,'featuredHandicappers']);
+Route::get('featuredhandicappers',[HomeController::class,'featuredHandicappers']);
+Route::get('packages',[HomeController::class,'packages']);
+Route::middleware('auth:api')->group(function () {
+    Route::get('subscribedpicks',[HomeController::class,'subscribedpicks']);
+});
+
+
+

@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->command('telescope:prune --hours=48')->daily();
+        // $schedule->command('telescope:prune --hours=48')->daily();
         $schedule->command('deactivate:cron')->everyMinute();
         $schedule->command('odds:fetch')->everyMinute()->withoutOverlapping();
         $schedule->command('bets:grade')->everyTenMinutes()->withoutOverlapping();

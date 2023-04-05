@@ -69,6 +69,15 @@
                         </div>
                         <div class="registration-form">
                             <h3>Registration Form</h3>
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
@@ -97,6 +106,12 @@
                                     <input class="form-control" required type="password" name="password_confirmation"
                                         placeholder="Confirm Password">
                                     @error('password_confirmation')
+                                        <div class="invalid-feedback"> {{ $message }} </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="referral_code" placeholder="Referral Code (Optional)">
+                                    @error('referral_code')
                                         <div class="invalid-feedback"> {{ $message }} </div>
                                     @enderror
                                 </div>

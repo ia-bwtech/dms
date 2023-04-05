@@ -99,7 +99,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     {{-- <li><a class="dropdown-item @if(request()->url()==url('/tournaments')) active @endif" href="/tournaments">Handicapper Tournaments</a></li> --}}
                                     <li><a class="dropdown-item @if(request()->url()==url('/historical-records')) active @endif" href="/historical-records">Historical Records</a></li>
-                                    <li><a class="dropdown-item @if(request()->url()==url('/forum')) active @endif" href="/forum">Forum</a></li>
+                                    {{-- <li><a class="dropdown-item @if(request()->url()==url('/forum')) active @endif" href="/forum">Forum</a></li> --}}
                                     <li><a class="dropdown-item @if(request()->url()==url('/faq')) active @endif" href="/faq">FAQ</a></li>
                                     <li><a class="dropdown-item @if(request()->url()==url('/blog-listing')) active @endif" href="/blog-listing">News and Articles</a></li>
 
@@ -207,7 +207,9 @@
                         <h2>Contact Info</h2>
                         <ul class="list-unstyled mb-0">
                             <li><i class="fa-solid fa-envelope"></i><a href="mailto:admin@blindsidebets.com">admin@blindsidebets.com</a></li>
-                            {{-- <li><i class="fa-solid fa-phone"></i><a href="tel:12231123111">+1 223 1123 111</a></li> --}}
+                            <li><i class="fa-solid fa-phone"></i>
+                                <p>If you or someone you know has a gambling problem and wants help, call</p>
+                                <a href="tel:1800GAMBLER">1-800-GAMBLER</a></li>
                         </ul>
                     </div>
                     {{-- <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 fourth-col">

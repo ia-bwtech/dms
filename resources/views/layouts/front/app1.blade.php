@@ -92,8 +92,8 @@
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
 				<h2>Overview</h2>
-				<p class="mt-3">Welcome to the THE HUNCHATL, The home of THE HUNCH consensus<br>group with 22 years of professional documented success!    Here you<br>can purchase THE HUNCHATL plays but also we challenge you to get<br>RANKED for free and beat our team to grow from an Amateur to a<br>Professional Handicapper yourself.</p>
-				<p class="mt-4">Here you have the ability to track your own plays and get rated,<br>ranked per sport against your peers and then be marketed by THE<br>HUNCHATL consensus group whereby you'll have the ability to create<br>and sell your own packages.</p>
+				<p class="mt-3">Welcome to the THE blindATL, The home of THE blind consensus<br>group with 22 years of professional documented success!    Here you<br>can purchase THE blindATL plays but also we challenge you to get<br>RANKED for free and beat our team to grow from an Amateur to a<br>Professional Handicapper yourself.</p>
+				<p class="mt-4">Here you have the ability to track your own plays and get rated,<br>ranked per sport against your peers and then be marketed by THE<br>blindATL consensus group whereby you'll have the ability to create<br>and sell your own packages.</p>
 				<a class="custom-btn prime-bg mt-5" href="#">Read More</a>
 			</div>
 		</div>

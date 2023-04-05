@@ -26,7 +26,7 @@
 </section>
 <!-- Banner Section -->
 
-{{-- Hunch Server --}}
+{{-- blind Server --}}
 {{-- <section id="handicapper" class="handicapper pt-120 pb-120 text-center">
     <div class="container">
         <widgetbot
