@@ -43,7 +43,7 @@
                     </div>
                 </form>
 
-                @if ($data->user->stripe_connected == 1)
+                @if($data->user->stripe_connected == 1 || $data->is_admin==1)
                     <form id="payment-form" data-secret="{{ $intent->client_secret }}">
                         <div id="payment-element">
                             <!-- Elements will create form elements here -->
@@ -134,7 +134,7 @@
     <!-- partial -->
 
 
-    @if ($data->user->stripe_connected == 1)
+    @if($data->user->stripe_connected == 1 || $data->is_admin==1)
         <script>
             const stripe = Stripe('{{ $stripePublishableKey }}');
 

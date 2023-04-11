@@ -209,7 +209,7 @@
                             <li><i class="fa-solid fa-envelope"></i><a href="mailto:admin@blindsidebets.com">admin@blindsidebets.com</a></li>
                             <li><i class="fa-solid fa-phone"></i>
                                 <p>If you or someone you know has a gambling problem and wants help, call</p>
-                                <a href="tel:1800GAMBLER">1-800-GAMBLER</a></li>
+                                <a href="tel:18004262537">1-800-GAMBLER</a></li>
                         </ul>
                     </div>
                     {{-- <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 fourth-col">
