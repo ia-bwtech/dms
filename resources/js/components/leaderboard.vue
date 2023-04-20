@@ -59,7 +59,7 @@
               <th>Rank</th>
               <th>Icon</th>
               <th>Name</th>
-              <th>Wins11</th>
+              <th>Wins</th>
               <th>Losses</th>
               <th>Win%</th>
               <th @click="getBySorted('net_units')">Units <i class="fas fa-sort"></i></th>

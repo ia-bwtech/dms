@@ -1,6 +1,6 @@
 <template>
     <section id="top" class="top-section pt-120 pb-120">
-	<div class="container">
+	<div class="container-fluid">
 		<!-- <div class="row">
 			<form class="option-form" action="" method="">
 				<div class="row justify-content-center">
@@ -111,7 +111,7 @@
                     this.leagues = res.data;
                 })
             },
-            
+
             getData() {
                 this.isloading = true;
                 axios.get(`/api/top-sports/${this.league}/${this.sport}/${this.daterange}`)
@@ -138,9 +138,9 @@
 		props: [
             'auth'
         ],
-        
+
         mounted() {
-            
+
         }
     }
 </script>
