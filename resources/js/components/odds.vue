@@ -3,50 +3,52 @@
 <section id="banner" class="banner-section banner-row banner-row-handicapperprofile banner-row-my-rankig odds-vue">
 <div class="container-fluid">
 <div class="row">
-<div class="col-5">
-<div class="name-pro">
-<h1>{{ auth.name ?? '-' }}</h1>
-</div>
-</div>
-<div class="col-7">
-<div class="row align-items-center">
-<table class="table bg-dark">
-	<thead class="text-center text-white">
-	<th class="border-bottom-0">Total Bets</th>
-	<th class="border-bottom-0">Wins</th>
-	<th class="border-bottom-0">Losses</th>
-	<th class="border-bottom-0">Win %</th>
-	<th class="border-bottom-0">ROI</th>
-	</thead>
-	<tbody class="text-center text-white font-weight-bold">
-	<tr>
-		<td>{{ auth.verified_wins + auth.verified_losses }}</td>
-		<td>{{ auth.verified_wins ?? '-' }}</td>
-		<td>{{ auth.verified_losses ?? '-' }}</td>
-		<td>{{ auth.verified_win_loss_percentage ?? '-' }}</td>
-		<td>{{ auth.verified_roi ?? '-' }}</td>
-	</tr>
-	</tbody>
-</table>
-</div>
-<div class="pro-image">
+<div class="col-3">
+	<div class="pro-image">
 <img :src="'images/profile/' + (auth.image ?? 'default-avatar.jpg')" width="316px" height="328px"
 class="sportsbettor-left-img">
 </div>
+
+</div>
+<div class="col-9">
+	<div class="row align-items-center">
+		<div class="name-pro">
+			<h1>{{ auth.name ?? '-' }}</h1>
+		</div>
+		<table class="table bg-dark">
+				<thead class="text-center text-white">
+				<th class="border-bottom-0">Total Bets</th>
+				<th class="border-bottom-0">Wins</th>
+				<th class="border-bottom-0">Losses</th>
+				<th class="border-bottom-0">Win %</th>
+				<th class="border-bottom-0">ROI</th>
+				</thead>
+				<tbody class="text-center text-white font-weight-bold">
+				<tr>
+					<td>{{ auth.verified_wins + auth.verified_losses }}</td>
+					<td>{{ auth.verified_wins ?? '-' }}</td>
+					<td>{{ auth.verified_losses ?? '-' }}</td>
+					<td>{{ auth.verified_win_loss_percentage ?? '-' }}</td>
+					<td>{{ auth.verified_roi ?? '-' }}</td>
+				</tr>
+				</tbody>
+		</table>
+	</div>
+
 </div>
 </div>
 <div class="row">
 </div>
 </div>
 </section>
-	
+
 <div class="main-content">
 <div class="container-fluid">
 <div class="row">
 
 	<section id="mybets" class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
 		<a href="#track-bets-col" id="btn-mobile-only">Make Bets <br><i class="fa-solid fa-arrow-down"></i></a>
-		<h2 class="mybets-title">My Bets</h2>
+		<h2 class="mybets-title"><img src="/assets/images1/bet.png" class="mybet"> My Bets</h2>
 		<div class="mybets-warp">
 			<div v-if="pendingBetsLoading" class="mybets-item mybets-placeholders">
 				<content-placeholders :rounded="true">
@@ -75,7 +77,21 @@ class="sportsbettor-left-img">
 	</section>
 
 	<section id="netunit"  class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
-		<h2 class="netunit-title">Net Units</h2>
+		<div class="row net-units-row">
+    <div class="col-xl-6">
+      <h2 class="netunit-title">Net Units</h2>
+    </div>
+    <div class="col-xl-6">
+      <div id="verified-col" class="verified">
+        <!-- <p>VERIFIED</p> -->
+        <verified-component :auth="auth"></verified-component>
+                  <!-- <label class="switch-new">
+                    <input type="checkbox" />
+                    <span class="slider-new round-new"></span>
+                  </label> -->
+                </div>
+              </div>
+            </div>
 			<div class="netunit-warp">
 				<div v-for="item in units" :key="item.id" @click="setStatsDetails(item, item.name)" data-bs-toggle="modal" data-bs-target="#statsmodal" class="netunit-item">
 					<h3>{{ item.name }}</h3>
@@ -767,7 +783,7 @@ class="sportsbettor-left-img">
 
 
 	<section id="netunileague"  class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
-		<h2 class="">Net Units by League</h2>
+		<h2 class="net-units-by-league">Net Units by League</h2>
 		<div class="netunileague-warp">
 			<div v-for="item in sports_units" :key="item.id" @click="setStatsDetails(item, item.league)" data-bs-toggle="modal" data-bs-target="#statsmodal" class="netunileague-item">
 				<span class="league-icon" v-html="item.league_icon" style="font-size: 50px;"></span>

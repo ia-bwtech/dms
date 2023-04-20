@@ -22,10 +22,16 @@
     <!-- Banner Section -->
     <!-- Banner Section1 -->
     <section id="banner" class="banner-section banner-row banner-row-handicapperprofile">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-7">
-                    <div class="">
+                <div class="col-3">
+                <div class="pro-image">
+                        <img src="{{ asset('images/profile/' . ($user->image ?? 'default-avatar.jpg')) }}" width="316px" height="328px"
+                            class="sportsbettor-left-img">
+                    </div>
+                   </div>
+                <div class="col-9">
+
                         <div class="row align-items-center">
                             <div class="name-pro">
                                 <h1>{{ $user->name ?? '-' }}</h1>
@@ -50,24 +56,18 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-                    <div class="pro-image">
-                        <img src="{{ asset('images/profile/' . ($user->image ?? 'default-avatar.jpg')) }}" width="316px" height="328px"
-                            class="sportsbettor-left-img">
-                    </div>
-
-                </div>
-
-                <div class="pro-con col-7">
-                    <p class="fs-6 text-white">orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-
+                             <p class="fs-6 text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
+                        </div>
+
+
+
                 </div>
-            </div>
-            <div class="row">
+
+
 
             </div>
+
 
         </div>
     </section>

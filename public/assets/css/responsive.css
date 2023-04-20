@@ -71,9 +71,7 @@
 		font-size: 40px;
     	line-height: 50px;
 	}
-	.second-col ul:last-child {
-    	padding-left: 20px;
-	}
+
 	.newsletter-form input{
 		height: 68px;
 		margin-bottom: 12px;
