@@ -114,8 +114,7 @@
                             {{-- Mobile Dashboard --}}
                             <li class="nav-item dropdown login-btn  mobiledashboardbtn">
 
-                                <a class="nav-link dropdown-toggle" href="{{ $route }}" id="navbarDropdown"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link" href="{{ $route }}" id="navbarDropdown">
                                     Dashboard
                                 </a>
 

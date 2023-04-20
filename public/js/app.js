@@ -6436,7 +6436,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
 /* harmony export */ });
 var render = function render() {
-  var _vm$auth$name, _vm$auth$verified_win, _vm$auth$verified_los, _vm$auth$verified_win2, _vm$auth$verified_roi, _vm$auth$image;
+  var _vm$auth$image, _vm$auth$name, _vm$auth$verified_win, _vm$auth$verified_los, _vm$auth$verified_win2, _vm$auth$verified_roi;
 
   var _vm = this,
       _c = _vm._self._c;
@@ -6451,18 +6451,8 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "col-5"
+    staticClass: "col-3"
   }, [_c("div", {
-    staticClass: "name-pro"
-  }, [_c("h1", [_vm._v(_vm._s((_vm$auth$name = _vm.auth.name) !== null && _vm$auth$name !== void 0 ? _vm$auth$name : "-"))])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-7"
-  }, [_c("div", {
-    staticClass: "row align-items-center"
-  }, [_c("table", {
-    staticClass: "table bg-dark"
-  }, [_vm._m(0), _vm._v(" "), _c("tbody", {
-    staticClass: "text-center text-white font-weight-bold"
-  }, [_c("tr", [_c("td", [_vm._v(_vm._s(_vm.auth.verified_wins + _vm.auth.verified_losses))]), _vm._v(" "), _c("td", [_vm._v(_vm._s((_vm$auth$verified_win = _vm.auth.verified_wins) !== null && _vm$auth$verified_win !== void 0 ? _vm$auth$verified_win : "-"))]), _vm._v(" "), _c("td", [_vm._v(_vm._s((_vm$auth$verified_los = _vm.auth.verified_losses) !== null && _vm$auth$verified_los !== void 0 ? _vm$auth$verified_los : "-"))]), _vm._v(" "), _c("td", [_vm._v(_vm._s((_vm$auth$verified_win2 = _vm.auth.verified_win_loss_percentage) !== null && _vm$auth$verified_win2 !== void 0 ? _vm$auth$verified_win2 : "-"))]), _vm._v(" "), _c("td", [_vm._v(_vm._s((_vm$auth$verified_roi = _vm.auth.verified_roi) !== null && _vm$auth$verified_roi !== void 0 ? _vm$auth$verified_roi : "-"))])])])])]), _vm._v(" "), _c("div", {
     staticClass: "pro-image"
   }, [_c("img", {
     staticClass: "sportsbettor-left-img",
@@ -6471,7 +6461,17 @@ var render = function render() {
       width: "316px",
       height: "328px"
     }
-  })])])]), _vm._v(" "), _c("div", {
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "col-9"
+  }, [_c("div", {
+    staticClass: "row align-items-center"
+  }, [_c("div", {
+    staticClass: "name-pro"
+  }, [_c("h1", [_vm._v(_vm._s((_vm$auth$name = _vm.auth.name) !== null && _vm$auth$name !== void 0 ? _vm$auth$name : "-"))])]), _vm._v(" "), _c("table", {
+    staticClass: "table bg-dark"
+  }, [_vm._m(0), _vm._v(" "), _c("tbody", {
+    staticClass: "text-center text-white font-weight-bold"
+  }, [_c("tr", [_c("td", [_vm._v(_vm._s(_vm.auth.verified_wins + _vm.auth.verified_losses))]), _vm._v(" "), _c("td", [_vm._v(_vm._s((_vm$auth$verified_win = _vm.auth.verified_wins) !== null && _vm$auth$verified_win !== void 0 ? _vm$auth$verified_win : "-"))]), _vm._v(" "), _c("td", [_vm._v(_vm._s((_vm$auth$verified_los = _vm.auth.verified_losses) !== null && _vm$auth$verified_los !== void 0 ? _vm$auth$verified_los : "-"))]), _vm._v(" "), _c("td", [_vm._v(_vm._s((_vm$auth$verified_win2 = _vm.auth.verified_win_loss_percentage) !== null && _vm$auth$verified_win2 !== void 0 ? _vm$auth$verified_win2 : "-"))]), _vm._v(" "), _c("td", [_vm._v(_vm._s((_vm$auth$verified_roi = _vm.auth.verified_roi) !== null && _vm$auth$verified_roi !== void 0 ? _vm$auth$verified_roi : "-"))])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "row"
   })])]), _vm._v(" "), _c("div", {
     staticClass: "main-content"
@@ -6484,9 +6484,7 @@ var render = function render() {
     attrs: {
       id: "mybets"
     }
-  }, [_vm._m(1), _vm._v(" "), _c("h2", {
-    staticClass: "mybets-title"
-  }, [_vm._v("My Bets")]), _vm._v(" "), _c("div", {
+  }, [_vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("div", {
     staticClass: "mybets-warp"
   }, [_vm.pendingBetsLoading ? _c("div", {
     staticClass: "mybets-item mybets-placeholders"
@@ -6504,7 +6502,7 @@ var render = function render() {
     }
   })], 1)], 1) : _vm.pendingBets.length == 0 ? _c("div", {
     staticClass: "mybets-item mybets-null"
-  }, [_vm._m(2)]) : _vm._l(_vm.pendingBets, function (pendingBet) {
+  }, [_vm._m(3)]) : _vm._l(_vm.pendingBets, function (pendingBet) {
     return _c("div", {
       key: pendingBet.id,
       staticClass: "mybets-item mybets-block"
@@ -6526,9 +6524,20 @@ var render = function render() {
     attrs: {
       id: "netunit"
     }
-  }, [_c("h2", {
-    staticClass: "netunit-title"
-  }, [_vm._v("Net Units")]), _vm._v(" "), _c("div", {
+  }, [_c("div", {
+    staticClass: "row net-units-row"
+  }, [_vm._m(4), _vm._v(" "), _c("div", {
+    staticClass: "col-xl-6"
+  }, [_c("div", {
+    staticClass: "verified",
+    attrs: {
+      id: "verified-col"
+    }
+  }, [_c("verified-component", {
+    attrs: {
+      auth: _vm.auth
+    }
+  })], 1)])]), _vm._v(" "), _c("div", {
     staticClass: "netunit-warp"
   }, _vm._l(_vm.units, function (item) {
     return _c("div", {
@@ -6632,7 +6641,7 @@ var render = function render() {
     staticClass: "trackbets-tabs"
   }, [_c("div", {
     staticClass: "box-menu"
-  }, [_c("ul", {}, [_vm._m(3), _vm._v(" "), _c("li", [_c("a", {
+  }, [_c("ul", {}, [_vm._m(5), _vm._v(" "), _c("li", [_c("a", {
     attrs: {
       href: "#F5"
     }
@@ -6740,7 +6749,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -6751,7 +6760,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -6762,7 +6771,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -6773,7 +6782,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : _vm._e(), _vm._v(" "), item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
       return _c("span", {
         key: odd.id
@@ -6788,7 +6797,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -6799,7 +6808,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -6810,7 +6819,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -6821,7 +6830,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
       return _c("span", {
         key: odd.id
@@ -6834,7 +6843,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -6843,7 +6852,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -6852,7 +6861,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -6861,7 +6870,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
       staticClass: "mi game-box"
     }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
@@ -6878,7 +6887,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -6889,7 +6898,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -6900,7 +6909,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
       return _c("span", {
         key: odd.id
@@ -6913,7 +6922,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -6922,7 +6931,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -6931,7 +6940,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])])]), _vm._v(" "), _c("div", {
       staticClass: "bet-description mt-3"
     }, [_c("div", {
@@ -6989,7 +6998,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -7000,7 +7009,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -7011,7 +7020,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -7022,7 +7031,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
       return _c("span", {
         key: odd.id
@@ -7035,7 +7044,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -7044,7 +7053,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -7053,7 +7062,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Puck Line" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -7062,7 +7071,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
       staticClass: "mi game-box"
     }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
@@ -7079,7 +7088,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -7090,7 +7099,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -7101,7 +7110,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
       return _c("span", {
         key: odd.id
@@ -7114,7 +7123,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -7123,7 +7132,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -7132,7 +7141,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])])])])]);
   })], 2)]), _vm._v(" "), _c("div", {
     staticClass: "box",
@@ -7221,7 +7230,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -7232,7 +7241,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -7243,7 +7252,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
       return _c("span", {
         key: odd.id
@@ -7256,7 +7265,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -7265,7 +7274,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -7274,7 +7283,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
       staticClass: "mi game-box"
     }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
@@ -7291,7 +7300,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -7302,7 +7311,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -7313,7 +7322,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "home_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
       return _c("span", {
         key: odd.id
@@ -7326,7 +7335,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -7335,7 +7344,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -7344,7 +7353,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])])]), _vm._v(" "), _c("div", {
       staticClass: "bet-description mt-3"
     }, [_c("div", {
@@ -7402,7 +7411,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -7413,7 +7422,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -7424,7 +7433,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
       return _c("span", {
         key: odd.id
@@ -7437,7 +7446,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Asian Handicap" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -7446,7 +7455,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Point Spread" && odd.name.includes(item.away_team) ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -7455,7 +7464,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.bet_points > 0 ? "+" + odd.bet_points.toString() : odd.bet_points)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])]), _vm._v(" "), _c("div", {
       staticClass: "mi game-box"
     }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
@@ -7472,7 +7481,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -7483,7 +7492,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -7494,7 +7503,7 @@ var render = function render() {
             _vm.setBetDetails(item.home_team, item.away_team, "away_team", odd.price, odd.market_name, odd.name, item.game_id, item.sport, item.league, odd.id), _vm.calculateToWin();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : item.is_live == true && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
       return _c("span", {
         key: odd.id
@@ -7507,7 +7516,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Points" && odd.name.includes("Under") ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -7516,7 +7525,7 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "1st Half Total Goals" && odd.name.includes("Under") ? _c("span", [_c("button", {
         attrs: {
           type: "button"
         },
@@ -7525,14 +7534,16 @@ var render = function render() {
             return _vm.showError();
           }
         }
-      }, [_vm._v("\r\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : _vm._e()]);
     }), 0) : _c("span", [_c("p", [_vm._v("N/A")])])])])])]);
   })], 2)])])])]), _vm._v(" "), _c("section", {
     staticClass: "col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5",
     attrs: {
       id: "netunileague"
     }
-  }, [_c("h2", {}, [_vm._v("Net Units by League")]), _vm._v(" "), _c("div", {
+  }, [_c("h2", {
+    staticClass: "net-units-by-league"
+  }, [_vm._v("Net Units by League")]), _vm._v(" "), _c("div", {
     staticClass: "netunileague-warp"
   }, _vm._l(_vm.sports_units, function (item) {
     return _c("div", {
@@ -7578,7 +7589,7 @@ var render = function render() {
     }
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(4), _vm._v(" "), _c("form", {
+  }, [_vm._m(6), _vm._v(" "), _c("form", {
     attrs: {
       enctype: "multipart/form-data"
     },
@@ -7792,7 +7803,7 @@ var render = function render() {
     }, [_vm._v(_vm._s(bet.to_win) + "u")]), _vm._v(" "), _c("div", {
       staticClass: "base-pick__status"
     }, [_vm._v("5:20 AM")])])])])])]);
-  }), 0)]), _vm._v(" "), _vm._m(5)])])])])]);
+  }), 0)]), _vm._v(" "), _vm._m(7)])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -7828,7 +7839,28 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
+  return _c("h2", {
+    staticClass: "mybets-title"
+  }, [_c("img", {
+    staticClass: "mybet",
+    attrs: {
+      src: "/assets/images1/bet.png"
+    }
+  }), _vm._v(" My Bets")]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
   return _c("div", {}, [_c("h3", [_vm._v("No current Active Bets")])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "col-xl-6"
+  }, [_c("h2", {
+    staticClass: "netunit-title"
+  }, [_vm._v("Net Units")])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
