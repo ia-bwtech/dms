@@ -5960,7 +5960,7 @@ var render = function render() {
       id: "top"
     }
   }, [_c("div", {
-    staticClass: "container"
+    staticClass: "container-fluid"
   }, [_c("div", {
     staticClass: "row mt-80"
   }, [_c("div", {
@@ -6343,7 +6343,7 @@ var render = function render() {
     staticClass: "row mt-40"
   }, [_c("table", {
     staticClass: "top"
-  }, [_c("thead", [_c("tr", [_c("th", [_vm._v("Rank")]), _vm._v(" "), _c("th", [_vm._v("Icon")]), _vm._v(" "), _c("th", [_vm._v("Name")]), _vm._v(" "), _c("th", [_vm._v("Wins11")]), _vm._v(" "), _c("th", [_vm._v("Losses")]), _vm._v(" "), _c("th", [_vm._v("Win%")]), _vm._v(" "), _c("th", {
+  }, [_c("thead", [_c("tr", [_c("th", [_vm._v("Rank")]), _vm._v(" "), _c("th", [_vm._v("Icon")]), _vm._v(" "), _c("th", [_vm._v("Name")]), _vm._v(" "), _c("th", [_vm._v("Wins")]), _vm._v(" "), _c("th", [_vm._v("Losses")]), _vm._v(" "), _c("th", [_vm._v("Win%")]), _vm._v(" "), _c("th", {
     on: {
       click: function click($event) {
         return _vm.getBySorted("net_units");
