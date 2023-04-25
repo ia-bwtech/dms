@@ -39,7 +39,7 @@
         </td> --}}
         <td>{{ isset($item->bets->last()->created_at) ? $item->bets->last()->created_at->format('d-M-Y') : 'Never Placed' }}
         </td>
-        <td>{{ optional($item)->created_at->diffForHumans() }}</td>
+        {{-- <td>{{ optional($item)->created_at->diffForHumans() }}</td> --}}
 
         <td>
             <a href="{{ route($last[1] . '.users.show', $item->id) }}" class="float-left mr-3"><i

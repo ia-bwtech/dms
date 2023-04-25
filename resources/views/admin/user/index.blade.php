@@ -101,7 +101,7 @@
                                     <th>verified wins</th>
                                     <th>verified roi</th>
                                     <th>Last Bet Placed On</th>
-                                    <th>Created At</th>
+                                    {{-- <th>Created At</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </thead>
