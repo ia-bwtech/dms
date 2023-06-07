@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Bet;
-use App\Models\league;
+use App\Models\League;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
@@ -622,7 +622,7 @@ class UserController extends Controller
     public function sportsUnits($id)
     {
         $user = User::where('id', $id)->with('bets')->first();
-        $leagues = league::all();
+        $leagues = League::all();
 
         // foreach($leagues as $item) {
         //     if($item->sport->name == 'football' && $item->name == 'NCAA') {

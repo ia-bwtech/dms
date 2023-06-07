@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use App\Models\Odd;
 use App\Models\Game;
-use App\Models\league;
+use App\Models\League;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
@@ -46,11 +46,11 @@ class FetchOdds extends Command
     {
         $date = Carbon::createFromFormat('Y-m-d 00:00',  Carbon::today()->format('Y-m-d 00:00'));
         $nextDate = $date->add(2, 'days')->format('Y-m-d 00:00');
-        $leagues = league::all();
+        $leagues = League::all();
         // return $leagues;
 
         foreach($leagues as $league) {
-            
+
             //Check for NCAAF and NCAAB
             // if($league->name == 'NCAAF') {
             //     $sport = 'football';
@@ -64,7 +64,7 @@ class FetchOdds extends Command
             //     $sport = $league->sport->name;
             //     $league = $league->name;
             // }
-            
+
             $allGames = Http::get('https://api-external.oddsjam.com/api/v2/games', [
                 'key' => '0483697b-57b6-4787-9bdc-1fc4688bcee7',
                 'sport' =>  $league->sport->name,
@@ -79,7 +79,7 @@ class FetchOdds extends Command
             if(!isset($allGames->data)) {
                 continue;
             }
-            
+
             //Check if there are any games in the response
             if(count($allGames->data) == 0) {
                 continue;
@@ -99,7 +99,7 @@ class FetchOdds extends Command
                 ]);
             }
         }
-        
+
         $gamesData = Game::whereBetween('start_date', array(Carbon::today(), $nextDate))->get();
         foreach($gamesData as $singleGame) {
             $odds = Http::get('https://api-external.oddsjam.com/api/v2/game-odds', [
@@ -108,7 +108,7 @@ class FetchOdds extends Command
                 'game_id' => $singleGame->game_id,
                 'is_main' => 1
             ]);
-            
+
             $odds = json_decode($odds);
             // return $odds->data;
             if(count($odds->data) == 0) {

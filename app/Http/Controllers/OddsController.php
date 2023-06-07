@@ -19,11 +19,11 @@ class OddsController extends Controller
 
         $date = Carbon::createFromFormat('Y-m-d 00:00',  Carbon::today()->format('Y-m-d 00:00'));
         $nextDate = $date->add(2, 'days')->format('Y-m-d 00:00');
-        $leagues = league::all();
+        $leagues = League::all();
         // return $leagues;
 
         foreach($leagues as $league) {
-            
+
             //Check for NCAAF and NCAAB
             // if($league->name == 'NCAAF') {
             //     $sport = 'football';
@@ -37,7 +37,7 @@ class OddsController extends Controller
             //     $sport = $league->sport->name;
             //     $league = $league->name;
             // }
-            
+
             $allGames = Http::get('https://api-external.oddsjam.com/api/v2/games', [
                 'key' => '0483697b-57b6-4787-9bdc-1fc4688bcee7',
                 'sport' =>  $league->sport->name,
@@ -52,7 +52,7 @@ class OddsController extends Controller
             if(!isset($allGames->data)) {
                 continue;
             }
-            
+
             //Check if there are any games in the response
             if(count($allGames->data) == 0) {
                 continue;
@@ -72,7 +72,7 @@ class OddsController extends Controller
                 ]);
             }
         }
-        
+
         $gamesData = Game::whereBetween('start_date', array(Carbon::today(), $nextDate))->get();
         foreach($gamesData as $singleGame) {
             $odds = Http::get('https://api-external.oddsjam.com/api/v2/game-odds', [
@@ -81,7 +81,7 @@ class OddsController extends Controller
                 'game_id' => $singleGame->game_id,
                 'is_main' => 1
             ]);
-            
+
             $odds = json_decode($odds);
             // return $odds->data;
             if(count($odds->data) == 0) {
@@ -132,18 +132,18 @@ class OddsController extends Controller
             $sport = $request->sport;
             $league = $request->league;
         }
-        
+
         $data = Game::whereDate('start_date', $request->date)->where('league', $league)->where('sport', $sport)->with('odds')->orderBy('start_date', 'ASC')->get();
 
         foreach($data as $game) {
-                
+
             $homeLogo = Team::where('team_name', $game->home_team)->first();
             if(isset($homeLogo->team_name)) {
                 $homeLogo = $homeLogo->team_name;
                 $homeLogo = asset('images/teams/' . $homeLogo . '.png');
                 $game->home_logo = $homeLogo;
             }
-            
+
             $awayLogo = Team::where('team_name', $game->away_team)->first();
             if(isset($awayLogo->team_name)) {
                 $awayLogo = $awayLogo->team_name;
@@ -151,7 +151,7 @@ class OddsController extends Controller
                 $game->away_logo = $awayLogo;
             }
         }
-        
+
         return response()->json(['status' => true, 'total_games' => count($data), 'message' => 'Odds data', 'games' => $data]);
     }
 
@@ -206,11 +206,11 @@ class OddsController extends Controller
 
             //Passing moneyline value to odds array
             $item->away_money_line = $awayMoneyline;
-            
+
             $item->odds = $odds;
         }
         return $data;
-    
+
         return response()->json(['games' => $games]);
     }
 }

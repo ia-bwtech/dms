@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\league;
+use App\Models\League;
 
 class LeagueController extends Controller
 {
     public function index() {
-        $data = league::with('sport')->orderBy('sport_id')->get();
+        $data = League::with('sport')->orderBy('sport_id')->get();
 
         foreach($data as $item) {
             if($item->name == 'NCAA' && $item->sport->name == 'football') {

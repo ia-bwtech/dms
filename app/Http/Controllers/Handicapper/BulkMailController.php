@@ -10,7 +10,7 @@ use App\Models\Bet;
 use App\Models\BulkMail;
 use App\Models\BulkMailRecipient;
 use App\Models\Game;
-use App\Models\league;
+use App\Models\League;
 use App\Models\Team;
 use App\Models\User;
 use Exception;
@@ -100,7 +100,7 @@ class BulkMailController extends Controller
     }
     public function index(Request $request)
     {
-        // $leagues=league::all();
+        // $leagues=League::all();
         // Team::where('league','NCAA')->where('sport','football')->update(['league'=>'NCAAF']);
         // Team::where('league','NCAA')->where('sport','basketball')->update(['league'=>'NCAAB']);
         // foreach($leagues as $league){

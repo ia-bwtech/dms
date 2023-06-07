@@ -12,7 +12,7 @@ use App\Models\Payment;
 use App\Models\Odd;
 use App\Models\Bet;
 use App\Models\Game;
-use App\Models\league;
+use App\Models\League;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
