@@ -150,7 +150,7 @@
 
 
         <!-- boxsection Section -->
-        <section id="howtouse" class="howtouse">
+        <section id="howtouse" class="howtouse d-none">
             <div class="container-fluid">
                 <div class="row align-items-center howtouse-video">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -170,14 +170,7 @@
             </div>
         </section>
         <!-- boxsection Section -->
-
-
-
-
         <!-- boxsection Section -->
         <!-- Blind Side Bets - Lyman Philips 'sign up as a sports bettor?' end Section -->
-
-
-
     </div>
 @endsection

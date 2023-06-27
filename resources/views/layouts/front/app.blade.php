@@ -178,7 +178,7 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 first-col">
                         <img src="{{ asset('assets/images1/logo-footer.png') }}" alt="Footer Logo" class="img-fluid">
-                        <p class="mt-4 mb-4">The Amateur & Professional Sports better Verification Network</p>
+                        <p class="mt-4 mb-4">The Amateur & Professional Sports Bettor Verification Network</p>
                         <ul class="list-unstyled mb-0 custom-list">
                             <li><a href="https://www.tiktok.com/@blindsidebets" target="_blank" rel="nofollow"><img src="{{ asset('assets/images/tiktok-icon.png') }}" alt="TikTok Icon" class="img-fluid"></a></li>
                             <li><a href="https://instagram.com/blindsidebets" target="_blank" rel="nofollow"><img src="{{ asset('assets/images/insta-icon.png') }}" alt="Instagram Icon" class="img-fluid"></a></li>
@@ -197,7 +197,7 @@
                             {{-- <li><a href="#">Ranked Packages</a></li> --}}
                             {{-- <li><a href="#">Free Play</a></li> --}}
                             {{-- <li><a href="#">Reward</a></li> --}}
-                            <li><a href="/leaderboard">Leader Board</a></li>
+                            <li><a href="/leaderboard">Leaderboard</a></li>
                             <li><a href="/faq">FAQ</a></li>
                             <li><a href="/forum">Forum</a></li>
                         </ul>
@@ -231,7 +231,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <p class="mb-0">Copyright 2022 © Blind Side Bets, All Rights Reserved.</p>
+                        <p class="mb-0">Copyright {{date("Y")}} © Blindside Bets, All Rights Reserved.</p>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-end">
                         <ul class="list-unstyled mb-0">

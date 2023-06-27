@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1>Welcome To Blind Side Bets</h1>
+                    <h1>Welcome To Blindside Bets</h1>
                     <h2>top sports bettor</h2>
                     <h3>leaderboard</h3>
                 </div>
