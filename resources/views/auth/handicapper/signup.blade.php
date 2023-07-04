@@ -65,7 +65,7 @@
                 <div class="row align-items-center howtouse-video">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="howtousevideoplay">
-                            <img src="/assets/images1/howtousevideo.png" class="howtouseimg">
+                            <img src="/assets/images1/howtousevideo.jpg" class="howtouseimg">
                         </div>
                         <div class="registration-form">
                             <h3>Registration Form</h3>

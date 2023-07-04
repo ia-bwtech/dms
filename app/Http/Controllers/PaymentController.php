@@ -121,20 +121,21 @@ class PaymentController extends Controller
             []
         );
 
+
         // if($data->status == 'succeeded') {
         $payment = Payment::create([
             'user_id' => auth()->user()->id,
-            'package_id' => $data->charges->data[0]->description,
-            'charge_id' => $data->charges->data[0]->id,
-            'amount' => $data->charges->data[0]->amount_captured,
-            'status' => $data->charges->data[0]->status,
+            'package_id' => $data->description,
+            'charge_id' => $data->latest_charge,
+            'amount' => $data->amount,
+            'status' => $data->status,
         ]);
 
 
 
         $subscription = Subscription::create([
             'user_id' => auth()->user()->id,
-            'package_id' => $data->charges->data[0]->description,
+            'package_id' => $data->description,
             'package_owner_id' => $payment->package->user->id,
             'payment_id' => $payment->id,
             'status' => 1,

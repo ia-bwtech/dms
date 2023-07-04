@@ -406,7 +406,7 @@ section#sports-bettor-sec {
 
 section#sports-bettor-sec:before {
     content: '';
-    background: url(/assets/images1/registrationform-bg.png) center bottom no-repeat;
+    background: url(/assets/images1/registrationform-bg.jpg) center bottom no-repeat;
     width: 1920px;
     height: 1213px;
     position: absolute;
@@ -1969,23 +1969,23 @@ input#flexSwitchCheckChecked {
 }
 
 .banner-row-faq {
-    background: url(/assets/images1/faq.png) center center no-repeat;
+    background: url(/assets/images1/faq.jpg) center center no-repeat;
 }
 
 .banner-row-handicapperpackages {
-    background: url(/assets/images1/handicapperpackages.png) center center no-repeat;
+    background: url(/assets/images1/handicapperpackages.jpg) center center no-repeat;
 }
 
 .banner-row-leaderboard {
-    background: url(/assets/images1/leaderboardred.png) center center no-repeat;
+    background: url(/assets/images1/leaderboardred.jpg) center center no-repeat;
 }
 
 .banner-row-social {
-    background: url(/assets/images1/socialmedia.png) center center no-repeat;
+    background: url(/assets/images1/socialmedia.jpg) center center no-repeat;
 }
 
 .banner-row-handicapperprofile {
-    background: url(/assets/images1/handicapperprofile.png) center center no-repeat;
+    background: url(/assets/images1/handicapperprofile.jpg) center center no-repeat;
 }
 
 h2.mt-4.mb-4 {

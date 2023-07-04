@@ -3,7 +3,7 @@
 @section('header')
 <style>
     body{
-    background: url("/assets/images1/createaccount-bg.png") center center no-repeat;
+    background: url("/assets/images1/createaccount-bg.jpg") center center no-repeat;
     background-size: cover;    }
 </style>
 <link rel="stylesheet" type="text/css" href="assets/css/styleguest.css">

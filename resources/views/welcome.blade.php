@@ -79,7 +79,7 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="row sports-bettor-col">
                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <a class="btn-borderred" href="{{ route('handicapper.signup') }}">Get Started</a>
+                                <a class="btn-borderred" href="{{ route('bettor.signup') }}">Get Started</a>
                             </div>
                             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
                                 <p>Buy plays from verified cappers<br> View handicapper betting history<br> Increase your
