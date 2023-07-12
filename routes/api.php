@@ -70,6 +70,7 @@ Route::prefix("on-board")->group(function(){
 Route::group(["middleware"=>"auth:api"], function(){
     Route::prefix("/me")->group(function(){
         Route::get('/dashboard', [HomeController::class, 'dashboard']);
+        Route::post("/profile-image-upload", [HomeController::class, 'user_image_upload']);
     });
 });
 
