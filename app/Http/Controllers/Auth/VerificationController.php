@@ -48,7 +48,6 @@ class VerificationController extends Controller
             // dd(auth()->user());
 
             if(auth()->check()){
-
                 if(auth()->user()->is_handicapper==1){
                     $this->redirectTo = '/handicapper/thankyou';
                 }
@@ -60,16 +59,16 @@ class VerificationController extends Controller
         });
     }
 
-    public function verify(Request $request)
-{
-    $user = User::find($request->route('id'));
+    public function verify(Request $request){
 
-    if (!hash_equals((string) $request->route('hash'), sha1($user->getEmailForVerification()))) {
-        throw new AuthorizationException();
-    }
+        $user = User::find($request->route('id'));
 
-    if ($user->markEmailAsVerified())
-        event(new Verified($user));
+        if (!hash_equals((string) $request->route('hash'), sha1($user->getEmailForVerification()))) {
+            throw new AuthorizationException();
+        }
+
+        if ($user->markEmailAsVerified())
+            event(new Verified($user));
         Auth::loginUsingId($user->id);
         if(auth()->user()->is_handicapper==1){
             $this->redirectTo = '/handicapper/thankyou';
@@ -77,6 +76,10 @@ class VerificationController extends Controller
         else{
             $this->redirectTo = '/bettor/thankyou';
         }
-    return redirect($this->redirectPath())->with('verified', true);
-}
+        return redirect($this->redirectPath())->with('verified', true);
+    }
+
+    public function resend(Request $request)
+    {
+    }
 }

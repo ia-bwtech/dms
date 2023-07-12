@@ -19,7 +19,7 @@
 	<div class="container">
 		<div class="row mt-80">
 			<div class="col-12 text-center">
-				<h2>Historical Records</h2>
+				<h2>Historical leaderboard</h2>
 			</div>
 		</div>
 		<div class="row mt-40">

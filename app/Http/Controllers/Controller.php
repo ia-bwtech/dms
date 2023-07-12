@@ -29,6 +29,8 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    public $jsonResponseData = ["status"=>false, "message"=>"", "data"=>[]];
+
     public function index1()
     {
         $data = $this->top10();
@@ -277,5 +279,9 @@ class Controller extends BaseController
         // $data = User::where('is_handicapper', 1)->orderBy('verified_win_loss_percentage', 'desc')->paginate(5);
 
         // return $data;
+    }
+
+    public function jsonResponse($status_code = 200){
+        return response()->json($this->jsonResponseData, $status_code);
     }
 }

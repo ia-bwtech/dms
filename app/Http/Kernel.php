@@ -43,6 +43,7 @@ class Kernel extends HttpKernel
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\ForceJsonResponse::class,
         ],
     ];
 
@@ -71,6 +72,6 @@ class Kernel extends HttpKernel
         'adminsauth' => \App\Http\Middleware\adminsauth::class,
         'handicappersauth' => \App\Http\Middleware\handicappersauth::class,
         'bettorsauth' => \App\Http\Middleware\bettorsauth::class,
-
+        'appEmailVerified' => \App\Http\Middleware\AppEmailVerification::class,
     ];
 }

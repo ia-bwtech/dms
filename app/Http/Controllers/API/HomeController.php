@@ -135,4 +135,11 @@ class HomeController extends Controller
 
         // return $data;
     }
+
+    public function dashboard(Request $request){
+
+        $this->jsonResponseData["status"] = true;
+        $this->jsonResponseData["data"] = auth()->user();
+        return $this->jsonResponse();
+    }
 }

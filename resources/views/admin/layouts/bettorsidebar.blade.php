@@ -35,9 +35,9 @@
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-user"></i>
+                    <i class="nav-icon fas fa-envelope"></i>
                     <p>
-                        Email Options
+                        Email Notifications
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>

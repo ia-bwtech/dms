@@ -113,9 +113,11 @@
                         @foreach ($featuredHandicappers as $item)
                             <a href="{{ route('handicappers.profile', $item['user_id']) }}">
                                 <div class="handicap-item">
-                                    <div class="handicap-img">
-                                        <img src="/images/profile/{{ $item['image'] }}" style="width: 90%; height:180px;">
-                                    </div>
+                                    @if($item["image"] != "")
+                                        <div class="handicap-img">
+                                            <img src="/images/profile/{{ $item['image'] }}" style="width: 90%; height:180px;">
+                                        </div>
+                                    @endif
                                     <h3>{{ $item['name'] }}</h3>
                                     <span class="desc">Records</span>
                                     <div class="winlosses">

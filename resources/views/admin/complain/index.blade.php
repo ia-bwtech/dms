@@ -20,7 +20,7 @@
 
             <div class="row mb-2">
                 <div class=" heading col-sm-6">
-                    <h1>Complains</h1>
+                    <h1>Customer Service</h1>
                 </div>
                 {{-- <button class="btn1 info filterbtn">Filter</button> --}}
                 <div class="col-sm-2">

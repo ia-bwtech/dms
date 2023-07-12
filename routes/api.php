@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LeagueController;
 use App\Http\Controllers\HandicapperController;
 use App\Http\Controllers\SportController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,12 +49,32 @@ Route::get('/top-sports/{leagueName}/{sportName}/{date}', [HandicapperController
 
 Route::post('register',[AuthController::class,'register']);
 Route::post('login',[AuthController::class,'login']);
+
 Route::get('featuredhandicappers',[HomeController::class,'featuredHandicappers']);
 Route::get('featuredhandicappers',[HomeController::class,'featuredHandicappers']);
 Route::get('packages',[HomeController::class,'packages']);
 Route::middleware('auth:api')->group(function () {
     Route::get('subscribedpicks',[HomeController::class,'subscribedpicks']);
 });
+Route::get("/", function(){
+   return response()->json(["status"=>false, "message"=>"", "data"=>[]]);
+});
 
+//Mobile App
+Route::prefix("on-board")->group(function(){
+    Route::post("/login", [AuthController::class, 'mobile_login']);
+    Route::post('/register',[AuthController::class,'mobile_register']);
+    Route::post('/email-verification-code',[AuthController::class,'email_code_verified']);
+});
+
+Route::group(["middleware"=>"auth:api"], function(){
+    Route::prefix("/me")->group(function(){
+        Route::get('/dashboard', [HomeController::class, 'dashboard']);
+    });
+});
+
+Route::prefix("user")->middleware(["auth:api", ""])->group(function(){
+   Route::get('/dashboard', [HomeController::class, 'dashboard']);
+});
 
 

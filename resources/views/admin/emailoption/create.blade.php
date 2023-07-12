@@ -14,7 +14,7 @@
                 <!-- Horizontal Form -->
                 <div class="card card-info black">
                     <div class="card-header">
-                        <h3 class="card-title">Add emailoption</h3>
+                        <h3 class="card-title">Add Email Notification</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->

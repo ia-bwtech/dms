@@ -98,7 +98,7 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     {{-- <li><a class="dropdown-item @if(request()->url()==url('/tournaments')) active @endif" href="/tournaments">Handicapper Tournaments</a></li> --}}
-                                    <li><a class="dropdown-item @if(request()->url()==url('/historical-records')) active @endif" href="/historical-records">Historical Records</a></li>
+                                    <li><a class="dropdown-item @if(request()->url()==url('/historical-leaderboard')) active @endif" href="/historical-leaderboard">Historical leaderboard</a></li>
                                     {{-- <li><a class="dropdown-item @if(request()->url()==url('/forum')) active @endif" href="/forum">Forum</a></li> --}}
                                     <li><a class="dropdown-item @if(request()->url()==url('/faq')) active @endif" href="/faq">FAQ</a></li>
                                     <li><a class="dropdown-item @if(request()->url()==url('/blog-listing')) active @endif" href="/blog-listing">News and Articles</a></li>

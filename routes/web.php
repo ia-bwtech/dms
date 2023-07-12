@@ -193,7 +193,7 @@ Route::get('handicappers/{id}', [HandicapperController::class, 'profile'])->name
 Route::get('top50', [Controller::class, 'top50']);
 Route::view('/terms', 'terms');
 Route::view('/forum', 'forum');
-Route::get('historical-records', [HandicapperController::class, 'historicalRecords'])->name('historical.records');
+Route::get('historical-leaderboard', [HandicapperController::class, 'historicalRecords'])->name('historical.records');
 Route::view('/socials', 'social');
 Route::view('/tournaments', 'tournament');
 Route::get('/faq', [FAQController::class, 'show'])->name('faqs.index');

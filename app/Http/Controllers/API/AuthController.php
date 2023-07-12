@@ -4,9 +4,13 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\User as ResourcesUser;
+use App\Http\Resources\UserCollection;
 use App\Models\User;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 use Validator;
 
 class AuthController extends Controller
@@ -18,12 +22,14 @@ class AuthController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required',
             'confirm_password' => 'required|same:password',
+            'role_id' => ['required', 'numeric', Rule::in([2])],
         ]);
         if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()], 401);
+            return response()->json(['status'=>false, 'message'=>'Validation required', 'data'=>[], 'error' => $validator->errors()], 401);
         }
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
+        $input["verification_code"] = $this->generateVerificationCode();
         $user = User::create($input);
         $success['token'] =  $user->createToken('MyApp')->accessToken;
         $success['name'] =  $user->name;
@@ -37,10 +43,98 @@ class AuthController extends Controller
             $user = Auth::user();
             $success['token'] =  $user->createToken('MyApp')->accessToken;
             $user = User::find($user->id);
-
+            //$u = new ResourcesUser($user);
             return new ResourcesUser($user);
         } else {
-            return response()->json(['error' => 'Unauthorised'], 401);
+            return response()->json(['status'=>false, 'message' => 'Unauthorised', 'data'=>[]], 401);
         }
+    }
+
+    public function mobile_login(Request $request){
+        $jsonResponse = ["status"=>false, "message"=>"", "data"=>[]];
+        if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+            $user = Auth::user();
+            if (is_null($user->email_verified_at)){
+                $jsonResponse["message"] = "Email verification required.";
+                return response()->json($jsonResponse);
+            }
+            $jsonResponse['access_token'] =  $user->createToken('MyApp')->accessToken;
+            $user = User::find($user->id);
+            $jsonResponse["status"] = true;
+            $jsonResponse["message"] = "Logged successfully.";
+            $jsonResponse["data"] = [
+                "id" => $user->id,
+                "name" => $user->name,
+                "email" => $user->email,
+                "phone" => $user->phone,
+                "image" => $user->image,
+                "bio" => $user->bio,
+            ];
+            return response()->json($jsonResponse);
+        } else {
+            $jsonResponse["message"] = "Invalid email and password.";
+            return response()->json($jsonResponse);
+        }
+    }
+    public function mobile_register(Request $request)
+    {
+        $jsonResponse = ["status"=>false, "message"=>"", "data"=>[]];
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
+            'confirm_password' => 'required|same:password',
+            'role_id' => ['required', 'numeric', Rule::in([2])],
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>false, 'message'=>'Validation required', 'data'=>[], 'error' => $validator->errors()], 401);
+        }
+        $input = $request->all();
+        $input['password'] = bcrypt($input['password']);
+        $input["verification_code"] = $this->generateVerificationCode();
+        $user = User::create($input);
+        $user = User::find($user->id);
+        $jsonResponse["status"] = true;
+        $jsonResponse["message"] = "Congrats! you register successfully.";
+        $jsonResponse["data"] = [
+            "id" => $user->id,
+            "name" => $user->name,
+            "email" => $user->email,
+            "phone" => $user->phone,
+            "image" => $user->image,
+            "bio" => $user->bio,
+        ];
+        return response()->json($jsonResponse);
+    }
+    public function email_code_verified(Request $request){
+        $jsonResponse = ["status"=>false, "message"=>"", "data"=>[]];
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'verification_code' => 'required|numeric'
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>false, 'message'=>'Validation required', 'data'=>[], 'error' => $validator->errors()], 401);
+        }
+        $input = $request->all();
+        $user = User::where("email", $request->email)->where("verification_code", $request->verification_code)->first();
+        if (empty($user)){
+            return response()->json(['status'=>false, 'message' => 'Invalid verification code', 'data'=>[]]);
+        }
+        if ($user->markEmailAsVerified())
+            event(new Verified($user));
+
+        $jsonResponse["status"] = true;
+        $jsonResponse["message"] = "Email verified successfully.";
+        return response()->json($jsonResponse);
+
+    }
+    public function generateVerificationCode():int
+    {
+        $randomNumber = random_int(100000, 999999);
+        $exists = User::where("verification_code", $randomNumber)->whereNull("email_verified_at")->first();
+        if (!empty($exists)){
+            $this->generateVerificationCode();
+        }
+        return $randomNumber;
     }
 }

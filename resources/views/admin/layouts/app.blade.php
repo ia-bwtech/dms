@@ -239,7 +239,7 @@
           /> --}}
                 <span class="brand-text font-weight-light">
 
-                    Blind Side Bets</span>
+                    Blindside Bets</span>
             </a>
             @if (auth()->user()->is_admin == 1)
                 @include('admin.layouts.sidebar')
