@@ -10,7 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LeagueController;
 use App\Http\Controllers\HandicapperController;
 use App\Http\Controllers\SportController;
-use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\API\GeneralController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,15 +63,23 @@ Route::get("/", function(){
 //Mobile App
 Route::prefix("on-board")->group(function(){
     Route::post("/login", [AuthController::class, 'mobile_login']);
-    Route::post('/register',[AuthController::class,'mobile_register']);
-    Route::post('/email-verification-code',[AuthController::class,'email_code_verified']);
+    Route::post('/register', [AuthController::class, 'mobile_register']);
+    Route::post('/email-verification-code', [AuthController::class, 'email_code_verified']);
+    Route::post('/resend-email-verification-code', [AuthController::class, 'resend_email_verification_code']);
+
 });
 
 Route::group(["middleware"=>"auth:api"], function(){
     Route::prefix("/me")->group(function(){
         Route::get('/dashboard', [HomeController::class, 'dashboard']);
         Route::post("/profile-image-upload", [HomeController::class, 'user_image_upload']);
+        Route::post("/profile-update", [HomeController::class, 'user_profile_update']);
     });
+});
+
+Route::prefix("general")->group(function(){
+    Route::get("/packages", [GeneralController::class, 'packages']);
+    Route::get("/handicapper/featured", [GeneralController::class, 'handicapper_featured']);
 });
 
 Route::prefix("user")->middleware(["auth:api", ""])->group(function(){

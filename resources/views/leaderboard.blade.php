@@ -50,6 +50,7 @@
             </section>
             <!-- Banner Section --> --}}
 
+    <textarea>{{@json_encode($data)}}</textarea>
 
             <div id="app">
                 <leaderboard-component></leaderboard-component>

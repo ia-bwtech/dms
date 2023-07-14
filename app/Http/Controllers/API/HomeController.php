@@ -9,6 +9,8 @@ use App\Http\Resources\SubscribedPicksCollection;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class HomeController extends Controller
 {
@@ -140,6 +142,72 @@ class HomeController extends Controller
 
         $this->jsonResponseData["status"] = true;
         $this->jsonResponseData["data"] = auth()->user();
+        return $this->jsonResponse();
+    }
+
+    public function user_image_upload(Request $request){
+        $validator = Validator::make($request->all(), [
+            'file' => ['image', 'mimes:jpeg,png,jpg,gif,svg', 'max:1024']
+        ]);
+        if ($validator->fails()) {
+            foreach ($validator->errors()->all() as $error_message){
+                if (strlen(trim($error_message))){
+                    $this->jsonResponseData["message"] = $error_message;
+                    return response()->json($this->jsonResponseData);
+                }
+            }
+        }
+        if ($request->hasFile('file')) {
+            $a = \Str::random(5);
+            $image = $request->file('file');
+            $nameonly = preg_replace('/\..+$/', '', $image->getClientOriginalName());
+            $filename = $nameonly . '_' . $a . '.' . $image->getClientOriginalExtension();
+            if (file_exists('images/profile/'.$filename)){
+                unlink("images/profile/".$filename);
+            }
+            $image->move('images/profile', $filename);
+            $user = User::where('id', $request->user()->id)->first();
+            $user->image = $filename;
+            $user->update();
+            $this->jsonResponseData["data"] = [
+                "id" => $user->id,
+                "name" => $user->name,
+                "email" => $user->email,
+                "phone" => $user->phone,
+                "image" => url('images/profile/'.$user->image),
+                "bio" => $user->bio,
+            ];
+            $this->jsonResponseData["message"] = "Profile image changed successfully.";
+            $this->jsonResponseData["status"] = true;
+        }
+        return $this->jsonResponse();
+    }
+
+    public function user_profile_update(Request $request){
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+        ]);
+        if ($validator->fails()) {
+            foreach ($validator->errors()->all() as $error_message){
+                if (strlen(trim($error_message))){
+                    $this->jsonResponseData["message"] = $error_message;
+                    return $this->jsonResponse();
+                }
+            }
+        }
+        $user = User::where("id", $request->user()->id)->first();
+        if ($request->has("bio")){
+            $user->bio = $request->bio;
+        }
+        if ($request->has("phone")){
+            $user->phone = $request->phone;
+        }
+        $user->name = $request->name;
+        $user->update();
+
+
+        $this->jsonResponseData["message"] = "Profile update successfully.";
+        $this->jsonResponseData["status"] = true;
         return $this->jsonResponse();
     }
 }

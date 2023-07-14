@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="capperconfirmbox">
-                                    <a class="btn-blue-2" href="{{route('handicappers.leaderboard')}}">Top 5 Leaderboard</a>
+                                    <a class="btn-blue-2" href="{{route('handicappers.leaderboard')}}#handicapper">Top 5 Leaderboard</a>
                                 </div>
                             </div>
                         </div>

@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -36,7 +36,6 @@ class AuthController extends Controller
         $user = User::find($user->id);
         return new ResourcesUser($user);
     }
-
     public function login()
     {
         if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
@@ -49,7 +48,6 @@ class AuthController extends Controller
             return response()->json(['status'=>false, 'message' => 'Unauthorised', 'data'=>[]], 401);
         }
     }
-
     public function mobile_login(Request $request){
         $jsonResponse = ["status"=>false, "message"=>"", "data"=>[]];
         if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
@@ -84,14 +82,19 @@ class AuthController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required',
             'confirm_password' => 'required|same:password',
-            'role_id' => ['required', 'numeric', Rule::in([2])],
+            'user_type' => ['required', 'numeric', Rule::in([0, 1])],
         ]);
         if ($validator->fails()) {
-            return response()->json(['status'=>false, 'message'=>'Validation required', 'data'=>[], 'error' => $validator->errors()], 401);
+            foreach ($validator->errors()->all() as $error_message){
+                $jsonResponse["message"] = $error_message;
+                return response()->json($jsonResponse);
+            }
         }
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
         $input["verification_code"] = $this->generateVerificationCode();
+        $input["is_handicapper"] = $input["user_type"];
+        unset($input["user_type"]);
         $user = User::create($input);
         $user = User::find($user->id);
         $jsonResponse["status"] = true;
@@ -106,6 +109,33 @@ class AuthController extends Controller
         ];
         return response()->json($jsonResponse);
     }
+
+    public function resend_email_verification_code(Request $request){
+        $jsonResponse = ["status"=>false, "message"=>"", "data"=>[]];
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+        ]);
+        if ($validator->fails()) {
+            foreach ($validator->errors()->all() as $error_message){
+                $jsonResponse["message"] = $error_message;
+                return response()->json($jsonResponse);
+            }
+        }
+        $user = User::where("email", $request->email)->first();
+        if (!empty($user)){
+            if (is_null($user->email_verified_at)){
+                $user->verification_code = $this->generateVerificationCode();
+                $user->update();
+                $jsonResponse["status"] = true;
+                $jsonResponse["message"] = "Verification code send successfully.";
+            }else{
+                $jsonResponse["message"] = "Email address already verified.";
+            }
+        }else{
+            $jsonResponse["message"] = "Invalid email address.";
+        }
+        return response()->json($jsonResponse);
+    }
     public function email_code_verified(Request $request){
         $jsonResponse = ["status"=>false, "message"=>"", "data"=>[]];
         $validator = Validator::make($request->all(), [
@@ -113,12 +143,15 @@ class AuthController extends Controller
             'verification_code' => 'required|numeric'
         ]);
         if ($validator->fails()) {
-            return response()->json(['status'=>false, 'message'=>'Validation required', 'data'=>[], 'error' => $validator->errors()], 401);
+            foreach ($validator->errors()->all() as $error_message){
+                $jsonResponse["message"] = $error_message;
+                return response()->json($jsonResponse);
+            }
         }
-        $input = $request->all();
         $user = User::where("email", $request->email)->where("verification_code", $request->verification_code)->first();
         if (empty($user)){
-            return response()->json(['status'=>false, 'message' => 'Invalid verification code', 'data'=>[]]);
+            $jsonResponse["message"] = 'Invalid verification code';
+            return response()->json($jsonResponse);
         }
         if ($user->markEmailAsVerified())
             event(new Verified($user));

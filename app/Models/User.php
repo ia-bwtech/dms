@@ -108,4 +108,13 @@ class User extends Authenticatable implements MustVerifyEmail
         }
         return $subscribedPicks;
     }
+
+    public function getImageWithPathAttribute(){
+        $image = (is_null($this->image) ? '0' : $this->image);
+        $user_image = "";
+        if (file_exists('images/profile/'.$image)){
+            $user_image = url('images/profile/'.urlencode($image));
+        }
+        return $user_image;
+    }
 }
