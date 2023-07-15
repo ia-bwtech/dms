@@ -102,4 +102,11 @@ class GeneralController extends Controller
 
     }
 
+
+    public function testApi(){
+
+        $this->jsonResponseData["message"] = "Testing request";
+        return $this->jsonResponse();
+    }
+
 }

@@ -66,6 +66,9 @@ Route::prefix("on-board")->group(function(){
     Route::post('/register', [AuthController::class, 'mobile_register']);
     Route::post('/email-verification-code', [AuthController::class, 'email_code_verified']);
     Route::post('/resend-email-verification-code', [AuthController::class, 'resend_email_verification_code']);
+    Route::post("/forgot-password", [AuthController::class, 'reset_password_code_send']);
+    Route::post("/forgot-password-verification", [AuthController::class, 'reset_password_code_verify']);
+    Route::post("/change-password", [AuthController::class, 'change_password']);
 
 });
 
@@ -80,6 +83,7 @@ Route::group(["middleware"=>"auth:api"], function(){
 Route::prefix("general")->group(function(){
     Route::get("/packages", [GeneralController::class, 'packages']);
     Route::get("/handicapper/featured", [GeneralController::class, 'handicapper_featured']);
+    Route::get("/test", [GeneralController::class, 'testApi']);
 });
 
 Route::prefix("user")->middleware(["auth:api", ""])->group(function(){

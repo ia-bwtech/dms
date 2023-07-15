@@ -210,4 +210,27 @@ class HomeController extends Controller
         $this->jsonResponseData["status"] = true;
         return $this->jsonResponse();
     }
+
+    public function user_update_password(Request $request){
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required',
+            'confirm_password' => 'required|same:password',
+        ]);
+        if ($validator->fails()) {
+            foreach ($validator->errors()->all() as $error_message){
+                if (strlen(trim($error_message))){
+                    $this->jsonResponseData["message"] = $error_message;
+                    return $this->jsonResponse();
+                }
+            }
+        }
+        $user = User::where("id", $request->user()->id)->first();
+        if (!empty($user)){
+            $user->password = bcrypt($request->password);
+        }
+
+
+
+    }
 }
