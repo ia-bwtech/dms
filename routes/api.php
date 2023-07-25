@@ -77,14 +77,23 @@ Route::group(["middleware"=>"auth:api"], function(){
         Route::get('/dashboard', [HomeController::class, 'dashboard']);
         Route::post("/profile-image-upload", [HomeController::class, 'user_image_upload']);
         Route::post("/profile-update", [HomeController::class, 'user_profile_update']);
+        Route::post("/subscribe-package", [HomeController::class, 'user_subscribe_package']);
     });
 });
 
 Route::prefix("general")->group(function(){
     Route::get("/packages", [GeneralController::class, 'packages']);
+    Route::get("/leagues", [GeneralController::class, 'leagues']);
     Route::get("/handicapper/featured", [GeneralController::class, 'handicapper_featured']);
     Route::get("/test", [GeneralController::class, 'testApi']);
 });
+
+Route::prefix("handicapper")->group(function(){
+    Route::get("/top-five-sports-capper/{leagueName}/{sportName}/{date}", [App\Http\Controllers\API\HandicapperController::class, 'top_five_sports_capper']);
+    Route::get("/dashboard", [App\Http\Controllers\API\HandicapperController::class, 'dashboard']);
+});
+
+
 
 Route::prefix("user")->middleware(["auth:api", ""])->group(function(){
    Route::get('/dashboard', [HomeController::class, 'dashboard']);

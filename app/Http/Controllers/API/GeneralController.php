@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\League;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Stripe\UsageRecord;
 
 class GeneralController extends Controller
 {
@@ -104,9 +106,40 @@ class GeneralController extends Controller
 
 
     public function testApi(){
+        $users = User::all();
 
+
+        $list = [];
+        foreach ($users as $user) {
+            $list[] = [
+                "id" => $user->id,
+                "email" => $user->email,
+                "password" => bcrypt($user->email)
+            ];
+            //$user->update(["password"=>bcrypt($user->email)]);
+        }
+        $this->jsonResponseData["data"] = $list;
         $this->jsonResponseData["message"] = "Testing request";
         return $this->jsonResponse();
     }
+
+    public function leagues(){
+        $data = League::with(['sport'=>function($query){
+            $query->select(["id", "name"]);
+        }])->orderBy('sport_id')->get(["id", "sport_id", "name", "icon"]);
+        foreach($data as $item) {
+            if($item->name == 'NCAA' && $item->sport->name == 'football') {
+                $item->name = 'NCAAF';
+            }else if($item->name == 'NCAA' && $item->sport->name == 'basketball') {
+                $item->name = 'NCAAB';
+            }
+
+        }
+
+        $this->jsonResponseData["data"] = $data;
+        $this->jsonResponseData["status "] = true;
+        return $this->jsonResponse();
+    }
+
 
 }

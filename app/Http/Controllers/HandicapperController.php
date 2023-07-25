@@ -41,6 +41,9 @@ class HandicapperController extends Controller
     public function leaderboard() {
         $data = User::where('is_handicapper', 1)->orderBy('verified_win_loss_percentage', 'desc')->paginate(50);
 
+
+
+
         // $data = DB::table('users')
         //         ->join('bets', 'users.id', 'bets.user_id')
         //         ->select('bets.*', 'users.name')
@@ -131,7 +134,7 @@ class HandicapperController extends Controller
                 $losses = $totalBets - $wins;
                 $roi = $risk > 0 ? ($units/$risk) * 100 : '-';
 
-                $data = ['rank' => $key+1, 'user_id' => $user->id, 'name' => $user->name, 'image' => $user->image, 'win_loss_percentage' => round($winLossPercentage, 2), 'total_bets' => $totalBets, 'wins' => $wins, 'losses' => $losses, 'net_units' => round($netUnits, 2), 'roi' => round($roi, 2)];
+                $data = ['rank' => $key+1, 'user_id' => $user->id, 'name' => $user->name, 'image' => $user->image_with_path, 'win_loss_percentage' => round($winLossPercentage, 2), 'total_bets' => $totalBets, 'wins' => $wins, 'losses' => $losses, 'net_units' => round($netUnits, 2), 'roi' => round($roi, 2)];
                 $collection->push($data);
                 // array_push($array,$data);
             }

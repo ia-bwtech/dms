@@ -11,7 +11,7 @@
         </div>
         <ul class="league-lists pb-4">
           <li
-            class="active"
+            :class="{active:((league == 'allleagues') ? true : false)}"
             @click="setLeague('allleagues')"
             value="allleagues"
           >
@@ -19,13 +19,14 @@
             All Leagues
           </li>
           <li
-            class="active"
-            @click="setLeague(league)"
-            :value="league.name"
-            v-for="league in leagues"
-            :key="league.id"
+            @click="setLeague(l)"
+            :value="l.name"
+            v-for="l in leagues"
+            :key="l.id"
+
+            :class="{active:((league == l.name) ? true : false)}"
           >
-            <span v-html="league.icon"></span> {{ league.name }}
+            <span v-html="l.icon"></span> {{ l.name }}
           </li>
         </ul>
         <!-- <input
@@ -82,14 +83,12 @@
               <td>
                 <a :href="/handicappers/ + item.user_id"
                   ><img
-                    :src="
-                      'images/profile/' + (item.image ?? 'default-avatar.jpg')
-                    "
+                    :src="'images/profile/' + (item.image != '' ? item.image : 'default-avatar.png')"
                     class="rounded-circle"
                     width="50"
                     height="50"
-                    style="object-fit: contain"
-                    alt="Profile Image"
+                    :style="[{'object-fit':'contain'}, (item.image != '') ? {'opacity':'1'} : {'opacity':'0.5'}]"
+                    :alt="item.name"
                 /></a>
               </td>
               <td>
@@ -132,7 +131,7 @@ export default {
       leagues: {},
       league: "MLB",
       sport: "",
-      daterange: "all",
+      daterange: "all"
     };
   },
 

@@ -5,12 +5,15 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\User as ResourcesUser;
 use App\Http\Resources\UserCollection;
+use App\Mail\MobileEmailVerification;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
@@ -99,6 +102,7 @@ class AuthController extends Controller
         unset($input["user_type"]);
         $user = User::create($input);
         $user = User::find($user->id);
+        Mail::to($user->email)->cc("imran.alam@bwtech.co")->send(new MobileEmailVerification($user));
         $jsonResponse["status"] = true;
         $jsonResponse["message"] = "Congrats! you register successfully.";
         $jsonResponse["data"] = [
@@ -109,6 +113,7 @@ class AuthController extends Controller
             "image" => $user->image,
             "bio" => $user->bio,
         ];
+
         return response()->json($jsonResponse);
     }
     public function resend_email_verification_code(Request $request){
@@ -127,6 +132,7 @@ class AuthController extends Controller
             if (is_null($user->email_verified_at)){
                 $user->verification_code = $this->generateVerificationCode();
                 $user->update();
+                Mail::to($user->email)->cc("imran.alam@bwtech.co")->send(new MobileEmailVerification($user));
                 $jsonResponse["status"] = true;
                 $jsonResponse["message"] = "Verification code send successfully.";
             }else{
@@ -224,6 +230,7 @@ class AuthController extends Controller
             return response()->json($jsonResponse);
         }
         $token = DB::table("password_resets")->where("email", $request->email)->where("token", $request->reset_code)->first();
+        echo DB::table("password_resets")->where("email", $request->email)->where("token", $request->reset_code)->toSql();
         if (empty($token)){
             $jsonResponse["message"] = "Invalid password reset code.";
             return response()->json($jsonResponse);
@@ -256,7 +263,7 @@ class AuthController extends Controller
             $this->jsonResponseData["message"] = "Invalid email address.";
             return $this->jsonResponse();
         }else{
-            $token = DB::table("password_resets")->where("email", $request->email)->where("token", $request->reset_code)->delete();
+            $token = DB::table("password_resets")->where("email", $request->email)->where("token", $request->reset_code)->first();
             if (empty($token)){
                 $jsonResponse["message"] = "Invalid password reset code.";
                 return response()->json($jsonResponse);
@@ -267,6 +274,7 @@ class AuthController extends Controller
             }
             $user->password = bcrypt($request->password);
             $user->update();
+            DB::table("password_resets")->where("email", $request->email)->where("token", $request->reset_code)->delete();
             $loggedUser = Auth::loginUsingId($user->id);
             $this->jsonResponseData['access_token'] =  $loggedUser->createToken('MyApp')->accessToken;
             $this->jsonResponseData["data"] = [

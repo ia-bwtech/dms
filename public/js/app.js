@@ -5293,7 +5293,8 @@ __webpack_require__.r(__webpack_exports__);
       leagues: {},
       league: 'MLB',
       sport: '',
-      daterange: 'all'
+      daterange: 'all',
+      selected_league: 0
     };
   },
   created: function created() {
@@ -5324,9 +5325,11 @@ __webpack_require__.r(__webpack_exports__);
         this.league = "allleagues";
         this.sport = 'allsports';
         this.getData();
+        this.selected_league = 0;
       } else {
         this.league = league.name;
         this.sport = league.sport.name;
+        this.selected_league = league.id;
         this.getData();
       }
     }
@@ -5970,7 +5973,9 @@ var render = function render() {
   }, _vm._l(_vm.leagues, function (league) {
     return _c("li", {
       key: league.id,
-      staticClass: "active",
+      "class": {
+        active: _vm.selected_league == league.id ? true : false
+      },
       attrs: {
         value: league.name
       },
@@ -6313,7 +6318,9 @@ var render = function render() {
   }, [_c("h2", [_vm._v("\n          Top\n          "), this.league != "allleagues" ? _c("span", [_vm._v(_vm._s(this.league))]) : _vm._e(), _vm._v("\n          Sports Bettors\n        ")])]), _vm._v(" "), _c("ul", {
     staticClass: "league-lists pb-4"
   }, [_c("li", {
-    staticClass: "active",
+    "class": {
+      active: _vm.league == "allleagues" ? true : false
+    },
     attrs: {
       value: "allleagues"
     },
@@ -6322,23 +6329,25 @@ var render = function render() {
         return _vm.setLeague("allleagues");
       }
     }
-  }, [_vm._v("\n          🏅 "), _c("br"), _vm._v("\n          All Leagues\n        ")]), _vm._v(" "), _vm._l(_vm.leagues, function (league) {
+  }, [_vm._v("\n          🏅 "), _c("br"), _vm._v("\n          All Leagues\n        ")]), _vm._v(" "), _vm._l(_vm.leagues, function (l) {
     return _c("li", {
-      key: league.id,
-      staticClass: "active",
+      key: l.id,
+      "class": {
+        active: _vm.league == l.name ? true : false
+      },
       attrs: {
-        value: league.name
+        value: l.name
       },
       on: {
         click: function click($event) {
-          return _vm.setLeague(league);
+          return _vm.setLeague(l);
         }
       }
     }, [_c("span", {
       domProps: {
-        innerHTML: _vm._s(league.icon)
+        innerHTML: _vm._s(l.icon)
       }
-    }), _vm._v(" " + _vm._s(league.name) + "\n        ")]);
+    }), _vm._v(" " + _vm._s(l.name) + "\n        ")]);
   })], 2)]), _vm._v(" "), _c("div", {
     staticClass: "row mt-40"
   }, [_c("table", {
@@ -6376,7 +6385,7 @@ var render = function render() {
       lines: 3
     }
   })], 1)], 1)]) : _vm._l(_vm.data.data, function (item, index) {
-    var _item$image, _item$wins, _item$losses, _item$net_units;
+    var _item$wins, _item$losses, _item$net_units;
 
     return _c("tr", {
       key: item.id
@@ -6386,14 +6395,18 @@ var render = function render() {
       }
     }, [_c("img", {
       staticClass: "rounded-circle",
-      staticStyle: {
+      style: [{
         "object-fit": "contain"
-      },
+      }, item.image != "" ? {
+        opacity: "1"
+      } : {
+        opacity: "0.5"
+      }],
       attrs: {
-        src: "images/profile/" + ((_item$image = item.image) !== null && _item$image !== void 0 ? _item$image : "default-avatar.jpg"),
+        src: "images/profile/" + (item.image != "" ? item.image : "default-avatar.png"),
         width: "50",
         height: "50",
-        alt: "Profile Image"
+        alt: item.name
       }
     })])]), _vm._v(" "), _c("td", [_c("a", {
       attrs: {

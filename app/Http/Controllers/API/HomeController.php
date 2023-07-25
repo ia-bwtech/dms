@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\HandicapperCollection;
 use App\Http\Resources\PackageCollection;
 use App\Http\Resources\SubscribedPicksCollection;
+use App\Models\Package;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -229,8 +230,26 @@ class HomeController extends Controller
         if (!empty($user)){
             $user->password = bcrypt($request->password);
         }
+    }
+
+    public function user_subscribe_package(Request $request){
+        $validator = Validator::make($request->all(), [
+            'package_id' => 'required|numeric',
+        ]);
+        if ($validator->fails()) {
+            foreach ($validator->errors()->all() as $error_message){
+                if (strlen(trim($error_message))){
+                    $this->jsonResponseData["message"] = $error_message;
+                    return $this->jsonResponse();
+                }
+            }
+        }
+        $package = Package::where("id", $request->package_id)->first();
+        $this->jsonResponseData["data"] = $package;
 
 
+
+        return $this->jsonResponse();
 
     }
 }

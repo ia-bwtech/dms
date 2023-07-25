@@ -29,7 +29,7 @@
 				<h2>Top 5 {{ this.league }} Sports Bettors*</h2> <small>*Minimum 10 Units Won</small>
                 <!-- <span ></span> -->
                 <ul class="league-lists">
-                    <li class="active" @click="setLeague(league)" :value="league.name" v-for="league in leagues" :key="league.id"><span v-html="league.icon"></span> {{ league.name }}</li>
+                    <li @click="setLeague(league)" :value="league.name" v-for="league in leagues" :key="league.id" :class="{active:(selected_league == league.id ? true : false)}"><span v-html="league.icon"></span> {{ league.name }}</li>
                 </ul>
 			</div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 date-range-col ">
@@ -67,7 +67,7 @@
                     <tr v-else-if="data.length == 0">
                         No data available
                     </tr>
-                    <tr v-else v-for="item, index in data" v-bind:key="item.user_id">
+                    <tr v-else v-for="(item, index) in data" v-bind:key="item.user_id">
                         <td>{{ index+1 }}</td>
                         <td><a :href="/handicappers/ + item.user_id"><img :src="'images/profile/' + (item.image ?? 'default-avatar.jpg')" class="rounded-circle" width="80" height="80" style="object-fit: contain;" alt="Profile Image"></a></td>
                         <td><a :href="/handicappers/ + item.user_id">{{ item.name }}</a></td>
@@ -93,7 +93,8 @@
                 leagues: {},
                 league: 'MLB',
                 sport: '',
-                daterange: 'all'
+                daterange: 'all',
+                selected_league:0,
             }
         },
 
@@ -126,10 +127,12 @@
                     this.league = "allleagues";
                     this.sport = 'allsports';
                     this.getData();
+                    this.selected_league = 0;
                 }
                 else {
                     this.league = league.name;
                     this.sport = league.sport.name;
+                    this.selected_league = league.id;
                     this.getData();
                 }
             }
