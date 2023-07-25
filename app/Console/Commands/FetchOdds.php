@@ -10,6 +10,7 @@ use App\Models\League;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class FetchOdds extends Command
 {
@@ -108,8 +109,13 @@ class FetchOdds extends Command
                 'game_id' => $singleGame->game_id,
                 'is_main' => 1
             ]);
+            $json_file = uniqid("fetch_odds_").$singleGame->game_id.".json";
+            Storage::put($json_file, $odds);
 
             $odds = json_decode($odds);
+
+
+
             // return $odds->data;
             if(count($odds->data) == 0) {
                 // return response()->json(['status' => false, 'message' => 'error', 'odds' => $odds]);
@@ -121,6 +127,7 @@ class FetchOdds extends Command
 
             //Deleting Old Odds
             $deleteOdds = Odd::where('game_id', $singleGame->game_id)->delete();
+
 
             foreach($odds[0]->odds as $key => $odd) {
                 // Log::error($key . 'odd: ');
