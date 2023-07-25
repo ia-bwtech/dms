@@ -16,3 +16,4 @@ yarn-error.log
 .htaccess
 composer.lock
 php_errors.log
+/resources/views/vendor/*
