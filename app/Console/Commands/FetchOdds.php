@@ -127,9 +127,6 @@ class FetchOdds extends Command
             //Deleting Old Odds
             $deleteOdds = Odd::where('game_id', $singleGame->game_id)->delete();
 
-            $json_file = uniqid("fetch_odds_").$singleGame->game_id.".json";
-            Storage::put($json_file, json_encode($odds));
-
             foreach($odds[0]->odds as $key => $odd) {
                 // Log::error($key . 'odd: ');
                 // Log::error(print_r($odd, true));
