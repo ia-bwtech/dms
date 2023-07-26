@@ -144,7 +144,7 @@ class FetchOdds extends Command
                     'is_live' => $odd->is_live,
                     'is_main' => $odd->is_main,
                     'deep_link_url' => $odd->deep_link_url,
-                    'checked_date' => Carbon::createFromFormat('Y-m-d\TH:i:s+', date("Y-m-d H:i:s", explode(".", $odd->timestamp)[0])),
+                    'checked_date' => date("Y-m-d H:i:s", explode(".", $odd->timestamp)[0]),
                 ]);
             }
         }
