@@ -252,4 +252,14 @@ class HomeController extends Controller
         return $this->jsonResponse();
 
     }
+
+    public function user_subscribed_picks(Request $request)
+    {
+        $user=User::find(auth()->user()->id);
+        $subscribedpicks=$user->subscribedPicks1();
+
+        dd($subscribedpicks);
+
+        return new SubscribedPicksCollection($subscribedpicks);
+    }
 }

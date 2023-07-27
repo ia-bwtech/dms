@@ -248,18 +248,11 @@
                             </div>
                           </div>
                           <!-- Home MoneyLine Odds -->
-                          <div class="spread game-box">
-                            <span
-                              v-if="item.is_live == false && item.odds.length"
-                            >
+                          <div class="spread game-box position-relative">
+                            <span v-if="item.is_live == false && item.odds.length" data-imran="hello" :data-odds-length="item.odds.length">
                               <!-- <label for="">{{ item.odds.length }}</label> -->
                               <p v-for="odd in item.odds" :key="odd.id">
-                                <span
-                                  v-if="
-                                    odd.market_name == 'Moneyline' &&
-                                    odd.name.includes(item.home_team)
-                                  "
-                                >
+                                <span v-if="odd.market_name == 'Moneyline' && odd.name.includes(item.home_team)">
                                   <button
                                     @click="
                                       setBetDetails(
@@ -289,11 +282,7 @@
                                 </span>
                               </p>
                             </span>
-                            <span
-                              v-else-if="
-                                item.is_live == true && item.odds.length
-                              "
-                            >
+                            <span v-else-if="item.is_live == true && item.odds.length">
                               <!-- <label for="">{{ item.odds.length }}</label> -->
                               <p v-for="odd in item.odds" :key="odd.id">
                                 <span
@@ -2843,7 +2832,7 @@ export default {
         )
         .then((res) => {
           this.data = res.data.games;
-          // console.log(this.data);
+           //console.log(this.data);
           // console.log(res.data.total_games);
           if (res.data.total_games == 0) {
             this.noGames = true;

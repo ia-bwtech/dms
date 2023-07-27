@@ -12,6 +12,7 @@ use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
@@ -106,12 +107,15 @@ class AuthController extends Controller
         $jsonResponse["status"] = true;
         $jsonResponse["message"] = "Congrats! you register successfully.";
         $jsonResponse["data"] = [
-            "id" => $user->id,
-            "name" => $user->name,
-            "email" => $user->email,
-            "phone" => $user->phone,
-            "image" => $user->image,
-            "bio" => $user->bio,
+            "user" => [
+                "id" => $user->id,
+                "name" => $user->name,
+                "email" => $user->email,
+                "phone" => $user->phone,
+                "image" => $user->image,
+                "bio" => $user->bio,
+            ],
+            "verification_code" => $input["verification_code"]
         ];
 
         return response()->json($jsonResponse);
@@ -135,6 +139,7 @@ class AuthController extends Controller
                 Mail::to($user->email)->cc("imran.alam@bwtech.co")->send(new MobileEmailVerification($user));
                 $jsonResponse["status"] = true;
                 $jsonResponse["message"] = "Verification code send successfully.";
+                $jsonResponse["data"] = ["verification_code" => $user->verification_code];
             }else{
                 $jsonResponse["message"] = "Email address already verified.";
             }
@@ -203,12 +208,18 @@ class AuthController extends Controller
             return response()->json($jsonResponse);
         }
         $resetCode = $this->generatePasswordResetCode($user->email);
+
+
         DB::table("password_resets")->insert([
             "email" => $user->email,
             "token" => $resetCode,
             "created_at" => Carbon::now()
         ]);
+
+
+
         $this->jsonResponseData["status"] = true;
+        $this->jsonResponseData["data"] = ["verification_code" => $resetCode];
         $this->jsonResponseData["message"] = "Reset code has been send";
         return $this->jsonResponse();
     }
@@ -230,7 +241,6 @@ class AuthController extends Controller
             return response()->json($jsonResponse);
         }
         $token = DB::table("password_resets")->where("email", $request->email)->where("token", $request->reset_code)->first();
-        echo DB::table("password_resets")->where("email", $request->email)->where("token", $request->reset_code)->toSql();
         if (empty($token)){
             $jsonResponse["message"] = "Invalid password reset code.";
             return response()->json($jsonResponse);
