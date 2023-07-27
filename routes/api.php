@@ -78,6 +78,7 @@ Route::group(["middleware"=>"auth:api"], function(){
         Route::post("/profile-image-upload", [HomeController::class, 'user_image_upload']);
         Route::post("/profile-update", [HomeController::class, 'user_profile_update']);
         Route::post("/subscribe-package", [HomeController::class, 'user_subscribe_package']);
+        Route::get('/subscribed/picks', [HomeController::class, 'user_subscribed_picks']);
     });
 });
 

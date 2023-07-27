@@ -5752,7 +5752,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       axios.get("/api/odds/local?date=" + this.date + "&league=" + this.leagueFilter + "&sport=" + this.sportFilter).then(function (res) {
-        _this2.data = res.data.games; // console.log(this.data);
+        _this2.data = res.data.games; //console.log(this.data);
         // console.log(res.data.total_games);
 
         if (res.data.total_games == 0) {
@@ -6709,8 +6709,13 @@ var render = function render() {
         title: item.home_team
       }
     }, [_vm._v("\n                                " + _vm._s(item.home_team) + "\n                              ")])])]), _vm._v(" "), _c("div", {
-      staticClass: "spread game-box"
-    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
+      staticClass: "spread game-box position-relative"
+    }, [item.is_live == false && item.odds.length ? _c("span", {
+      attrs: {
+        "data-imran": "hello",
+        "data-odds-length": item.odds.length
+      }
+    }, _vm._l(item.odds, function (odd) {
       return _c("p", {
         key: odd.id
       }, [odd.market_name == "Moneyline" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {

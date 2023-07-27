@@ -55,7 +55,7 @@ class GeneralController extends Controller
                 $rank++;
             }
         }
-        $this->jsonResponseData["data"] = $featuredCollection->sortByDesc("total_bets")->sortByDesc("roi")->paginate(5);
+        $this->jsonResponseData["data"] = array_values($featuredCollection->sortByDesc("total_bets")->sortByDesc("roi")->toArray());
         return $this->jsonResponse();
     }
 
