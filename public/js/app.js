@@ -6710,15 +6710,11 @@ var render = function render() {
       }
     }, [_vm._v("\n                                " + _vm._s(item.home_team) + "\n                              ")])])]), _vm._v(" "), _c("div", {
       staticClass: "spread game-box position-relative"
-    }, [item.is_live == false && item.odds.length ? _c("span", {
-      attrs: {
-        "data-imran": "hello",
-        "data-odds-length": item.odds.length
-      }
-    }, _vm._l(item.odds, function (odd) {
+    }, [item.is_live == false && item.odds.length ? _c("span", _vm._l(item.odds, function (odd) {
       return _c("p", {
         key: odd.id
       }, [odd.market_name == "Moneyline" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        staticClass: "btn-pa-ods",
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -6734,6 +6730,7 @@ var render = function render() {
       return _c("p", {
         key: odd.id
       }, [odd.market_name == "Moneyline" && odd.name.includes(item.home_team) ? _c("span", [_c("button", {
+        staticClass: "btn-pa-ods",
         attrs: {
           type: "button"
         },
@@ -6839,6 +6836,7 @@ var render = function render() {
       return _c("span", {
         key: odd.id
       }, [odd.market_name == "Total Runs" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        staticClass: "btn-pa-ods",
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -6850,6 +6848,7 @@ var render = function render() {
           }
         }
       }, [_vm._v("\n                                    " + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        staticClass: "btn-pa-ods",
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -6861,6 +6860,7 @@ var render = function render() {
           }
         }
       }, [_vm._v("\n                                    " + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        staticClass: "btn-pa-ods",
         attrs: {
           type: "button",
           "data-bs-toggle": "modal",
@@ -6876,6 +6876,7 @@ var render = function render() {
       return _c("span", {
         key: odd.id
       }, [odd.market_name == "Total Runs" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        staticClass: "btn-pa-ods",
         attrs: {
           type: "button"
         },
@@ -6885,6 +6886,7 @@ var render = function render() {
           }
         }
       }, [_vm._v("\n                                    " + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Points" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        staticClass: "btn-pa-ods",
         attrs: {
           type: "button"
         },
@@ -6894,6 +6896,7 @@ var render = function render() {
           }
         }
       }, [_vm._v("\n                                    " + _vm._s(odd.name > 0 ? "+" + odd.name.toString() : odd.name)), _c("br"), _vm._v(" "), _c("small", [_vm._v(_vm._s(odd.price > 0 ? "+" + odd.price.toString() : odd.price))])])]) : odd.market_name == "Total Goals" && odd.name.includes("Over") ? _c("span", [_c("button", {
+        staticClass: "btn-pa-ods",
         attrs: {
           type: "button"
         },

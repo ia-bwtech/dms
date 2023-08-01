@@ -37,6 +37,8 @@ class Controller extends BaseController
         $blindPackages = Package::where('user_id', 2)->get();
         $featured = User::where('is_featured', 1)->with('packages')->first();
         $featuredHandicappers = $this->leaderboardApi('allleagues', 'allsports', 'all');
+
+
         // $bannersection=CMS::where('slug','home')->first();
         // dd($bannersection->content);
 

@@ -249,11 +249,11 @@
                           </div>
                           <!-- Home MoneyLine Odds -->
                           <div class="spread game-box position-relative">
-                            <span v-if="item.is_live == false && item.odds.length" data-imran="hello" :data-odds-length="item.odds.length">
+                            <span v-if="item.is_live == false && item.odds.length">
                               <!-- <label for="">{{ item.odds.length }}</label> -->
                               <p v-for="odd in item.odds" :key="odd.id">
                                 <span v-if="odd.market_name == 'Moneyline' && odd.name.includes(item.home_team)">
-                                  <button
+                                  <button class="btn-pa-ods"
                                     @click="
                                       setBetDetails(
                                         item.home_team,
@@ -291,7 +291,7 @@
                                     odd.name.includes(item.home_team)
                                   "
                                 >
-                                  <button @click="showError()" type="button">
+                                  <button class="btn-pa-ods" @click="showError()" type="button">
                                     {{
                                       odd.price > 0
                                         ? "+" + odd.price.toString()
@@ -726,7 +726,7 @@
                                     odd.name.includes('Over')
                                   "
                                 >
-                                  <button
+                                  <button class="btn-pa-ods"
                                     @click="
                                       setBetDetails(
                                         item.home_team,
@@ -764,7 +764,7 @@
                                     odd.name.includes('Over')
                                   "
                                 >
-                                  <button
+                                  <button class="btn-pa-ods"
                                     @click="
                                       setBetDetails(
                                         item.home_team,
@@ -802,7 +802,7 @@
                                     odd.name.includes('Over')
                                   "
                                 >
-                                  <button
+                                  <button class="btn-pa-ods"
                                     @click="
                                       setBetDetails(
                                         item.home_team,
@@ -848,7 +848,7 @@
                                     odd.name.includes('Over')
                                   "
                                 >
-                                  <button @click="showError()" type="button">
+                                  <button @click="showError()" class="btn-pa-ods" type="button">
                                     {{
                                       odd.name > 0
                                         ? "+" + odd.name.toString()
@@ -867,7 +867,7 @@
                                     odd.name.includes('Over')
                                   "
                                 >
-                                  <button @click="showError()" type="button">
+                                  <button @click="showError()" class="btn-pa-ods" type="button">
                                     {{
                                       odd.name > 0
                                         ? "+" + odd.name.toString()
@@ -886,7 +886,7 @@
                                     odd.name.includes('Over')
                                   "
                                 >
-                                  <button @click="showError()" type="button">
+                                  <button @click="showError()" class="btn-pa-ods" type="button">
                                     {{
                                       odd.name > 0
                                         ? "+" + odd.name.toString()
