@@ -79,7 +79,5 @@ class VerificationController extends Controller
         return redirect($this->redirectPath())->with('verified', true);
     }
 
-    public function resend(Request $request)
-    {
-    }
+
 }

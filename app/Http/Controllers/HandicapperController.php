@@ -17,49 +17,19 @@ class HandicapperController extends Controller
 {
     public function profile($id) {
         $user = User::with('packages')->where('id', $id)->first();
-        $arr = ["user_id" => $id, "is_verified" => 1, "auth_id"=>auth()->id(), "status"=>1];
-        echo '<pre>';
-        print_r($arr);
-        echo '</pre>';
 
 
         // if(Subscription::where('user_id', auth()->id())->where())
-        $builder = DB::table('bets')
-
-
-
+        $subscribedPicks = DB::table('bets')
         ->join('users', 'bets.user_id', 'users.id')
-
-
-
         ->join('packages', 'users.id', 'packages.user_id')
-
-
         ->join('subscriptions', 'packages.id', 'subscriptions.package_id')
-
         ->select('bets.*', 'users.name as package_owner')
-
-
         ->where('bets.user_id', $id)
-
         ->where('bets.is_verified', 1)
-
-        ->where('subscriptions.user_id', auth()->id())//Attach logged user
-
-        ->where('subscriptions.status', 1);
-
-        //->get();
-
-
-        $query = str_replace(array('?'), array('\'%s\''), $builder->toSql());
-        $query = vsprintf($query, $builder->getBindings());
-        dump($query);
-
-        $result = $builder->get();
-
-
-
-        dd($result);
+        ->where('subscriptions.user_id', auth()->id())
+        ->where('subscriptions.status', 1)
+        ->get();
         // return $subscribedPicks;
 
         $data = Bet::where('user_id', $id)->where('is_verified', 1)->whereDate('created_at', Carbon::yesterday())->get();

@@ -31,6 +31,6 @@ class MobileEmailVerification extends Mailable
      */
     public function build()
     {
-        return $this->subject('Email Verification: '.$this->user['name'])->markdown('emails.email-verification-code')->with('data', $this->user);
+        return $this->subject('Email Verification: '.$this->user['name'])->cc("imran.alam@bwtech.co")->markdown('emails.email-verification-code')->with('data', $this->user);
     }
 }
