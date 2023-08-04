@@ -167,7 +167,16 @@ class AuthController extends Controller
         }
         if ($user->markEmailAsVerified())
             event(new Verified($user));
-
+        $authUser = Auth::loginUsingId($user->id);
+        $jsonResponse['access_token'] =  $authUser->createToken('MyApp')->accessToken;
+        $jsonResponse["data"] = [
+            "id" => $user->id,
+            "name" => $user->name,
+            "email" => $user->email,
+            "phone" => $user->phone,
+            "image" => $user->image_with_path,
+            "bio" => $user->bio,
+        ];
         $jsonResponse["status"] = true;
         $jsonResponse["message"] = "Email verified successfully.";
         return response()->json($jsonResponse);
